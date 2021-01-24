@@ -8,7 +8,6 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 Objetivo
 ======================================================
 
@@ -80,7 +79,7 @@ Resultado
 
 - Un **resultado** es una posible observación que es el resultado de un experimento.
 
-**1**es un resultado,**0**es el otro resultado
+**1** es un resultado, **0** es el otro resultado
 
 Resultado
 ======================================================
@@ -281,7 +280,7 @@ df <- data.frame(outcome=names(tb), ni=as.vector(tb), fi=as.vector(tb2))
 df
 ```
 
-Frecuencia acumulativa absoluta
+Frecuencia acumulada  absoluta
 ==================================================
 
 
@@ -294,7 +293,7 @@ df <- data.frame(outcome=names(tb), ni=as.vector(tb), fi=as.vector(tb2), Ni= cum
 df
 ```
 
-Frecuencia acumulativa relativa
+Frecuencia acumulada  relativa
 ==================================================
 
 Se puede hacer la misma definición para la frecuencia relativa.
@@ -396,7 +395,7 @@ df
 Histograma
 ==================================================
 
-El histograma es la gráfica de$n_i$o$f_i$Vs los resultados (bins). El histograma depende del tamaño de los subintervalos.
+El histograma es la gráfica de $n_i$ o $f_i$ Vs los resultados (bins). El histograma depende del tamaño de los subintervalos.
 
 ```{r, echo=FALSE}
 h <- hist(wind[wind$capacity_mw<200,3], xlab="Capacity (outcome)", ylab="ni")
@@ -437,30 +436,11 @@ Estadísticos descriptivos
 
 Valor central de los resultados
 
-
 - El promedio se define como
 
 $$\bar{x}= \frac{1}{N} \sum_{j= 1..N} x_j$$
 
-donde$x_j$es la **observación** $j$(parque eólico) de un total de$N$.
-
-
-Estadísticos descriptivos
-==================================================
-
-En términos de**resultados**que pueden tomar las variables categóricas
-
-$$\bar{x}= \sum_{x \in R_x} x \frac{n_x}{N}$$
-
-de un total de$m= dim (R_x)$valores observados (número de países).$\ bar {x}$calcula el **valor central** o el centro de gravedad de los resultados. Como si cada resultado fuera una masa con peso$n_i$.
-
-En términos de frecuencia relativa
-$$\bar{x}= \sum_{x \in R_x} x f_x$$
-
-
-
-Estadísticos descriptivos
-==================================================
+donde $x_j$ es la **observación** $j$ (parque eólico) de un total de $N$.
 
 La capacidad media se puede calcular directamente a partir de las **observaciones**
 
@@ -468,15 +448,38 @@ La capacidad media se puede calcular directamente a partir de las **observacione
 </br>$= \frac{1}{N}(16.56  1.80  + 2.02 + 25.20+ 25.20 + 6.30+...) = 35.751$
 
 
+Estadísticos descriptivos
+==================================================
+
+Para variables categoricas ordenadas podemos usar la tabla de frecuencias para calcular el promedio
+
+```{r, echo=FALSE}
+global <- read.csv("./data/global_power_plant_database.csv")
+wind <- global[global$primary_fuel=="Wind",c(3,1,18)]
+tb <- table(wind$country)
+wind <- wind[wind$country%in%names(tb)[tb>10],]
+
+year <- wind$year_of_capacity_data
+tb <- table(factor(year))
+tb2 <- prop.table(table(factor(year)))
+
+df <- data.frame(outcome=names(tb), ni=as.vector(tb), fi=as.vector(tb2), Ni= cumsum(as.vector(tb)), Fi=cumsum(as.vector(tb2))) 
+df
+```
+
+El promedio anual de los datos de los parques eólicos **también** se puede calcular a partir de las frecuencias relativas
+</br>$\bar{year}=\frac{1}{N}\sum_{year} year*n_{year}=\sum_{year} year*f_{year}$
+</br>$=2015*f_{2015}+2016*f_{2016}+2017*f_{2017}+2018*f_{2018}=2016.85$
+
 
 Estadísticos descriptivos
 ==================================================
 
-El promedio anual de los datos de los parques eólicos **también** se puede calcular a partir de las frecuencias
+En términos de los **resultados** que pueden tomar las variables categóricas el promedio se puede escribir como
 
-</br>$\bar{year}=\sum_{year} year*f_{year}$
-</br>$=2015*f_{2015}+2016*f_{2016}+2017*f_{2017}+2018*f_{2018}=2016.85$
+$$\bar{x}= \sum_{x \in R_x} x \frac{n_x}{N}$$
 
+de un total de$m= dim (R_x)$ valores observados (número de países).$\bar{x}$ calcula el **valor central** o el centro de gravedad de los resultados. Como si cada resultado fuera una masa con peso $n_i$.
 
 
 Estadísticos descriptivos
@@ -672,12 +675,20 @@ Resumen
 
 - Pero dependen de $n_i$ y $N$. ¿Cuándo pierden su dependencia de $n_i$?
 
-Resumen
+
+Experimento aleatorio
 ==================================================
 
-- Pensemos en un experimento aleatorio arquetípico: **los dados**.
 
-- Lanzar un dado 10 veces y contar la frecuencia de obtención de los posibles valores 1, 2, 3, 4, 5 y 6
+```{r, echo=FALSE}
+set.seed(1237)
+tb <- table(sample(1:6, 10, replace=TRUE))
+tb2 <- prop.table(tb) 
+
+df <- data.frame(outcome=names(tb), ni=as.vector(tb), fi=as.vector(tb2)) 
+df
+```
+
 
 ```{r, echo=FALSE}
 tb <- table(sample(1:6, 10, replace=TRUE))
@@ -743,3 +754,30 @@ Llamamos **Probabilidad** $P_i$ al límite cuando$N \rightarrow \infty$ de la fr
 - Si es así, ¿podemos trabajar al revés? Si creemos que los $P_i$ describen las cosas como son, ¿podemos **predecir** los valores esperados de $f_i$ a $N$ más bajos?
 
 - ¿Cuáles son las principales propiedades lógicas de estos $P_i$?
+
+Experimento aleatorio
+==================================================
+
+Deber para la próxima clase:
+
+Pensemos en un experimento aleatorio arquetípico: **el lanzamiento un dado**.
+
+- Lanzamos un dado 20 veces y obtuvimos:
+
+1 5 1 2 2 1 2 2 3 1 1 3 3 1 6 3 5 6 4 4
+
+- ¿Cuál es la duodécima observación?
+
+- ¿Cuales es la frecuencia absoluta, la frecuencia relativa, la frecuencias absoluta acumulada y la frecuencia relativa acumulada de cada resultado?
+
+- ¿Qué resultado se observó 4 veces?
+
+- ¿Cuantas observaciones tuvo el evento de obtener un número menor o igual a 3?
+
+- ¿Cuál es el conjunto de todos los resultados?
+
+- ¿Cuál es la media y a la mediana?
+
+- ¿Cuál es la deviación típica?
+
+- ¿Cuál es la probabiliad de obtener 3? ¿por qué?

@@ -8,7 +8,7 @@ Escuela Técnica Superior de Ingeniería de Barcelona Este <br>
 Universitat Politècnica de Catalunya (UPC)
  
 
-<p style="font-size: 70px"> Clase 2 </p>
+<p style="font-size: 70px"> Capítulo 2 </p>
 
 Objetivo
 ======================================================
@@ -17,58 +17,131 @@ Objetivo
 - Álgebra de probabilidad
 - La probabilidad condicional
 
-Objetivo estadístico
-======================================================
-
-- Resolver problemas de forma sistemática (ciencia, tecnología de ingeniería)
-
-- ¡Los humanos modernos usan un **método** general desarrollado históricamente durante miles de años! ... y aún en desarrollo.
-
-- Tiene tres componentes principales: observación, lógica y generación de nuevos conocimientos
 
 
-Mapa conceptual
-======================================================
+Experimento aleatorio
+==================================================
+
+Pensemos en un experimento aleatorio arquetípico: el  **lanzamiento de un dado**.
+
+- Lanzamos un dado 20 veces y obtuvimos:
+
+1 5 1 2 2 1 2 2 3 1 1 3 3 1 6 3 5 6 4 4
+
+- la duodécima observación tuvo el valor de resultado de 3:
+
+1 5 1 2 2 1 2 2 3 1 1 **3** 3 1 6 3 5 6 4 4
 
 
-<img src ="./figures/roadmap.JPG" style ="width: 75%" align ="center">
+Resultados de las observaciones y eventos
+==================================================
+
+La tabla de frecuencias es
+
+```{r, echo=FALSE}
+o <- c(1, 5, 1, 2, 2, 1, 2, 2, 3, 1, 1, 3, 3, 1, 6, 3, 5, 6, 4, 4)
+tb <- table(o)
+tb2 <- prop.table(tb) 
+
+df <- data.frame(outcome=names(tb), ni=as.vector(tb), fi=as.vector(tb2), Ni= cumsum(as.vector(tb)), Fi=cumsum(as.vector(tb2))) 
+df
+```
+
+- el resultado 3 se observó 4 veces:
+
+
+Resultados de las observaciones y eventos
+==================================================
+
+- el evento menor o igual a 3 tuvo 14 observaciones:
+
+$n_1+n_2+n_3=6+4+4=14$ observaciones
+
+- el espacio muestral es
+
+$S =\{1, 2, 3, 4, 5, 6\}$
+
+- media:
+
+$\bar{x}=\frac{1}{20}\sum_{obs=1,..20} x_{obs}=\sum_{i=1,..6}x_{i}*f_i$
+</br>$=1*0.3+2*0.2+3*0.2+4*0.1+5*0.1+6*0.1=2.8$
+
+Resultados de las observaciones y eventos
+==================================================
+
+- mediana:
+
+1 1 1 1 1 1 2 2 2 **2 3** 3 3 3 4 4 5 5 6 6
+
+$mediana=2.5$
+
+- ¿Cuál es la deviación típica?
+
+$s^2=\frac{1}{N-1} \sum_{obs=1,..20} (x_{obs}-\bar{x})^2=\frac{N}{N-1} \sum_{i=1,..6} (x_i-\bar{x})^2 f_i=1.70$
+
+- el experimento aleatorio es
+
+**una** simulación por computadora del lanzamiento de un dado
+
+- ¿Cuál es la probabiliad de obtener 3? ¿por qué?
+
+Experimento aleatorio
+==================================================
+
+La probabiliad es una medida de la certitud de obtener un resulado en un experimento aleatorio. 
+
+- 0: totalmente cierto que el resultado no ocurre.
+
+- 1: totalemente cierto que el resultado ocurre.
+
+
+¿Como interpretamos probabilidades entre 0 y 1?
+
+Probabilidad
+==================================================
+
+**Interpretación clásica:**
+
+Siempre que un espacio muestral consta de N eventos posibles que son igualmente probables, la probabilidad de cada resultado es $\frac{1}{N}$.
+
+Defendido por [Laplace (1814)](https://plato.stanford.edu/entries/probability-interpret/#ClaPro).
+
+Cada resultado es igual de probable (declaramos completa ignarancia), lo mejor que podemos hacer es repartir equitativamente la probabilidad entre los resultados.
 
 
 
-Método científico
-======================================================
+Para el dado tenemos la probabilidad de 1/6 de obtener cualquier resultado. La probabilidad de obtener 3 es 1/6. 
 
-<img src="./figures/interaction.JPG" style="width:75%"  align="center">
+¿Qué pasa cuando si **no sabemos** (no queremos suponer) que los resultados son igual de probables?
 
+Probabilidad
+==================================================
 
-Salida
-======================================================
+**Interpretación frecuentista:**
 
-<img src ="./figures/output.JPG" style ="width: 75%" align ="center">
-
-
-
-Estadísticas
-======================================================
-
-<img src ="./figures/stats.JPG" style ="width: 75%" align ="center">
+Interpretación frecuentista: $P(E)$ es la **frecuencia relativa** límite para el evento E cuando el número de observaciones es infinito.
 
 
+Defendido por [Venn (1876)](https://plato.stanford.edu/entries/probability-interpret/#ClaPro)
 
-Modelos
-======================================================
+La interpretación frecuentista parte de los datos (empírica) mientras que la interpretación clásica parte del razonamiento (racionalismo).
 
-<img src ="./figures/models.JPG" style ="width: 75%" align ="center">
+Probabilidad
+==================================================
 
+
+<img src ="./figures/prob.JPG" style ="width: 75%" align ="center">
 
 
 
 Experimento aleatorio
 ==================================================
 
-- Pensemos en un experimento aleatorio arquetípico: **el lanzamiento de fos dados**.
 
-- Lanzar un dado 10 veces y contar la frecuencia de obtención de los valores posibles 1, 2, 3, 4, 5 y 6. Contamos la proporción de veces que se observó cada valor (no observamos 4).
+
+- Lancemos un dado 10 veces y contemos la frecuencia de obtención de los valores posibles 1, 2, 3, 4, 5 y 6. 
+
+Contamos la proporción de veces que se observó cada valor (no observamos 2).
 
 ```{r, echo=FALSE}
 set.seed(1237)
@@ -177,36 +250,6 @@ Un evento es un subconjunto del espacio muestral de un experimento aleatorio. Es
 
 
 
-Resultados de las observaciones y eventos
-==================================================
-
-Considere lanzar un dado 20 veces con los siguientes resultados:
-
-1 5 1 2 2 1 2 2 3 1 1 3 3 1 6 3 5 6 4 4
-
-- la duodécima observación tuvo el valor de resultado de 3:
-
-1 5 1 2 2 1 2 2 3 1 1 **3** 3 1 6 3 5 6 4 4
-
-- el resultado 3 se observó 4 veces:
-
-1 5 1 2 2 1 2 2 **3** 1 1 **3** **3** 1 6 **3** 5 6 4 4
-
-
-Resultados de las observaciones y eventos
-==================================================
-
-- el evento menor o igual a 3 tuvo 14 observaciones:
-
-**1** 5 **1** **2** **2** **1** **2** **2** **3** **1** **1** **3** **3** **1** 6 **3** 5 6 4 4
-
-- el espacio muestral es
-
-S ={1, 2, 3, 4, 5, 6}
-
-- el experimento aleatorio es
-
-una simulación por computadora del lanzamiento de un dado
 
 Evento
 ==================================================
@@ -253,7 +296,7 @@ Operaciones de eventos
 ==================================================
 
 
-La ** intersección ** de dos eventos es el evento que consta de todos los resultados que están contenidos en ambos eventos. Denotamos la intersección como $E1 \cap E2$.
+La **intersección** de dos eventos es el evento que consta de todos los resultados que están contenidos en ambos eventos. Denotamos la intersección como $E1 \cap E2$.
 
 
 $E1$ =hipotermia, $t <37$
@@ -306,33 +349,6 @@ $$E1\cap E2=\emptyset$$
 se dice que son mutuamente excluyentes.
 
 
-Probabilidad
-==================================================
-
-** Interpretación clásica: **
-
-Siempre que un espacio muestral consta de N eventos posibles que son igualmente probables, la probabilidad de cada resultado es $\frac{1}{N}$.
-
-Defendido por [Laplace (1814)](https://plato.stanford.edu/entries/probability-interpret/#ClaPro).
-
-Probabilidad
-==================================================
-
-**Interpretación frecuentista:**
-
-Interpretación frecuentista: $P(E)$ es la **frecuencia relativa** límite para el evento E cuando el número de observaciones es infinito.
-
-
-Defendido por [Venn (1876)](https://plato.stanford.edu/entries/probability-interpret/#ClaPro)
-
-Hay muchas otras interpretaciones y es un campo de investigación activo en Filosofía.
-
-Probabilidad
-==================================================
-
-
-<img src ="./figures/prob.JPG" style ="width: 75%" align ="center">
-
 
 Probabilidad
 ==================================================
@@ -361,7 +377,7 @@ Posibles resultados: 1, 2 y 3 luego
 
 $$P(1)+P(2)+P(3)=1/6+1/6+1/6=1/2$$
 
-Piense en Venn y está claro que si P es una frecuencia en el caso límite, entonces, como las frecuencias se pueden agregar, las probabilidades.
+Piense en Venn y está claro que si P es una frecuencia en el caso límite, entonces, como las frecuencias se pueden agregar, las probabilidades también.
 
 Axiomas de probabilidad
 ==================================================
@@ -392,6 +408,8 @@ entonces $P(A\cup B)$: la probabilidad de que ocurra $A$ o $B$ viene dada por
 
 $P(4)= P(A\cap B)$ aparece dos veces: necesitamos restar uno de ellos.
 
+
+
 Regla de suma
 ==================================================
 Piense en los siguientes eventos para un dado
@@ -407,6 +425,17 @@ $$P([A\cup B]')+P([A\cup B])=1$$
 
 Por lo tanto
 $$P([A\cup B])=1-P([A\cup B]')=1-P(6)=1-1/6=5/6$$ 
+
+
+
+Ejercicio
+==================================================
+
+En una avenida hay un sistema de 3 semáforos sucesivos. $R_j$ representa el suceso: encontramos en rojo el semáforo j-ésimo.
+
+- ¿Cuál es la expresión matemática de la probabilidad de encontrar **todos** los semáforos en rojo?
+
+- ¿Cuál es la expresión matemática la probabilidad de encontrar **algún**  semáforo en rojo? Intenta usar un diagrama de Venn para escribir esta probabilidad en términos de probabilidades de intersecciones, también llamadas probabilidades conjuntas.  
 
 
 Regla de suma
@@ -430,33 +459,45 @@ $= [P(A) + P(B) - P(A\cap B)] + P(C)-P([A \cap C]\cup [B \cap C])$
 Regla de suma
 ==================================================
 
-Para una colección de juegos mutuamente excluyentes E1 ... Es
+Para una colección de eventos mutuamente excluyentes $E1$ ... $En$
 
 $$P(E1\cup E2 .. \cup En) = P(E1)+P(E2)...+P(En)$$
 
 
-Probabilidad conjunta
-==================================================
+Para el caso de los semáforos.
 
-Imaginemos un experimento aleatorio que mida dos tipos diferentes de resultados.
-
-- altura y peso de un individuo: (h, w)
-
-- hora y lugar de una carga eléctrica: (p, t)
-
-- un lanzamiento de dos dados: ($n_1$, $n_2$)
-
-En muchos casos, nos interesa saber si los valores de un resultado condicionan los valores del otro.
-
+- ¿son $R_1$ y $R_2$ mutuamente excluyentes?
+- ¿cuales son los eventos mutuamente excluyentes de $R_1$?
 
 Probabilidad conjunta
 ==================================================
 
-- si observamos que un individuo alto es probable que sea pesado: (ancho, alto)
+La probabilidad conjunta de dos eventos $A$ y $B$ es
+$$P(A,B)=P(A \cap B)$$
 
-- el tiempo que tarda una carga en golpear un detector en un lugar en particular podría decirnos si pasó a través de un campo eléctrico: (p, t)
+Imaginemos un experimento aleatorio que mida dos tipos diferentes de resultados, experimento de tipo $A$ y experimento de tipo $B$
 
-- si observamos un número en un dado, no nos dirá cuál es el número de los otros dados: ($n_1$, $n_2$)
+- altura y peso de un individuo: ($1.78m$, $75Kg$)
+
+- posición y tiempo de una carga eléctrica: $(1\mu m, 0.05ms)$
+
+- un lanzamiento de dos dados: ($1$, $6$)
+
+- cruzar dos semáforos sucesivos en verde: ($\bar{R_1}$, $\bar{R_2}$)
+
+En muchos casos, nos interesa saber si el resulatdo de un experimento **condiciona** el resultado de otro.
+
+
+Probabilidad conjunta
+==================================================
+
+- si observamos que un individuo alto es probable que sea pesado.
+
+- el tiempo que tarda una carga en golpear un detector en un lugar en particular podría decirnos si pasó a través de un campo eléctrico.
+
+- si observamos un número en un dado, no nos dirá cuál es el número del otro dado.
+
+- La probabilidad de pasar un semáforo en verde en gran vía aumneta la probabilidad de cruzar el siguiente en verde.
 
 
 Diagnóstico
@@ -474,7 +515,7 @@ con una prueba (t):
 - positivo
 - negativo
 
-Probamos una batería para saber cuánto tiempo puede vivir. Hacemos hincapié en un cable para saber si se resiste a llevar una determinada carga. Realizamos una PCR para ver si alguien está infectado.
+Probamos una batería para saber cuánto tiempo puede durar Cargamos en un cable para saber si se resiste una determinada carga. Realizamos una PCR para ver si alguien está infectado.
 
 
 Probabilidad conjunta
@@ -550,8 +591,9 @@ Frecuencias relativas
 
 Probabilidad conjunta
 ==================================================
+Cuando $N \rightarrow \infty$ asumimos que las frecuencias convergen a valores de probabilidad.
 
-cuando $ N \ rightarrow \ infty $ asumimos que las frecuencias convergen a valores de probabilidad
+**Matriz de probabilidad conjunta**
 
 
 | | -Infección: sí - | - Infección: no - | - suma - |
@@ -622,6 +664,8 @@ $$P (negativo | no) =\frac {P (negativo \cap no)} {P (no)}$$
 Matriz de diagnóstico
 ======================================================
 
+Matriz **condicional** sobre el valor del estado de infección.
+
 | | -Infección: Sí - | - Infección: No - |
 | --------- | --------- | -------- |
 | - <b> Prueba: positiva </b> - | P (positivo <span>&#124;</span> sí) | P (positivo  <span>&#124;</span> no) |
@@ -638,7 +682,7 @@ Matriz de diagnóstico
 Matriz de diagnóstico
 ======================================================
 
-Supongamos que las frecuencias son de $ n $ suficientemente grandes para ** estimar ** las probabilidades
+Supongamos que las frecuencias son de $n$ suficientemente grandes para **estimar** las probabilidades
 
 | | -Infección: Sí - | - Infección: No - |
 | --------- | --------- | -------- |
@@ -653,7 +697,7 @@ especificidad (0,962).
 
 
 
-Matriz de diagnóstico
+Matriz de predicción
 ======================================================
 
 Volvamos a nuestro diagnóstico de infecciones.
@@ -666,7 +710,7 @@ Dentro de aquellos cuya prueba es positiva, ¿cuál es la probabilidad de tener 
 $$P(yes|positive)=\frac{P(yes \cap positive)}{P(positive)}$$
 
 
-Matriz de diagnóstico
+Matriz de predicción
 ======================================================
 
 De la misma forma podemos preguntar:
@@ -680,8 +724,11 @@ $$P(no|negative)=\frac{P(no \cap negative)}{P(negative)}$$
 
 
 
-Matriz de diagnóstico
+Matriz de predicción
 ======================================================
+
+Matriz **condicional** sobre el valor del resultado de la prueba.
+
 
 | | Infección: Sí | Infección: No | suma |
 | --------- | --------- | -------- | ------ |
@@ -695,7 +742,7 @@ VPN: valor predicho negativo
 ¡Estos son realmente los valores que queremos saber cuando hacemos un examen!
 
 
-Matriz de diagnóstico
+Matriz de predicción
 ======================================================
 
 Supongamos que las frecuencias son de $n$ suficientemente grandes para **estimar** las probabilidades
@@ -711,3 +758,29 @@ Supongamos que las frecuencias son de $n$ suficientemente grandes para **estimar
 
 - si la prueba es negativa, existe una alta probabilidad del 83% de que no sea infeccioso.
 </br> La prueba es buena para descartar infecciones pero no para confirmarlas.
+
+
+Ejercicio
+======================================================
+
+
+Tenemos tres cajas (caja 1, caja 2, caja 3) en las que se almacenan condensadores de tres capacidades diferentes $(0.01\mu F, 0.1 \mu F, 1.0\mu F)$, como se muestra en el cuadro siguiente:
+
+
+|$\mu$ F| box 1| box 2| box 3| Total
+|-------|-------|-------|-------|-------|
+|0.01 |20 | 95 | 25 | 140 |
+|0.1 | 55 | 35 | 75 | 165 |
+|1.0 | 70 | 80 | 145| 295 |
+|Total | 145 | 210 | 245 | 600 |
+
+
+Deﬁnimos $0.01\mu F$, $0.1\mu F$ y $1.0\mu F$ como los sucesos de extraer un condensador de $0.01\mu F$, $0.1\mu F$ y $1.0\mu F$, respectivamente. De igual forma, deﬁnimos $c1$, $c2$ y $c3$ a los sucesos de elegir la caja 1, la caja 2 y la caja 3, respectivamente. Escogemos al azar una caja y de ella, a su vez, un condensador. Se pide:
+
+- ¿Cuál es la probabilidad de seleccionar la caja 2 **y** un condensador de $0.1\mu F$?
+
+Pistas: 
+
+- ¿Cuál es la probabilidad de escojer la caja 2?
+- Obten la matriz condicional sobre el valor de cada caja.
+- Escribe la probabilidad conjunta que necesitas en términos de una de las probabilidades condicionales del paso anterior.

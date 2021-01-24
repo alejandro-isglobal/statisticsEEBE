@@ -8,7 +8,7 @@ Escuela Técnica Superior de Ingeniería de Barcelona Este <br>
 Universitat Politècnica de Catalunya (UPC)
  
 
-<p style= "font-size: 70px"> Clase 1 </p>
+<p style= "font-size: 70px"> Capítulo 1 </p>
 
 Objetivo
 ======================================================
@@ -81,7 +81,7 @@ Resultado
 
 - Un **resultado** es una posible observación que es el resultado de un experimento.
 
-**1**es un resultado,**0**es el otro resultado
+**1** es un resultado, **0** es el otro resultado
 
 Resultado
 ======================================================
@@ -340,7 +340,7 @@ Variables categóricas y ordenadas
 4    2018   39 0.02187325
 ```
 
-Frecuencia acumulativa absoluta
+Frecuencia acumulada  absoluta
 ==================================================
 
 
@@ -357,7 +357,7 @@ $$N_i= \sum_{k= 1..i} n_k$$
 4    2018   39 0.02187325 1783
 ```
 
-Frecuencia acumulativa relativa
+Frecuencia acumulada  relativa
 ==================================================
 
 Se puede hacer la misma definición para la frecuencia relativa.
@@ -478,7 +478,7 @@ Frecuencias para variables continuas
 Histograma
 ==================================================
 
-El histograma es la gráfica de$n_i$o$f_i$Vs los resultados (bins). El histograma depende del tamaño de los subintervalos.
+El histograma es la gráfica de $n_i$ o $f_i$ Vs los resultados (bins). El histograma depende del tamaño de los subintervalos.
 
 ![plot of chunk unnamed-chunk-18](Capitulo1-figure/unnamed-chunk-18-1.png)
 
@@ -513,30 +513,11 @@ Estadísticos descriptivos
 
 Valor central de los resultados
 
-
 - El promedio se define como
 
 $$\bar{x}= \frac{1}{N} \sum_{j= 1..N} x_j$$
 
-donde$x_j$es la **observación** $j$(parque eólico) de un total de$N$.
-
-
-Estadísticos descriptivos
-==================================================
-
-En términos de**resultados**que pueden tomar las variables categóricas
-
-$$\bar{x}= \sum_{x \in R_x} x \frac{n_x}{N}$$
-
-de un total de$m= dim (R_x)$valores observados (número de países).$\ bar {x}$calcula el **valor central** o el centro de gravedad de los resultados. Como si cada resultado fuera una masa con peso$n_i$.
-
-En términos de frecuencia relativa
-$$\bar{x}= \sum_{x \in R_x} x f_x$$
-
-
-
-Estadísticos descriptivos
-==================================================
+donde $x_j$ es la **observación** $j$ (parque eólico) de un total de $N$.
 
 La capacidad media se puede calcular directamente a partir de las **observaciones**
 
@@ -544,15 +525,37 @@ La capacidad media se puede calcular directamente a partir de las **observacione
 </br>$= \frac{1}{N}(16.56  1.80  + 2.02 + 25.20+ 25.20 + 6.30+...) = 35.751$
 
 
+Estadísticos descriptivos
+==================================================
+
+Para variables categoricas ordenadas podemos usar la tabla de frecuencias para calcular el promedio
+
+
+```
+  outcome   ni         fi
+1    2015   12 0.00673023
+2    2016  273 0.15311273
+3    2017 1459 0.81828379
+4    2018   39 0.02187325
+```
+
+El promedio anual de los datos de los parques eólicos **también** se puede calcular a partir de las frecuencias relativas
+
+$\bar{year}=\frac{1}{N}\sum_{j} year=\frac{1}{N}\sum_{year} year*n_{year}=\sum_{year} year*f_{year}$
+
+$=2015*f_{2015}+2016*f_{2016}+2017*f_{2017}+2018*f_{2018}=2016.85$
+
 
 Estadísticos descriptivos
 ==================================================
 
-El promedio anual de los datos de los parques eólicos **también** se puede calcular a partir de las frecuencias
+En términos de los **resultados** que pueden tomar las variables categóricas el promedio se puede escribir como
 
-</br>$\bar{year}=\sum_{year} year*f_{year}$
-</br>$=2015*f_{2015}+2016*f_{2016}+2017*f_{2017}+2018*f_{2018}=2016.85$
+$$\bar{x}= \sum_{x \in R_x} x f_x$$
 
+de un total de$m= dim (R_x)$ valores observados (número de países).
+
+$\bar{x}$ calcula el **valor central** o el centro de gravedad de los resultados. Como si cada resultado tuviera una densidad de masa $f_i$.
 
 
 Estadísticos descriptivos
@@ -569,7 +572,7 @@ Por eso escuchamos, por ejemplo, que un paciente con coronavirus puede infectar 
 Estadísticos descriptivos
 ==================================================
 
-![plot of chunk unnamed-chunk-22](Capitulo1-figure/unnamed-chunk-22-1.png)
+![plot of chunk unnamed-chunk-23](Capitulo1-figure/unnamed-chunk-23-1.png)
 
 Estadísticos descriptivos
 ==================================================
@@ -594,7 +597,7 @@ Estadísticos descriptivos
 - Mediana: la mitad de la masa
 
 
-![plot of chunk unnamed-chunk-23](Capitulo1-figure/unnamed-chunk-23-1.png)
+![plot of chunk unnamed-chunk-24](Capitulo1-figure/unnamed-chunk-24-1.png)
 
 
 
@@ -605,14 +608,14 @@ Estadísticos descriptivos
 Una medida importante de los resultados es su **dispersión**. Muchos experimentos pueden compartir su media, pero difieren en la dispersión de los valores.
 
 
-![plot of chunk unnamed-chunk-24](Capitulo1-figure/unnamed-chunk-24-1.png)
+![plot of chunk unnamed-chunk-25](Capitulo1-figure/unnamed-chunk-25-1.png)
 
 
 Estadísticos descriptivos
 ==================================================
 
 
-![plot of chunk unnamed-chunk-25](Capitulo1-figure/unnamed-chunk-25-1.png)
+![plot of chunk unnamed-chunk-26](Capitulo1-figure/unnamed-chunk-26-1.png)
 
 Estadísticos descriptivos
 ==================================================
@@ -639,7 +642,7 @@ $$s^2=\frac{N}{N-1} \sum_{x} (x-\bar{x})^2 f_x$$
 Estadísticos descriptivos
 ==================================================
 
-La raíz cuadrada de la varianza muestral se llama **desviación estándar** $s$.
+La raíz cuadrada de la varianza muestral se llama **desviación estándar** o típica $s$.
 
 
 La desviación estándar de la capacidad de los parques eólicos es
@@ -665,13 +668,13 @@ Estadísticos descriptivos
 ==================================================
 La distancia entre el tercer cuartil y el primer cuartil se llama **rango intercuartil** (IQR) y captura el 50% central de las observaciones
 
-![plot of chunk unnamed-chunk-26](Capitulo1-figure/unnamed-chunk-26-1.png)
+![plot of chunk unnamed-chunk-27](Capitulo1-figure/unnamed-chunk-27-1.png)
 
 Estadísticos descriptivos
 ==================================================
 El rango intercuartílico, la mediana y el 5% y el 95% de los datos se pueden visualizar en una **gráfica de caja**, aquí los valores de los resultados están en el eje y. El IQR es la caja, la mediana la línea en el medio y los bigotes marcan el 5% y el 95% de los datos.
 
-![plot of chunk unnamed-chunk-27](Capitulo1-figure/unnamed-chunk-27-1.png)
+![plot of chunk unnamed-chunk-28](Capitulo1-figure/unnamed-chunk-28-1.png)
 
 Resumen
 ==================================================
@@ -692,20 +695,30 @@ Resumen
 
 - Pero dependen de $n_i$ y $N$. ¿Cuándo pierden su dependencia de $n_i$?
 
-Resumen
+
+Experimento aleatorio
 ==================================================
 
-- Pensemos en un experimento aleatorio arquetípico: **los dados**.
 
-- Lanzar un dado 10 veces y contar la frecuencia de obtención de los posibles valores 1, 2, 3, 4, 5 y 6
+
+```
+  outcome ni  fi
+1       1  2 0.2
+2       3  2 0.2
+3       4  1 0.1
+4       5  3 0.3
+5       6  2 0.2
+```
+
 
 
 ```
   outcome ni  fi Ni  Fi
-1       2  1 0.1  1 0.1
-2       3  2 0.2  3 0.3
-3       4  4 0.4  7 0.7
-4       5  3 0.3 10 1.0
+1       1  2 0.2  2 0.2
+2       2  1 0.1  3 0.3
+3       3  1 0.1  4 0.4
+4       4  3 0.3  7 0.7
+5       6  3 0.3 10 1.0
 ```
 
 
@@ -718,12 +731,12 @@ Resumen
 
 ```
   outcome  ni    fi   Ni    Fi
-1       1 161 0.161  161 0.161
-2       2 180 0.180  341 0.341
-3       3 174 0.174  515 0.515
-4       4 178 0.178  693 0.693
-5       5 144 0.144  837 0.837
-6       6 163 0.163 1000 1.000
+1       1 162 0.162  162 0.162
+2       2 173 0.173  335 0.335
+3       3 163 0.163  498 0.498
+4       4 171 0.171  669 0.669
+5       5 176 0.176  845 0.845
+6       6 155 0.155 1000 1.000
 ```
 
 - ¿Qué sucede cuando$N \rightarrow \infty$?
@@ -735,7 +748,7 @@ Resumen
 
 $$lim_{N\rightarrow \infty} f_i = P_i$$
 
-![plot of chunk unnamed-chunk-30](Capitulo1-figure/unnamed-chunk-30-1.png)
+![plot of chunk unnamed-chunk-32](Capitulo1-figure/unnamed-chunk-32-1.png)
 
 
 Próximo
@@ -748,3 +761,30 @@ Llamamos **Probabilidad** $P_i$ al límite cuando$N \rightarrow \infty$ de la fr
 - Si es así, ¿podemos trabajar al revés? Si creemos que los $P_i$ describen las cosas como son, ¿podemos **predecir** los valores esperados de $f_i$ a $N$ más bajos?
 
 - ¿Cuáles son las principales propiedades lógicas de estos $P_i$?
+
+Experimento aleatorio
+==================================================
+
+Deber para la próxima clase:
+
+Pensemos en un experimento aleatorio arquetípico: **el lanzamiento un dado**.
+
+- Lanzamos un dado 20 veces y obtuvimos:
+
+1 5 1 2 2 1 2 2 3 1 1 3 3 1 6 3 5 6 4 4
+
+- ¿Cuál es la duodécima observación?
+
+- ¿Cuales es la frecuencia absoluta, la frecuencia relativa, la frecuencias absoluta acumulada y la frecuencia relativa acumulada de cada resultado?
+
+- ¿Qué resultado se observó 4 veces?
+
+- ¿Cuantas observaciones tuvo el evento de obtener un número menor o igual a 3?
+
+- ¿Cuál es el conjunto de todos los resultados?
+
+- ¿Cuál es la media y a la mediana?
+
+- ¿Cuál es la deviación típica?
+
+- ¿Cuál es la probabiliad de obtener 3? ¿por qué?
