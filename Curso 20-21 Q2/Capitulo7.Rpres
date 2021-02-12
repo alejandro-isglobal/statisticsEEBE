@@ -1,0 +1,730 @@
+Introducción a la estadística
+======================================================
+
+Escuela Técnica Superior de Ingeniería de Barcelona Este <br>
+Universitat Politècnica de Catalunya (UPC)
+ 
+
+<p style = "font-size: 70px"> Capítulo 7 </p>
+
+Objetivo
+======================================================
+
+Modelos de probabilidad discreta
+
+- Función de probabilidad de Poisson
+
+Modelos de probabilidad continua
+
+- Función de densidad de probabilidad exponencial
+- Función de densidad de probabilidad normal
+
+
+Modelos de probabilidad para variables discretas
+======================================================
+
+
+| Modelo | outcome    | x  |  f(x) | E(X) | V(X) |
+| ----------- | ------------- | ------ | ----- | ---- | ---- |
+| Uniforme | $n$ discreto | a,... b| $\frac{1}{n}$ |$\frac{b+a}{2}$ |  $\frac{(b-a+1)^2-1}{12}$ | 
+| Bernoulli             | evento A  | 0,1 | $p^x(1-p)^{1-x}$ | $p$ | $p(1-p)$ |
+| Binomial | \# de eventos A | 0,1,...| $\binom n x p^x(1-p)^{n-x}$ | $np$ | $np(1-p)$ |
+| Geometrico | \# de eventos B antes de evento A | 0,1,...|$p(1-p)^{x}$| $\frac{1-p}{p}$ |$\frac{1-p}{p^2}$ |
+| Geometrico desplazado | \# de **ensayos** hasta evento A | 1,2,...| $p(1-p)^{x-1}$ | $\frac{1}{p}$ | $\frac{1-p}{p^2}$ |
+| Binomial Negativo | \# de eventos B hasta r eventos A | 0,1,.. |$\binom {x+r-1} x p^r(1-p)^x$ | $r\frac{1-p}{p}$ | $r\frac{1-p}{p^2}$ |
+| Hypergeometrico | \# de eventos A en unamuestra $n$ |$\max(0, n+K-N)$, ... $\min(K, n)$ | $\frac{1}{\binom N n}\binom K x \binom {N-K} {n-x}$ | $np$ | $np(1-p)\frac{N-n}{N-1}$ |
+
+Modelos de probabilidad para variables discretas
+======================================================
+
+Estamos construyendo modelos más complejos a partir de modelos simples:
+
+**Uniforme**: interpretación clásica de probabilidad
+</br>$\downarrow$ 
+</br> **Bernoulli**: Introducción de un **parámetro** $ p $ (familia de funciones)
+</br>$\downarrow$ 
+</br> **Binomial**: **Repetición** de un experimento aleatorio ($ n $ veces ensayos de Bernoulli)
+</br>$\downarrow$ 
+</br> **Poisson**: repetición de un experimento aleatorio dentro de un intervalo continuo (sin **control** sobre cuándo o dónde repetir el experimento).
+
+
+distribución de Poisson
+======================================================
+
+Imagina que estamos observando eventos que **dependen** del tiempo o la distancia **intervalos**.
+
+- coches que llegan a un semáforo
+- recibir mensajes en su teléfono móvil
+- defectos que ocurren al azar en un alambre de cobre
+
+Suponga que los eventos son resultados de experimentos aleatorios **independientes**, cada uno de los cuales aparece al azar en un intervalo continuo.
+
+distribución de Poisson
+======================================================
+
+- Cuando estudiamos el proceso binomial pensamos en repetir el lanzamiento de una moneda $n$ veces.
+
+- Asumimos implícitamente que **controlamos** cuándo ocurrieron las repeticiones.
+
+- Ahora consideramos otra capa de aleatoriedad: ¡no controlamos cuándo ocurre el lanzamiento de la moneda!
+
+
+distribución de Poisson
+======================================================
+
+¿Cuál es la probabilidad de observar eventos de $X$ en la unidad de un intervalo (tiempo o distancia)?
+
+Imagine que algunas impurezas en un alambre de cobre se depositan al azar a lo largo de un alambre.
+
+- en cada centímetro, contarías un promedio de $\lambda = 10/cm$.
+- dividir el centímetro en micrómetros ($0.0001cm$)
+
+distribución de Poisson
+======================================================
+
+Los micrómetros son lo suficientemente pequeños para
+- hay o no hay una impureza en cada micrómetro
+- cada micrómetro puede considerarse un ** ensayo de Bernoulli **
+
+
+<img src = "./figures/poiss.JPG" style = "width: 75%" style = "height: 100%" align = "center">
+
+distribución de Poisson
+======================================================
+
+La probabilidad de observar $X$ impurezas en $n = 10,000 0 \mu$ (1cm) sigue aproximadamente una distribución binomial
+
+$P(X=x)=\binom n x p^x(1-p)^{n-x}$
+
+donde $p$ es la probabilidad de encontrar una impureza en un micrómetro.
+
+Recuérdalo
+$E (X) = np$
+así que para $\lambda = np$ (número promedio de impurezas por 1 cm), podemos escribir
+
+$P(X=x)=\binom n x \big(\frac{\lambda}{n}\big)^x(1-\frac{\lambda}{n})^{n-x}$
+
+distribución de Poisson
+======================================================
+
+- Todavía **podría** haber dos fallas en un micrómetro, por lo que necesitamos aumentar la partición del cable ($n$).
+
+- Las pruebas de Bernoulli solo son verdaderas en el límite ($n \rightarrow \infty$).
+
+$P(X=x)=\binom n x \big(\frac{\lambda}{n}\big)^x(1-\frac{\lambda}{n})^{n-x}$
+
+Donde $\lambda$ es constante porque es la densidad de defectos por centímetro, dada por $E(X)$.
+
+
+
+distribución de Poisson
+======================================================
+
+$P(X=x)=\binom n x \big(\frac{\lambda}{n}\big)^x(1-\frac{\lambda}{n})^{n-x}$
+
+en el límite ($n \rightarrow \infty$)
+
+- $\frac{1}{n^x}\binom n x =\frac{1}{n^x}\frac{n!}{x! (n-x)!}=\frac{(n-x)!(n-x+1)...(n-1)n}{n^x x! (n-x)!}=\frac{n(n-1)..(n-x+1)}{n^x x!} \rightarrow \frac{1}{x!}$
+- $(1-\frac{\lambda}{n})^{n} \rightarrow e^{-\lambda}$ (definición de la función exponencial)
+- $(1-\frac{\lambda}{n})^{-x} \rightarrow 1$
+
+Por lo tanto
+
+$P(X=x)= \frac{e^{-\lambda}\lambda^x}{x!}$
+
+
+distribución de Poisson
+======================================================
+
+**Definición**
+
+Dado
+
+- un intervalo en los números reales
+- los recuentos ocurren al azar en el intervalo
+- se conoce el número promedio de conteos en el intervalo ($\lambda$)
+- si se puede encontrar una pequeña partición regular del intervalo de modo que cada uno de ellos pueda considerarse ensayos de Bernoulli
+
+Entonces...
+
+distribución de Poisson
+======================================================
+
+**Definición**
+
+El experimento aleatorio de contar a través del intervalo es un proceso de **Poisson** y los conteos $X$ siguen la función de masa de probabilidad
+$f(x)= \frac{e^{-\lambda}\lambda^x}{x!}, \lambda>0$
+
+distribución de Poisson
+======================================================
+
+```{r, echo=FALSE}
+outcome <- 0:10
+probability <- dpois(outcome,0.5)
+plot(outcome, probability, pch=16,col="red", main="Poiss(lambda=0.5)")
+for(i in 1:length(outcome))
+{lines(c(outcome[i], outcome[i]), c(0, probability[i]), col="red")}
+```
+
+
+
+distribución de Poisson
+========================================================
+
+```{r, echo=FALSE}
+outcome <- 0:20
+probability <- dpois(outcome,5)
+plot(outcome, probability, pch=16,col="red", main="Poiss(lambda=5)")
+for(i in 1:length(outcome))
+{lines(c(outcome[i], outcome[i]), c(0, probability[i]), col="red")}
+```
+
+
+distribución de Poisson
+======================================================
+
+para la distribución de Poisson
+</br>$f(x)=\frac{e^{-\lambda}\lambda^x}{x!}, \lambda>0$
+
+
+tenemos
+
+- significa $E(X)= \lambda$
+- varianza $V(X)= \lambda$
+
+Eso se puede obetenr mediante la función de generación de momentos $M_X (t) = E [e ^ {tx}]$.
+
+distribución de Poisson
+======================================================
+
+El número medio de partículas radiactivas que golpean un contador Geiger es de 2,3 segundos.
+
+¿Cuál es la probabilidad de contar exactamente 2 partículas en un segundo?
+
+$f(x; \lambda)=\frac{e^{-\lambda}\lambda^x}{x!}, \lambda>0$
+
+$f(2; \lambda=2.3)=\frac{e^{-2.3}2.3^2}{2!}=0.26, \lambda=2.3\, counts/s$
+
+
+distribución de Poisson
+======================================================
+
+El número medio de partículas radiactivas que inciden en un contador Geiger es de 2,3 conteos/segundo.
+
+¿Cuál es la probabilidad de contar con la detección exacta de 10 partículas en 5 segundos?
+
+$f(x; \lambda)=\frac{e^{-\lambda}\lambda^x}{x!}, \lambda=2.3\, counts/s$
+
+Entonces, la variable aleatoria $Y$ que cuenta cuántas partículas golpean el detector cada 5 segundos tiene una media
+
+$\lambda_{5s}=E(Y)= 5 \times 2.3\, counts/5s=11.5 \, counts/5s$
+
+
+y distribuye:
+
+$f(y; \lambda_{5s})=\frac{e^{-\lambda_{5s}}\lambda_{5s}^x}{x!}, \lambda_{5s}=11.5 \, counts/5s$
+
+
+$f(y=10; \lambda_{5s})=\frac{e^{-11.5}11.5^{10}}{{10!}}=0.11, \lambda=11.5 \,counts/5s$
+
+
+
+distribución de Poisson
+======================================================
+
+¿Cuál es la probabilidad de al menos un conteo en dos segundos?
+
+
+El promedio de conteos en 2 segundos es
+
+$\lambda_{2s}=E(Z)= 2 \times 2.3 \, counts/2s=4.6 \, counts/2s$
+
+
+que es la media de la variable aleatoria $Z$ que cuenta cuántas partículas golpean el detector cada 2 segundos. $Z \hookrightarrow Poiss(\lambda_ {2s})$ y
+
+$P(Z > 0)=1-F_{Pois}(0; \lambda_{2s})=1-f(0; \lambda_{2s})=1-e^{-4.6}=0.98 \nonumber$
+
+
+
+
+Modelos de probabilidad para variables continuas
+======================================================
+
+Los modelos de probabilidad continua se derivan de considerar las funciones de densidad de probabilidad $f (x)$ de una variable aleatoria continua $X$ que **creemos** que describen procesos como experimentos aleatorios reales.
+
+Definición:
+
+- $f(x) \geq 0$
+- $\int_{-\infty}^{\infty} f(x) dx = 1$
+- $P(a\leq X \leq b)=\int_{a}^{b} f(x) dx$
+
+Modelos de probabilidad para variables continuas
+======================================================
+
+- recuerde que estos son objetos abstractos y pueden o no representar cualquier proceso natural / diseñado.
+
+
+- como en el caso discreto, construiremos los modelos a partir de los requisitos básicos de lo que creemos que los procesos naturales pueden satisfacer.
+
+
+
+Distribución exponencial
+======================================================
+
+Regresemos a la distribución de Poisson para el número de conteos ($k$) en un intervalo
+
+$f(k)=\frac{e^{-\lambda}\lambda^k}{k!}, \lambda>0$ 
+
+
+Recuerde que introdujimos aleatoriedad adicional en la que ocurren los ensayos de Bernoulli, pero aún esperábamos que dentro de un intervalo conozcamos el número promedio de ensayos $\lambda$.
+
+
+Distribución exponencial
+======================================================
+
+- Consideremos ahora solo dos ensayos consecutivos diferentes (duración/tiempo).
+
+- la distancia entre ellos es una variable aleatoria **continua**.
+
+
+Podemos preguntar cuál es la probabilidad de que dos eventos estén distanciados $X$.
+
+
+Distribución exponencial
+======================================================
+
+Cuando preguntamos por la probabilidad en diferentes longitudes de intervalos, tuvimos que volver a escalar $\lambda$ en algunas unidades por el intervalo de interés
+
+$E_x(K)=x \lambda$
+
+$K$ ahora está en $x$ unidades de $\lambda^{- 1}$ y donde $x$ es la **longitud** del nuevo intervalo. $K$ es, por tanto, el número de eventos en el intervalo $x$.
+
+$f(k)=\frac{e^{-x\lambda}{(x\lambda)}^k}{k!}, x\lambda>0$
+
+
+Consideremos un intervalo de tamaño $x$ que mide la longitud entre dos eventos cualesquiera (digamos entre 0 conteos y 1 conteo).
+
+
+¿Cuál es la probabilidad de contar menos de un evento en el intervalo $x$?
+
+
+
+Distribución exponencial
+======================================================
+
+La distribución es de la forma
+
+$f(k=0;x)= \frac{e^{-x\lambda}{(x\lambda)}^0}{0!}=e^{-\lambda x}$
+
+
+Pensemos en $x$ como el resultado de medir el intervalo que necesitamos esperar entre dos conteos (en unidades de $\lambda^{- 1}$). El intervalo $X$ es una variable aleatoria y $x$ es el valor de un experimento.
+
+Distribución exponencial
+======================================================
+
+¿Cuál es la probabilidad de observar $x$ como el intervalo sin recuentos? Queremos la probabilidad en $x$; $f (x; k = 0)$
+
+La distribución es de la forma
+
+$P(X=x) = f(x; k=0) dx = \frac{f(k;x)f(x)}{f(k=0)}$
+
+
+Podemos considerar que la probabilidad marginal de observar $f (x)$ es una constante: es la probabilidad de seleccionar un intervalo de tamaño $x$ aleatoriamente, no condicionado al proceso de Poisson. Por lo tanto,
+
+$P(X=x) = f(x; k=0) dx = C e^{-\lambda x}$
+
+$C$ es una constante que asegura: $\int f(x; k=0) dx =1$, luego por integración $C =\lambda$
+
+$$P(X=x) = \lambda e^{-\lambda x}$$
+
+
+¡Hemos visto esta función de probabilidad antes!
+
+Distribución exponencial
+======================================================
+
+Un proceso de producción en línea requiere perforar un agujero de $12.5 mm$ en un disco metálico. A veces, el taladro se mueve y abre agujeros un poco más grandes
+
+- **Creíamos** que $$f(x)=20 e^{-20(x-12.5)}$$ para $12.5 \leq x$ y $f (x) = 0$ para $x\leq 12.5$ 
+
+si cambiamos a la variable:  $z=x-12.5$ y $\lambda=20$
+
+$f(z)=\lambda e^{-\lambda z}, z\geq 0$
+
+
+
+Distribución exponencial
+======================================================
+
+Para la distribución exponencial
+$f(z)=\lambda e^{-\lambda z}, z\geq 0$
+
+habíamos mostrado que 
+
+- Media:  $\mu_z=E(Z)=\frac{1}{\lambda}$ 
+
+ 
+- Varianza: $V(Z)=\frac{1}{\lambda^2}$
+
+Distribución exponencial
+======================================================
+
+¿Cuál es la probabilidad de observar $x$, como el intervalo entre 0 y 1 conteos?
+
+La distribución es entonces
+
+$f(x)=\lambda e^{-x\lambda}$
+
+y la probabilidad en un $dx$ pequeño es
+
+$P(x\leq X\leq x+dx)=\lambda e^{-x\lambda}dx,  0\leq x\leq \infty$
+
+Donde $E(X)=1/\lambda$ y $V(X)=1/\lambda^2$
+
+Distribución exponencial
+======================================================
+
+Nota: la distribución exponencial puede describir la perforación de un hueco o los tiempos (distancias) entre conteos de Poisson.
+
+- Los modelos de probabilidad se pueden utilizar para describir procesos naturales o de ingeniería muy diferentes.
+
+- El principal desafío en las estadísticas del mundo real:
+
+¿Qué modelo elegir en un experimento en particular?
+
+
+Distribución uniforme
+======================================================
+
+También se puede obtener una función de densidad de probabilidad a partir de la función de probabilidad uniforme discreta
+
+- $n$ resultados tienen cada $P (X = x) = 1 / n$
+- cuando $n \ rightarrow \ infty$
+
+Si $X$ toma valores en $(a, b)$, la densidad de probabilidad será constante en el intervalo
+
+\[
+    f(x)= 
+\begin{cases}
+    \frac{1}{b-a},& \text{if } x\in (a,b)\\
+    0,& otherwise 
+\end{cases}
+\]
+
+Distribución uniforme
+======================================================
+
+<img src = "./figures/unifc.png" style = "width: 50%" align = "center">
+
+Distribución uniforme
+======================================================
+
+¿Cuáles son la media y la varianza de la distribución uniforme?
+
+- Para la media que tenemos
+</br>$E(X)=\int_{a}^{b} \frac{1}{b-a} x dx$
+</br>$=\frac{1}{2}\frac{x^2}{b-a}\big|_a^b=\frac{a+b}{2}$
+
+- Para la varianza tenemos
+</br>$V(X)=\int_{a}^{b} \frac{1}{b-a} (x-\mu)^2 dx$
+</br>$=\frac{1}{3}\frac{\big(x -\frac{a+b}{2}\big)^3}{b-a}\big|_a^b=\frac{(b-a)^2}{12}$
+
+lo mismo que el caso discreto! porque $E (X)$ y $V (X)$ no dependen de $n$.
+
+
+Distribución normal
+======================================================
+
+- La función de probabilidad de densidad normal es **la reina** de las distribuciones
+
+- Descubierto por el **príncipe** de las matemáticas Carl Friedrich Gauss
+
+- También se llama distribución gaussiana
+
+Distribución normal
+======================================================
+
+En 1801 Gauss analizó la órbita de Ceres (gran asteroide entre Marte y Júpiter).
+
+- La gente sospechaba que era un planeta nuevo.
+- Las medidas tuvieron errores.
+- Estaba interesado en averiguar cómo se distribuían las observaciones para poder encontrar la órbita más probable.
+- Quería predecir hacia dónde los astrónomos podrían apuntar sus telescopios para encontrarlo después de que cruzara frente al Sol.
+
+
+
+Distribución normal
+======================================================
+
+<img src = "./figures/ceres.JPG" style = "width: 75%" align = "center">
+
+
+Distribución normal
+======================================================
+
+Asumió que
+
+- los errores pequeños eran más probables que los errores grandes
+- error a una distancia $-\epsilon$ o $\epsilon$ de la medida más probable eran igualmente probables
+- la altitud más **probable** de Ceres en un momento dado en el cielo era el **promedio** de múltiples mediciones de altitud en esa latitud.
+
+
+Distribución normal
+======================================================
+
+Eso fue suficiente para mostrar que las desviaciones aleatorias $y$ **de la órbita** se distribuían como
+
+$f(y)=\frac{h}{\sqrt{\pi}}e^{-h^2y^2}$
+
+* La evolución de la distribución normal, Saul Stahl, Mathematics Magazine, 2006.
+
+Distribución normal
+======================================================
+
+**Pesrpectiva teórica**
+
+$f(y)=\frac{h}{\sqrt{\pi}}e^{-h^2y^2}$
+
+Escribámoslo en una forma más general:
+
+Imagine medidas $X$ para la altitud de Ceres desde un origen (horizonte) que se concentran alrededor de un valor $x_0$, luego $y = x-x_0$. Si $x$ es una medida de altitud desde el horizonte, entonces su función de densidad de probabilidad es
+
+$f(x)=\frac{h}{\sqrt{\pi}}e^{-h^2(x-x_0)^2}$
+
+y su media es:
+</br>$E(X)=\int_{-\infty}^{\infty} x \frac{h}{\sqrt{\pi}}e^{-h^2(x-x_0)^2}dx =x_0$
+
+Lo cual se puede comprobar por su función generadora de momentos:
+
+$M_X(t)= E(e^{tx})=e^{x_0 t+\frac{t^2}{2h^2}}$; $M'_X(t)=E(X)=\mu=M_X(t)(x_0+\frac{t}{2h^2})\Big|_{t=0}=x_0$
+
+Distribución normal
+======================================================
+
+**Pesrpectiva teórica**
+
+
+Y, para la varianza, encontramos:
+
+$E(X^2)=M''_X(t)(\mu^2+\frac{1}{2h^2})\Big|_{t=0}=\mu^2+\frac{1}{2h^2}$
+
+y como
+$E(X^2)=V(X)+\mu^2=\sigma^2+\mu^2$ entonces $\sigma^2=\frac{1}{2h^2}$
+
+
+Reemplazando los valores de $\mu=x_0$ y $h^2=\frac{1}{2\sigma^2}$ en $f (x)$ podemos escribir la función de densidad normal de **parámetros** $\mu$ y $\sigma$
+
+$f(x; \mu, \sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, x \in {\Bbb R}$
+
+con media $E (X) = \mu$ y varianza  $V (X) = \sigma^2$.
+
+por eso habíamos llamado a la media $\mu$ y la varianza $\sigma^2$, estos números son los **parámetros** de la función. 
+
+Distribución normal
+======================================================
+
+**Definición**
+
+Una variable aleatoria X definida en números reales tiene una distribución de densidad **Normal** si su distribución toma la forma
+
+$f(x; \mu, \sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, x \in {\Bbb R}$
+
+
+Cuando $X$ sigue una distribución normal escribimos
+
+$X\hookrightarrow N(\mu,\sigma^2)$
+
+
+Distribución normal
+========================================================
+
+
+```{r, echo=FALSE}
+outcome <- seq(0,25,0.01)
+probability <- dnorm(outcome,10, 1)
+plot(outcome, probability, pch=16,col="red",type="l")
+probability <- dnorm(outcome,10, 4)
+lines(outcome, probability, pch=16,col="blue")
+probability <- dnorm(outcome,20, 1)
+lines(outcome, probability, pch=16,col="orange")
+legend("topleft", legend=c("N(mu=10, sigma=1)","N(mu=10, sigma=4)","N(mu=20, sigma=1)"), col=c("red", "blue", "orange"), lty=1, bty="n")
+```
+
+Distribución normal
+======================================================
+
+Recuerde nuestras motivaciones para el teorema de Chebyshev.
+
+Queríamos saber si
+
+- los resultados deben concentrarse en la probabilidad alrededor de la media
+- los resultados deben disminuir en probabilidad lejos de la media.
+
+Teorema:
+$P(|X -\mu| \geq a\sigma) \leq \frac{1}{a^2}$
+
+
+Distribución normal
+======================================================
+
+
+| a | Regla de Chebyshev para cualquier función de prob | $N(\mu, \sigma)$ |
+| ------- | ---------------------- | ---------------------- |
+| 0 | menos del 100% | $P(|X -\mu| \geq 0)=0.5$ |
+| 1 | menos del 100% | $P(|X -\mu| \geq 1\sigma)=0.317$ |
+| 1.5 | menos del 44% | $P(|X -\mu| \geq 1.5\sigma)=0.1373$ |
+| 2 | menos del 25% | $P(|X -\mu| \geq 2\sigma)=0.045$ |
+| 3 | menos del 11.1% |$P(|X -\mu| \geq 3\sigma)=0.0026$ |
+| 4 | menos del 6.3% | $P(|X -\mu| \geq 4\sigma)=6.3\times 10^{-5}$ |
+
+
+Distribución normal
+======================================================
+
+- El valor de $\mu$ divide las medidas en dos
+- Los valores de $x$ que caen más allá de 2 $\sigma$ se consideran **raros** $5 \%$
+- Los valores de $x$ que caen más allá de 3 $\sigma$ se consideran **extremadamente raros** $0.2 \%$
+
+Distribución normal
+======================================================
+
+<img src = "./figures/probs.png" style = "width: 50%" align = "center">
+
+Distribución normal
+======================================================
+
+$f(x; \mu, \sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, x \in {\Bbb R}$
+
+Cambiar variables a **variable estandarizada**
+
+$Z=\frac{X-\mu}{\sigma}$
+
+reemplazando$x=\sigma z+\mu$ y $dx=\sigma dz$ en la expresión de probabilidad
+
+$P(x\leq X \leq x +dx)=P(z\leq Z \leq z +dz)$
+</br>$=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx=\frac{1}{ \sqrt{2\pi}}e^{-\frac{z^2}{2}} dz$
+
+obtenemos la forma **estandarizada** de la distribución normal.
+
+Distribución normal
+======================================================
+
+**Definición**
+
+Una variable aleatoria $Z$ definida en números reales tiene una distribución de densidad **estándar** si su distribución toma la
+
+$f(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz,z \in {\Bbb R}$
+
+
+
+Distribución normal
+======================================================
+
+
+</br>$f(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz,z \in {\Bbb R}$
+
+
+- la distribución estándar es la distribución normal $N(\mu=0,\sigma^2=1)$
+- cualquier variable normalmente distribuida $X$ se puede transformar en una variable $Z$ que se distribuye normalmente por estandarización $Z=(x-\mu)/\sigma$
+
+
+Distribución normal
+======================================================
+
+La función de probabilidad acumulada de la distribución estándar es la función de **error** definida por
+
+$\Phi (z)=P(Z\leq z)=\int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz$
+
+<img src = "./figures/st.png" style = "width: 75%" style = "height: 100%" align = "center">
+
+Puede encontrarlo tabulado o en programas de computadora
+
+
+Distribución normal
+======================================================
+
+
+```{r, echo=FALSE}
+outcome <- seq(-3,3,0.01)
+probability <- pnorm(outcome,0, 1)
+plot(outcome, probability, pch=16,col="red",type="s", ylab="Phi(z)", xlab="z")
+```
+
+
+
+Distribución normal
+======================================================
+
+
+Para cualquier variable normalmente distribuida $X$, tal que
+
+$X\hookrightarrow N(\mu, \sigma^2)$
+
+su distribución acumulativa se puede calcular a partir de
+
+$F(x)= \Phi \big(\frac{x-\mu}{\sigma}\big)$
+
+Distribución estándar
+======================================================
+
+Para calcular $P(a\leq X \leq b), usamos la propiedad de las distribuciones acumulativas
+
+$P(a\leq X \leq b) = F(b)-F(a)=P(X\leq b)-P(X\leq a)$
+
+
+Estandaricemos
+
+$=P(\frac{X-\mu}{\sigma}\leq \frac{a-\mu}{\sigma})-P(\frac{X-\mu}{\sigma}\leq \frac{b-\mu}{\sigma})$
+</br>$=P(Z \leq \frac{b-\mu}{\sigma})-P(Z \leq \frac{a-\mu}{\sigma}\big)$
+</br>$=\Phi \big(\frac{b-\mu}{\sigma}\big)-\Phi \big(\frac{a-\mu}{\sigma}\big)$
+
+Distribución estándar
+======================================================
+
+Todas las distribuciones normales se pueden obtener de la distribución estándar con los valores de $\mu$ y $\sigma$
+
+
+<img src = "./figures/stand.png" style = "width: 50%" style = "height: 100%" align = "center">
+
+
+
+Distribución normal
+======================================================
+
+¿Por qué es tan importante la distribución normal?
+
+- El promedio de las medidas de muchas variables aleatorias se puede aproximar mediante una distribución normal (no importa cómo se distribuyan las medidas)
+
+- Los procesos binomial y de Poisson con muchos ensayos ($n\ rightarrow \infty$) tienden a la distribución normal
+
+
+
+
+Resumen de modelos de probabilidad
+======================================================
+
+
+| Modelo | outcome    | x  |  f(x) | E(X) | V(X) |
+| ----------- | ------------- | ------ | ----- | ---- | ---- |
+| Uniforme | $n$ discreto | a,... b| $\frac{1}{n}$ |$\frac{b+a}{2}$ |  $\frac{(b-a+1)^2-1}{12}$ | 
+| Bernoulli             | evento A  | 0,1 | $p^x(1-p)^{1-x}$ | $p$ | $p(1-p)$ |
+| Binomial | \# de eventos A | 0,1,...| $\binom n x p^x(1-p)^{n-x}$ | $np$ | $np(1-p)$ |
+| Geometrico | \# de eventos B antes de evento A | 0,1,...|$p(1-p)^{x}$| $\frac{1-p}{p}$ |$\frac{1-p}{p^2}$ |
+| Geometrico desplazado | \# de **ensayos** hasta evento A | 1,2,...| $p(1-p)^{x-1}$ | $\frac{1}{p}$ | $\frac{1-p}{p^2}$ |
+| Binomial Negativo | \# de eventos B hasta r eventos A | 0,1,.. |$\binom {x+r-1} x p^r(1-p)^x$ | $r\frac{1-p}{p}$ | $r\frac{1-p}{p^2}$ |
+| Hypergeometrico | \# de eventos A en unamuestra $n$ |$\max(0, n+K-N)$, ... $\min(K, n)$ | $\frac{1}{\binom N n}\binom K x \binom {N-K} {n-x}$ | $np$ | $np(1-p)\frac{N-n}{N-1}$ |
+| Poisson | \# de eventos A en un intervalo | 0,1, .. | $\frac {e ^ {-\lambda} \lambda^x} {x!}$ | $\lambda$ | $\lambda$ |
+| Exponencial | Intervalo entre dos eventos A | $[0, \infty)$ | $\lambda e ^{- \lambda x}$ | $\frac {1} {\lambda}$ | $\frac{1} {\lambda ^ 2}$ |
+| Normal | medición con errores simétricos cuyo valor más probable es la media | $(- \infty, \infty)$ | $\frac{1}{\sqrt {2 \pi} \sigma} e^{- \frac {(x- \mu)^2} {2 \sigma^2 }}$ | $\mu$ | $\sigma^2$ |
+
+
+Ejercicio
+======================================================
+
+
+Estamos interesados en estudiar el tiempo de espera en una determinada parada de una linea de autobuses urbanos. En condiciones de tráﬁco normal, el número de autobuses que pasan cada hora por la parada es una variable aleatoria que tiene distribución de Poisson con parámetro λ = 6 autobuses/hora.
+
+(a) Un viajero llega a la parada en el momento justo que acaba de salir el autobús. Calcula la probabilidad de que tenga de esperar más de 20 minutos hasta la llegada del próximo autobús.
+
+(b) Un viajero ha llegado a la parada en el momento justo que acababa de salir el autobús, y lleva 10 minutos esperando. Calcula la probabilidad de que, a partir de ese momento, tenga de esperar menos de 10 minutos adicionales hasta la llegada del próximo autobús.
+
