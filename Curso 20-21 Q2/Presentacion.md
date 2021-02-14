@@ -10,10 +10,44 @@ Universitat Politècnica de Catalunya (UPC)
 
 <p style="font-size:70px">Presentación</p>
 
+
+
 Presentación del curso
 ======================================================
 
 - Estadística es un curso obligatorio del departamento de matemáticas con 6 créditos
+
+- Por qué es una asignatura **obligatoria**?
+
+Presentación del curso
+======================================================
+
+- Sustena el método científico (como veremos enseguida)
+
+- Es la asignatura con mayor proyección de empleo
+ - los datos son la mercancía de mayor valor en nuestra época.
+ - los modelos (inteleigencia artificial y algoritmos) determinan nuestro consumo y nuestro comportamiento.
+
+
+
+Ejemplos
+======================================================
+
+
+<img src="./figures/doig.JPG" style="width:50%"  align="center">
+
+- Ingeniera indistrial de la UPC.
+- Netflix: Sr. Manager of Product Innovation, Creative Personalization **Algorithms**
+- Anaconda: Developer of **RStudio** for anaconda
+
+Ejemplos
+======================================================
+
+
+<img src="./figures/juendo.JPG" style="width:50%"  align="center">
+
+- Ingeniero en telecomunicaciones master en la UPC.
+- Director del equipo de análisis de datos Barcelonabeta Brain Research center. 
 
 
 Enseñanza de los componentes principales
@@ -42,7 +76,7 @@ de la nota.
 - Competencia general: ensayo presencial tras el 4º examen teórico y valorado en un 5% de la nota final.
 
 
-Exámenes de un solo grado
+Parciales
 ======================================================
 
 ![plot of chunk unnamed-chunk-1](Presentacion-figure/unnamed-chunk-1-1.png)
@@ -60,10 +94,9 @@ Dificultad del curso
 ![plot of chunk unnamed-chunk-3](Presentacion-figure/unnamed-chunk-3-1.png)
 
 
-Dificultad del curso
+Componentes de estudio  
 ======================================================
 
-Componentes de estudio  
 
 - Teórico: ¿Por qué?
 - Problemas: ¿Cómo?
@@ -73,7 +106,7 @@ Componentes de estudio
 Guía de curso
 ======================================================
 
-- Seguiremos este [programa] (https://atenea.upc.edu/mod/resource/view.php?id=2500675) donde he detallado el tema semana a semana para la **teoría** y los **ejercicios**.
+- Seguiremos este [programa](https://atenea.upc.edu/mod/resource/view.php?id=2832641) donde he detallado el tema semana a semana para la **teoría** y los **ejercicios**.
 
 - Daré al menos un **ejercicio** para después de cada clase. No cuentan para la calificación, pero ayudarán a mantener el hilo. 
 
