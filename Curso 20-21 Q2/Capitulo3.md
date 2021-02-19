@@ -370,7 +370,7 @@ Las marginales son
 Independencia estadística
 ======================================================
 
-¿Cuál es la probabilidad condicional de observar un conductor defectuoso si tiene un defecto?
+¿Cuál es la probabilidad condicional de observar un conductor defectuoso si tiene fracturas?
 
 |  | F  |  F' 
 | --------- | --------- | -------- |
@@ -383,12 +383,13 @@ Independencia estadística
 - $P(D|F)=P(D|F')=P(D)$
 - $P(D'|F)=P(D'|F')=P(D')$
 
+Las fracturas no condicionan la conductividad del material. 
 
 Independencia estadística
 ======================================================
 
 
-La probabilidad de observar un conductor defectuoso **no** depende de haber observado o no un defecto.
+La probabilidad de observar un conductor defectuoso **no** depende de haber observado una fractura.
 
 $$P (D) =P (D | F)$$
 
@@ -447,7 +448,7 @@ Cara: $H$ y Cruz: $T$
 
 - Obtener cara en la primera moneda no condiciona obtener cruz en el resultado de la segunda moneda $P (T | H) =P (T) =1/2$
 
-- la probabilidad de obtener una cabeza y luego una cola es el producto de cada resultado independiente $P (H, T) =P (H) * P (T) =1/4$
+- la probabilidad de obtener una cara y luego una cruz es el producto de cada resultado independiente $P (H, T) =P (H) * P (T) =1/4$
 
 
 Ejercicio
@@ -505,8 +506,8 @@ y también calculamos la otra *matriz condicional**
 
 | | Infección: Sí  |  Infección: No  | sum |
 | --------- | --------- | -------- | -------- |
-|  <b> Prueba: positiva </b>  | P (sí <span>&#124;</span> positivo) | P (ningún <span>&#124;</span> positivo) | 1 |
-|  <b> Prueba: negativa </b>  | P (sí <span>&#124;</span> negativo) | P (sin <span>&#124;</span> negativo) | 1 |
+|  <b> Prueba: positiva </b>  | P (sí <span>&#124;</span> positivo) | P (no <span>&#124;</span> positivo) | 1 |
+|  <b> Prueba: negativa </b>  | P (sí <span>&#124;</span> negativo) | P (no <span>&#124;</span> negativo) | 1 |
 
 
 - Valor predictivo positivo: la probabilidad de tener la enfermedad **si** da positivo $P (sí | positivo)$
@@ -546,8 +547,8 @@ Supongamos que las frecuencias son de $n$ suficientemente grandes para **estimar
 
 | | Infección: Sí  |  Infección: No  |
 | --------- | --------- | -------- |
-|  <b> Prueba: positiva </b>  | P (positivo <span>&#124;</span> sí) =0,7 | P (<span>&#124;</span> positivo no) =0.06 |
-|  <b> Prueba: negativa </b>  | P (negativo <span>&#124;</span> sí) =0.3 | P (<span>&#124;</span> negativo no) =0.94 |
+|  <b> Prueba: positiva </b>  | P (positivo <span>&#124;</span> sí) =0,7 | P (positivo <span>&#124;</span>  no) =0.06 |
+|  <b> Prueba: negativa </b>  | P (negativo <span>&#124;</span> sí) =0.3 | P (negativo <span>&#124;</span> no) =0.94 |
 |  <b> suma </b>  | 1 | 1 |
 
 De esta matriz, ¿podemos obtener $P (sí | positivo)$?
@@ -560,8 +561,8 @@ Pero no conocemos esta matriz
 
 | | Infección: Sí |  Infección: No  | sum |
 | --------- | --------- | -------- | -------- |
-|  <b> Prueba: positiva </b>  | P (sí <span>&#124;</span> positivo) | P (ningún <span>&#124;</span> positivo) | 1 |
-|  <b> Prueba: negativa </b>  | P (sí <span>&#124;</span> negativo) | P (sin <span>&#124;</span> negativo) | 1 |
+|  <b> Prueba: positiva </b>  | P (sí <span>&#124;</span> positivo) | P (no <span>&#124;</span> positivo) | 1 |
+|  <b> Prueba: negativa </b>  | P (sí <span>&#124;</span> negativo) | P (no <span>&#124;</span> negativo) | 1 |
 
 
 ¿Cómo pasar de una matriz a otra ?, eso es revirtiendo el condicionamiento:
@@ -636,7 +637,7 @@ Necesitamos la **regla de probabilidad total**, que es la siguiente
 
 | | Infección: sí  |  Infección: no  |  suma  |
 | --------- | --------- | -------- | -------- |
-|  <b> Prueba: positiva </b>  | $P (pos \cap yes)$ | $P (pos \cap no)$ | $P (pos)$ |
+|  <b> Prueba: positiva </b>  | $P (pos \cap sí)$ | $P (pos \cap no)$ | $P (pos)$ |
 |  <b> Prueba: negativa </b>  | $P (neg \cap sí)$ | $P (neg \cap no)$ | $P (neg)$ |
 |  <b> suma </b>  | $P (sí)$ | $P (no)$ | $1$ |
 
@@ -680,7 +681,7 @@ $$P (Ei | B) =\frac {P (B | Ei) P (Ei)} {P (B | E1) P (E1) + ... + P (B | Ek) P 
 Teorema de Bayes
 ======================================================
 
-Aplicémoslo ahora a la probabilidad de no infectarse si la prueba es negativa
+Apliquémoslo ahora a la probabilidad de no estar infectado si la prueba es negativa
 
 $P (no | negativo) =\frac {P (negativo | no) P (no)} {P (negativo | no) P (no) + P (negativo | sí) P (sí)}$
 

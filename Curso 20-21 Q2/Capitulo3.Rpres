@@ -506,8 +506,8 @@ y también calculamos la otra *matriz condicional**
 
 | | Infección: Sí  |  Infección: No  | sum |
 | --------- | --------- | -------- | -------- |
-|  <b> Prueba: positiva </b>  | P (sí <span>&#124;</span> positivo) | P (ningún <span>&#124;</span> positivo) | 1 |
-|  <b> Prueba: negativa </b>  | P (sí <span>&#124;</span> negativo) | P (sin <span>&#124;</span> negativo) | 1 |
+|  <b> Prueba: positiva </b>  | P (sí <span>&#124;</span> positivo) | P (no <span>&#124;</span> positivo) | 1 |
+|  <b> Prueba: negativa </b>  | P (sí <span>&#124;</span> negativo) | P (no <span>&#124;</span> negativo) | 1 |
 
 
 - Valor predictivo positivo: la probabilidad de tener la enfermedad **si** da positivo $P (sí | positivo)$
@@ -547,8 +547,8 @@ Supongamos que las frecuencias son de $n$ suficientemente grandes para **estimar
 
 | | Infección: Sí  |  Infección: No  |
 | --------- | --------- | -------- |
-|  <b> Prueba: positiva </b>  | P (positivo <span>&#124;</span> sí) =0,7 | P (<span>&#124;</span> positivo no) =0.06 |
-|  <b> Prueba: negativa </b>  | P (negativo <span>&#124;</span> sí) =0.3 | P (<span>&#124;</span> negativo no) =0.94 |
+|  <b> Prueba: positiva </b>  | P (positivo <span>&#124;</span> sí) =0,7 | P (positivo <span>&#124;</span>  no) =0.06 |
+|  <b> Prueba: negativa </b>  | P (negativo <span>&#124;</span> sí) =0.3 | P (negativo <span>&#124;</span> no) =0.94 |
 |  <b> suma </b>  | 1 | 1 |
 
 De esta matriz, ¿podemos obtener $P (sí | positivo)$?
@@ -561,8 +561,8 @@ Pero no conocemos esta matriz
 
 | | Infección: Sí |  Infección: No  | sum |
 | --------- | --------- | -------- | -------- |
-|  <b> Prueba: positiva </b>  | P (sí <span>&#124;</span> positivo) | P (ningún <span>&#124;</span> positivo) | 1 |
-|  <b> Prueba: negativa </b>  | P (sí <span>&#124;</span> negativo) | P (sin <span>&#124;</span> negativo) | 1 |
+|  <b> Prueba: positiva </b>  | P (sí <span>&#124;</span> positivo) | P (no <span>&#124;</span> positivo) | 1 |
+|  <b> Prueba: negativa </b>  | P (sí <span>&#124;</span> negativo) | P (no <span>&#124;</span> negativo) | 1 |
 
 
 ¿Cómo pasar de una matriz a otra ?, eso es revirtiendo el condicionamiento:
@@ -637,7 +637,7 @@ Necesitamos la **regla de probabilidad total**, que es la siguiente
 
 | | Infección: sí  |  Infección: no  |  suma  |
 | --------- | --------- | -------- | -------- |
-|  <b> Prueba: positiva </b>  | $P (pos \cap yes)$ | $P (pos \cap no)$ | $P (pos)$ |
+|  <b> Prueba: positiva </b>  | $P (pos \cap sí)$ | $P (pos \cap no)$ | $P (pos)$ |
 |  <b> Prueba: negativa </b>  | $P (neg \cap sí)$ | $P (neg \cap no)$ | $P (neg)$ |
 |  <b> suma </b>  | $P (sí)$ | $P (no)$ | $1$ |
 

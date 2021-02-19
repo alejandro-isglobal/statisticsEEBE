@@ -715,7 +715,7 @@ Dentro de aquellos cuya prueba es positiva, ¿cuál es la probabilidad de tener 
 
 - <b> Valor predictivo positivo </b>
 
-$$P(yes|positive)=\frac{P(yes \cap positive)}{P(positive)}$$
+$$P(si|positivo)=\frac{P(si \cap positivo)}{P(positivo)}$$
 
 
 Matriz de predicción
@@ -728,7 +728,7 @@ Dentro de aquellos cuya prueba es negativa, ¿cuál es la probabilidad de no ten
 
 - <b> Valor predictivo negativo </b>
 
-$$P(no|negative)=\frac{P(no \cap negative)}{P(negative)}$$
+$$P(no|negativo)=\frac{P(no \cap negativo)}{P(negativo)}$$
 
 
 
@@ -740,8 +740,8 @@ Matriz **condicional** sobre el valor del resultado de la prueba.
 
 | | Infección: Sí | Infección: No | suma |
 | --------- | --------- | -------- | ------ |
-| <b> Prueba: positiva </b> | PPV: P (sí  <span>&#124;</span> positivo) | P (ningún  <span>&#124;</span> positivo) | 1 |
-| <b> Prueba: negativa </b> | P (sí  <span>&#124;</span> negativo) | VPN: P (sin  <span>&#124;</span> negativo) | 1 |
+| <b> Prueba: positiva </b> | PPV: P (sí  <span>&#124;</span> positivo) | P (no  <span>&#124;</span> positivo) | 1 |
+| <b> Prueba: negativa </b> | P (sí  <span>&#124;</span> negativo) | VPN: P (no  <span>&#124;</span> negativo) | 1 |
 
 
 PPV: valor predicho positivo
