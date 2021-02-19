@@ -63,8 +63,10 @@ $S =\{1, 2, 3, 4, 5, 6\}$
 
 - media:
 
-$\bar{x}=\frac{1}{20}\sum_{obs=1,..20} x_{obs}=\sum_{i=1,..6}x_{i}*f_i$
+$\bar{x}=\frac{1}{20}\sum_{j=1,..20} x_{j}=\sum_{i=1,..6}x_{i}*f_i$
 </br>$=1*0.3+2*0.2+3*0.2+4*0.1+5*0.1+6*0.1=2.8$
+
+$j$ enumera **observaciones**, $i$ enumera **resultados**
 
 Resultados de las observaciones y eventos
 ==================================================
@@ -77,7 +79,7 @@ $mediana=2.5$
 
 - ¿Cuál es la deviación típica?
 
-$s^2=\frac{1}{N-1} \sum_{obs=1,..20} (x_{obs}-\bar{x})^2=\frac{N}{N-1} \sum_{i=1,..6} (x_i-\bar{x})^2 f_i=1.70$
+$s^2=\frac{1}{N-1} \sum_{j=1,..20} (x_{j}-\bar{x})^2=\frac{N}{N-1} \sum_{i=1,..6} (x_i-\bar{x})^2 f_i=1.70$
 
 - el experimento aleatorio es
 
@@ -213,7 +215,7 @@ Espacio muestral
 
 Comenzamos razonando cuáles son todos los valores posibles (resultados) que podría dar un experimento aleatorio.
 
-Tenga en cuenta que no tenemos que observarlos en un experimento en particular: estamos usando lógica y no observación.
+Ten en cuenta que no tenemos que observarlos en un experimento en particular: estamos usando lógica y no observación.
 
 **Definición:**
 
@@ -273,7 +275,7 @@ Ejemplos:
 - El caso de producir un tornillo con tamaño: 71,5 mm
 - El evento de recibir más de 4 correos electrónicos en una hora.
 
-Tenga en cuenta que los resultados de diferentes experimentos pueden pertenecer al mismo evento.
+Ten en cuenta que los resultados de diferentes experimentos pueden pertenecer al mismo evento.
 
 
 
@@ -322,7 +324,7 @@ $E1'$ =sin hipotermina $t \geq 37$
 Operaciones de eventos
 ==================================================
 
-Tenga en cuenta que
+Ten en cuenta que
 
 $E3=E1\cup E2= [35,37) \cup (38,42]$
 
@@ -365,7 +367,7 @@ Suma de probabilidades
 
 Para un espacio muestral discreto, la probabilidad de un evento E, denotado como $P(E)$, es igual a la suma de las probabilidades de los eventos en $E$.
 
-Piense en Laplace y frene todos los eventos posibles de E en partes iguales.
+Piensa en Laplace y frene todos los eventos posibles de E en partes iguales.
 
 Suma de probabilidades
 ==================================================
@@ -377,7 +379,7 @@ Posibles resultados: 1, 2 y 3 luego
 
 $$P(1)+P(2)+P(3)=1/6+1/6+1/6=1/2$$
 
-Piense en Venn y está claro que si P es una frecuencia en el caso límite, entonces, como las frecuencias se pueden agregar, las probabilidades también.
+Piensa en Venn y está claro que si P es una frecuencia en el caso límite, entonces, como las frecuencias se pueden agregar, las probabilidades también.
 
 Axiomas de probabilidad
 ==================================================
@@ -398,7 +400,7 @@ Regla de suma
 $$P(A\cup B) = P(A) + P(B) - P(A\cap B)$$
 
 
-Piense en los siguientes eventos para un dado
+Piensa en los siguientes eventos para un dado
 
 $A=\{1,2,3,4\}$ and $B=\{4,5\}$
 
@@ -412,14 +414,14 @@ $P(4)= P(A\cap B)$ aparece dos veces: necesitamos restar uno de ellos.
 
 Regla de suma
 ==================================================
-Piense en los siguientes eventos para un dado
+Piensa en los siguientes eventos para un dado
 
 $A=\{1,2,3,4\}$
 
 $B=\{4,5\}$
 
 
-Tenga en cuenta también que la probabilidad de que el resultado esté o no en $A\cup B$ es uno.
+Ten en cuenta también que la probabilidad de que el resultado esté o no en $A\cup B$ es uno.
 
 $$P([A\cup B]')+P([A\cup B])=1$$
 
@@ -433,10 +435,29 @@ Ejercicio
 
 En una avenida hay un sistema de 3 semáforos sucesivos. $R_j$ representa el suceso: encontramos en rojo el semáforo j-ésimo.
 
-- ¿Cuál es la expresión matemática de la probabilidad de encontrar **todos** los semáforos en rojo?
+- ¿Cuál es la expresión matemática para la probabilidad de encontrar **todos** los semáforos en rojo?
 
-- ¿Cuál es la expresión matemática la probabilidad de encontrar **algún**  semáforo en rojo? Intenta usar un diagrama de Venn para escribir esta probabilidad en términos de probabilidades de intersecciones, también llamadas probabilidades conjuntas.  
+- ¿Cuál es la expresión matemática para la probabilidad de encontrar **algún**  semáforo en rojo? 
 
+Intentremos usar un diagrama de Venn para escribir esta probabilidad en términos de probabilidades de intersecciones, también llamadas probabilidades conjuntas.  
+
+
+
+
+Ejercicio
+==================================================
+
+En una avenida hay un sistema de 3 semáforos sucesivos. $R_j$ representa el suceso: encontramos en rojo el semáforo j-ésimo.
+
+- ¿Cuál es la expresión matemática para la probabilidad de encontrar **todos** los semáforos en rojo?
+
+$P(R_1 \cap R_2 \cap R_3 )$
+
+- ¿Cuál es la expresión matemática para la probabilidad de encontrar **algún**  semáforo en rojo? 
+
+$P(R_1\cup R_2 \cup R_3)= P(R_1) + P(R_2) + P(R_3)$ 
+</br>$- P(R_2 \cap R_1) - P(R_3 \cap R_2) - P(R_3 \cap R_1)$ 
+</br>$+ P(R_1\cap R_2 \cap R_3)$
 
 Regla de suma
 ==================================================
@@ -537,7 +558,7 @@ Probabilidad conjunta
 
 Cada individuo es un experimento aleatorio con dos medidas: (Infección, Prueba)
 
-| - Asunto - | - Infección - | - Prueba - |
+| - sujeto - | - Infección - | - Prueba - |
 | ------------- | ------------- | ---------- |
 | $s_1$ | si | positivo |
 | $s_2$ | no | negativo |

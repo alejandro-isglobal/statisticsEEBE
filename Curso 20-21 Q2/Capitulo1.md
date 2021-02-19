@@ -73,13 +73,13 @@ Resultado
 
 **Observación**
 
-- y **observación** es la adquisición de un número o una característica de un experimento
+- Una **observación** es la adquisición de un número o una característica al realizar un experimento
 
  ... 1 0 0 1 0 **1** 0 1 1 ... (el número en negrita es una observación)
 
 **Resultado**
 
-- Un **resultado** es una posible observación que es el resultado de un experimento.
+- Un **resultado** es uno de los valores posibles de las observaciones de un experimento.
 
 **1** es un resultado, **0** es el otro resultado
 
@@ -106,7 +106,7 @@ La mayoría de los experimentos
 
 *resultado = señal + ruido*
 
-El objetivo es extraer el ruido del resultado.
+El objetivo es extraer el la señal en el resultado.
 
 Experimento aleatorio
 ======================================================
@@ -115,7 +115,7 @@ Cuando el ruido no es cero, tenemos un **experimento aleatorio**
 
 **Definición:**
 
-Un experimento que se repite de la misma manera cada vez da como resultado resultados diferentes.
+Un experimento que se repite de la misma manera cada vez y sus observaciones dan resultados diferentes.
 
 
 Experimento aleatorio
@@ -147,7 +147,7 @@ Los datos se pueden descargar y se pueden obtener diferentes medidas.
 Parques eólicos
 ======================================================
 
-Veamos los parques eólicos. Este es un ejemplo de solo **6** fincas de un total de 5091.
+Veamos los parques eólicos. Este es un ejemplo de sólo **6** parques eólicos de un total de 5091.
 
 
 ```
@@ -173,7 +173,9 @@ Resumimos las observaciones **categóricas** contando cuántas veces vimos un re
 
 $n_i$ es el número de veces que observamos el resultado $i$
 
-En nuestro ejemplo, pensemos en AUS (Australia) como un posible **resultado** para la variable **país** de un parque eólico.
+En nuestro ejemplo, pensemos en AUS (Australia) como un posible **resultado** para la observación del  **país** del que procede de un parque eólico.
+
+Cuando veamos otro parque eólico obtendremos tendremos otro país del que procede (repetición del experimento aleatorio). 
 
 Frecuencias
 ======================================================
@@ -218,11 +220,13 @@ Frecuencias relativas
 ======================================================
 
 
-También podemos resumir las observaciones calculando la**proporción**de cuántas veces vimos un resultado en particular.
+También podemos resumir las observaciones calculando la **proporción** de cuántas veces vimos un resultado en particular.
 
 $$f_i= n_i/N$$ donde $N$ es el número total de observaciones
 
-En nuestro ejemplo se registran $N= 5091$ parques eólicos, por lo que pedimos la proporción de parques eólicos en cada país de 5091.
+En nuestro ejemplo se registran $N= 5091$ parques eólicos.
+
+La frecuencia es la proporción de parques eólicos en cada país de un total de 5091.
 
 
 Frecuencias relativas
@@ -289,7 +293,7 @@ Podemos visualizar aún más las frecuencias relativas con un gráfico de sector
 Resultado versus observación
 ======================================================
 
-Esta es una **observación** del experimento/estudio (un parque eólico)
+Esta es una **observación** del experimento aleatorio: ver el país de un parque eólico en los datos.
 
 
 ```
@@ -308,7 +312,7 @@ Esta es la frecuencia de observación del **resultado** BRA (o número de parque
 Variables categóricas y ordenadas
 ======================================================
 
-Los países no están ordenados de manera significativa con respecto a los resultados. Sin embargo, a veces las variables **categóricas** se pueden **ordenar** (días, meses, años)
+Los países no tienen un orden intrínseco con respecto a los resultados. Sin embargo, a veces las variables **categóricas** se pueden **ordenar** (días, meses, años)
 
 
 
@@ -327,7 +331,7 @@ Los países no están ordenados de manera significativa con respecto a los resul
 Variables categóricas y ordenadas
 ==================================================
 
-- Podemos ver de nuevo cuántas veces se observó cada año (en qué año se recopilaron los datos de los parques eólicos)
+- Podemos ver de nuevo cuántas veces se observa cada año en los datos (en qué año se recopilaron los datos de los parques eólicos)
 
 - y la proporción de resultados para cada año (los años son las observaciones ahora)
 
@@ -379,7 +383,7 @@ hasta 2017 se recopiló el 0,97% de los datos de 1783 parques eólicos.
 Gráfico de barras
 ==================================================
 
-Podemos trazar $n_i$ Vs los resultados, dándonos un diagrama de barras
+Podemos dibujar $n_i$ Vs los resultados, por médio de un diagrama de barras
 
 
 ![plot of chunk unnamed-chunk-11](Capitulo1-figure/unnamed-chunk-11-1.png)
@@ -388,7 +392,7 @@ Variables continuas
 ==================================================
 
 
-El resultado de un experimento aleatorio también puede dar resultados continuos, como la capacidad de MW de la granja.
+El resultado de un experimento aleatorio también puede dar resultados **continuos**, como la capacidad de MW de la granja.
 
 
 ```
@@ -405,7 +409,7 @@ Variables continuas
 ==================================================
 - Podemos conocer el rango de la observación por sus resultados mínimos y máximos observados
 
-- Para la capacidad de los parques eólicos oscilan entre: (1MW, 200MW)
+- La capacidad de los parques eólicos oscilan entre: (1MW, 200MW)
 
 
 Variables continuas
@@ -422,7 +426,7 @@ Variables continuas
 ```
 
 
-- crear una variable **categórica ordenada**; en este caso con 10 posibles resultados
+- creamos una variable **categórica ordenada**; en este caso con 10 posibles resultados
 
 
 Variables continuas
@@ -519,9 +523,13 @@ $$\bar{x}= \frac{1}{N} \sum_{j= 1..N} x_j$$
 
 donde $x_j$ es la **observación** $j$ (parque eólico) de un total de $N$.
 
+Estadísticos descriptivos
+==================================================
+
+
 La capacidad media se puede calcular directamente a partir de las **observaciones**
 
-</br>$\bar{capacity}= \frac{1}{N}\sum_j x_j$
+</br>$\bar{c}= \frac{1}{N}\sum_j c_j$
 </br>$= \frac{1}{N}(16.56  1.80  + 2.02 + 25.20+ 25.20 + 6.30+...) = 35.751$
 
 
@@ -539,21 +547,21 @@ Para variables categoricas ordenadas podemos usar la tabla de frecuencias para c
 4    2018   39 0.02187325
 ```
 
-El promedio anual de los datos de los parques eólicos **también** se puede calcular a partir de las frecuencias relativas
+El promedio anual de los datos de los parques eólicos **también** se puede calcular a partir de las frecuencias relativas (outcome=y)
 
-$\bar{year}=\frac{1}{N}\sum_{j} year=\frac{1}{N}\sum_{year} year*n_{year}=\sum_{year} year*f_{year}$
+$\bar{y}=\frac{1}{N}\sum_{i} y_j=\frac{1}{N}\sum_{i} y_i*n_{i}=\sum_{i} y_i*f_{y}$
 
-$=2015*f_{2015}+2016*f_{2016}+2017*f_{2017}+2018*f_{2018}=2016.85$
+$=2015*f_{1}+2016*f_{2}+2017*f_{3}+2018*f_{4}=2016.85$
 
 
 Estadísticos descriptivos
 ==================================================
 
-En términos de los **resultados** que pueden tomar las variables categóricas el promedio se puede escribir como
+En términos de los **resultados** que pueden tomar las variables categóricas el **promedio** se puede escribir como
 
-$$\bar{x}= \sum_{x \in R_x} x f_x$$
+$$\bar{x}= \sum_{i = 1...m} x_i f_i$$
 
-de un total de$m= dim (R_x)$ valores observados (número de países).
+de un total de $m$ posibles resultados (número de países).
 
 $\bar{x}$ calcula el **valor central** o el centro de gravedad de los resultados. Como si cada resultado tuviera una densidad de masa $f_i$.
 
@@ -561,7 +569,9 @@ $\bar{x}$ calcula el **valor central** o el centro de gravedad de los resultados
 Estadísticos descriptivos
 ==================================================
 
-Los promedios no son el resultado de una observación (experimento aleatorio) sino una serie de observaciones. Describen el número en el que se equilibran los valores observados.
+Los promedios no son el resultado de una observación (experimento aleatorio) sino una serie de observaciones. 
+
+Describe el número en el que se equilibran los valores observados.
 
 Por eso escuchamos, por ejemplo, que un paciente con coronavirus puede infectar a un promedio de 2,5 personas.
 
@@ -585,7 +595,7 @@ debajo del cual encontramos la mitad de las observaciones
 
 $\sum_{x\leq x_p} 1 = \frac{N}{2}$
 
-o en términos de frecuencias, es el valor$x_p$que hace que la frecuencia acumulada$F_p$sea igual a 0.5
+o en términos de frecuencias, es el valor $x_p$ que hace que la frecuencia acumulada $F_p$ sea igual a 0.5
 
 $q_{0.5}=\sum_{x\leq x_p} f_x =F_p=0.5$
 
@@ -620,14 +630,14 @@ Estadísticos descriptivos
 Estadísticos descriptivos
 ==================================================
 
-La dispersión sobre la media se mide con la
+La dispersión sobre la media se mide con 
 
-- La varianza de la muestra:
+- La varianza muestral:
 
 $$s^2=\frac{1}{N-1} \sum_{j=1..N} (x_j-\bar{x})^2$$
 
 
-Mide la distancia cuadrada promedio de las **observaciones** al promedio. La razón de N-1 se explicará cuando hablemos de inferencia.
+que mide la distancia cuadrada promedio de las **observaciones** al promedio. La razón de N-1 se explicará cuando hablemos de inferencia.
 
 
 Estadísticos descriptivos
@@ -635,14 +645,14 @@ Estadísticos descriptivos
 
 - En términos de las frecuencias de las variables **categóricas** observadas (momento de inercia)
 
-$$s^2=\frac{N}{N-1} \sum_{x} (x-\bar{x})^2 f_x$$
+$$s^2=\frac{N}{N-1} \sum_{i=1...m} (x_i-\bar{x_i})^2 f_i$$
 
 
 
 Estadísticos descriptivos
 ==================================================
 
-La raíz cuadrada de la varianza muestral se llama **desviación estándar** o típica $s$.
+La raíz cuadrada de la varianza muestral $s$ se llama **desviación estándar** o típica.
 
 
 La desviación estándar de la capacidad de los parques eólicos es
@@ -679,46 +689,41 @@ El rango intercuartílico, la mediana y el 5% y el 95% de los datos se pueden vi
 Resumen
 ==================================================
 
-- Hemos visto datos **observacionales**: Cada molino de viento tenía algunas variables medidas:
+- Hemos visto datos **observacionales**: Cada parque eólico de viento tenía algunas variables medidas:
 
 - Categórico: año, país
 - Continuo: Capacidad en MW
 
-Consideramos que observar un parque eólico es la observación de un experimento aleatorio: observar parques eólicos en todo el mundo. Cada vez que observamos un parque eólico las variables toman valores diferentes. Cada variable tiene una **frecuencia** de observación.
+Consideramos que observar un parque eólico es la observación de un experimento aleatorio: observar parques eólicos en todo el mundo. 
+
+Cada vez que observamos un parque eólico las variables toman valores diferentes. 
+
+Cada variable tiene una **frecuencia** de observación.
 
 Resumen
 ==================================================
 
 - Las frecuencias de las variables $f_i$ o su acumulación $F_i$ (en variables ordenadas) son características del sistema (humanos construyendo parques eólicos).
 
-- No dependen (no deberían) de quién está ejecutando el experimento, a diferencia de $n_i$ o $N$.
+- No deberían depender de quién está ejecutando el experimento, a diferencia de $n_i$ o $N$.
 
-- Pero dependen de $n_i$ y $N$. ¿Cuándo pierden su dependencia de $n_i$?
+- Pero dependen (en su definición) de $n_i$ y $N$. ¿Cuándo pierden su dependencia de $n_i$?
 
 
 Experimento aleatorio
 ==================================================
+Lanzemos un dado 10 veces y calculemos las frecuencias para cada resultado
 
-
-
-```
-  outcome ni  fi
-1       1  2 0.2
-2       3  2 0.2
-3       4  1 0.1
-4       5  3 0.3
-5       6  2 0.2
-```
 
 
 
 ```
   outcome ni  fi Ni  Fi
 1       1  2 0.2  2 0.2
-2       2  1 0.1  3 0.3
-3       3  1 0.1  4 0.4
-4       4  3 0.3  7 0.7
-5       6  3 0.3 10 1.0
+2       2  2 0.2  4 0.4
+3       3  1 0.1  5 0.5
+4       5  1 0.1  6 0.6
+5       6  4 0.4 10 1.0
 ```
 
 
@@ -726,17 +731,17 @@ Experimento aleatorio
 Resumen
 ==================================================
 
-- ¿Qué sucede cuando$N$aumenta a 1,000?
+- ¿Qué sucede cuando $N$ aumenta a 1,000?
 
 
 ```
   outcome  ni    fi   Ni    Fi
 1       1 162 0.162  162 0.162
-2       2 173 0.173  335 0.335
-3       3 163 0.163  498 0.498
-4       4 171 0.171  669 0.669
-5       5 176 0.176  845 0.845
-6       6 155 0.155 1000 1.000
+2       2 165 0.165  327 0.327
+3       3 159 0.159  486 0.486
+4       4 168 0.168  654 0.654
+5       5 185 0.185  839 0.839
+6       6 161 0.161 1000 1.000
 ```
 
 - ¿Qué sucede cuando$N \rightarrow \infty$?
@@ -748,7 +753,7 @@ Resumen
 
 $$lim_{N\rightarrow \infty} f_i = P_i$$
 
-![plot of chunk unnamed-chunk-32](Capitulo1-figure/unnamed-chunk-32-1.png)
+![plot of chunk unnamed-chunk-31](Capitulo1-figure/unnamed-chunk-31-1.png)
 
 
 Próximo
@@ -758,14 +763,12 @@ Llamamos **Probabilidad** $P_i$ al límite cuando$N \rightarrow \infty$ de la fr
 
 - Entendemos que estos valores pertenecen a la Naturaleza, no dependen del experimentador ni del observador: describen las cosas como son.
 
-- Si es así, ¿podemos trabajar al revés? Si creemos que los $P_i$ describen las cosas como son, ¿podemos **predecir** los valores esperados de $f_i$ a $N$ más bajos?
+- Como no podemos hacer un experimento infinitas veces, ¿podemos comenzar al revés? Si creemos que los $P_i$ describen las cosas como son, ¿podemos **predecir** de ellos los valores observados de $f_i$ a $N$ reales?
 
 - ¿Cuáles son las principales propiedades lógicas de estos $P_i$?
 
-Experimento aleatorio
+Ejercicio
 ==================================================
-
-Deber para la próxima clase:
 
 Pensemos en un experimento aleatorio arquetípico: **el lanzamiento un dado**.
 
@@ -776,6 +779,10 @@ Pensemos en un experimento aleatorio arquetípico: **el lanzamiento un dado**.
 - ¿Cuál es la duodécima observación?
 
 - ¿Cuales es la frecuencia absoluta, la frecuencia relativa, la frecuencias absoluta acumulada y la frecuencia relativa acumulada de cada resultado?
+
+Ejercicio
+==================================================
+
 
 - ¿Qué resultado se observó 4 veces?
 

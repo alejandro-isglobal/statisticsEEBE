@@ -24,7 +24,7 @@ Presentación del curso
 
 - Sustena el método científico (como veremos enseguida)
 
-- Es la asignatura con mayor proyección de empleo
+- Es una de las asignatura con mayor proyección de empleo
  - los datos son la mercancía de mayor valor en nuestra época.
  - los modelos (inteleigencia artificial y algoritmos) determinan nuestro consumo y nuestro comportamiento.
 
@@ -93,6 +93,15 @@ Dificultad del curso
 
 ![plot of chunk unnamed-chunk-3](Presentacion-figure/unnamed-chunk-3-1.png)
 
+Dificultad del curso
+======================================================
+
+
+Sección ESM1: 2020-2021-Q1
+
+<img src="./figures/notas.JPG" style="width:50%"  align="center">
+
+Cada assistencia incrementó (en promedio) 0.05 de nota!
 
 Componentes de estudio  
 ======================================================

@@ -463,12 +463,12 @@ Capítulo 1
 <h1>Resultado</h1>
 <p><strong>Observación</strong></p>
 <ul>
-<li>y <strong>observación</strong> es la adquisición de un número o una característica de un experimento</li>
+<li>Una <strong>observación</strong> es la adquisición de un número o una característica al realizar un experimento</li>
 </ul>
 <p>… 1 0 0 1 0 <strong>1</strong> 0 1 1 … (el número en negrita es una observación)</p>
 <p><strong>Resultado</strong></p>
 <ul>
-<li>Un <strong>resultado</strong> es una posible observación que es el resultado de un experimento.</li>
+<li>Un <strong>resultado</strong> es uno de los valores posibles de las observaciones de un experimento.</li>
 </ul>
 <p><strong>1</strong> es un resultado, <strong>0</strong> es el otro resultado</p>
 </div>
@@ -489,13 +489,13 @@ Capítulo 1
 </ul>
 <p>La mayoría de los experimentos</p>
 <p><em>resultado = señal + ruido</em></p>
-<p>El objetivo es extraer el ruido del resultado.</p>
+<p>El objetivo es extraer el la señal en el resultado.</p>
 </div>
 <div id="experimento-aleatorio-1" class="section level1">
 <h1>Experimento aleatorio</h1>
 <p>Cuando el ruido no es cero, tenemos un <strong>experimento aleatorio</strong></p>
 <p><strong>Definición:</strong></p>
-<p>Un experimento que se repite de la misma manera cada vez da como resultado resultados diferentes.</p>
+<p>Un experimento que se repite de la misma manera cada vez y sus observaciones dan resultados diferentes.</p>
 </div>
 <div id="experimento-aleatorio-2" class="section level1">
 <h1>Experimento aleatorio</h1>
@@ -520,7 +520,7 @@ Capítulo 1
 </div>
 <div id="parques-eólicos" class="section level1">
 <h1>Parques eólicos</h1>
-<p>Veamos los parques eólicos. Este es un ejemplo de solo <strong>6</strong> fincas de un total de 5091.</p>
+<p>Veamos los parques eólicos. Este es un ejemplo de sólo <strong>6</strong> parques eólicos de un total de 5091.</p>
 <pre><code>                           name country primary_fuel
 539      Mortons Lane Wind Farm     AUS         Wind
 542      Mount Millar Wind Farm     AUS         Wind
@@ -534,7 +534,8 @@ Capítulo 1
 <p>Cuando repetimos un experimento aleatorio, registramos una lista de resultados. <br></p>
 <p>Resumimos las observaciones <strong>categóricas</strong> contando cuántas veces vimos un resultado en particular.</p>
 <p><span class="math inline">\(n_i\)</span> es el número de veces que observamos el resultado <span class="math inline">\(i\)</span></p>
-<p>En nuestro ejemplo, pensemos en AUS (Australia) como un posible <strong>resultado</strong> para la variable <strong>país</strong> de un parque eólico.</p>
+<p>En nuestro ejemplo, pensemos en AUS (Australia) como un posible <strong>resultado</strong> para la observación del <strong>país</strong> del que procede de un parque eólico.</p>
+<p>Cuando veamos otro parque eólico obtendremos tendremos otro país del que procede (repetición del experimento aleatorio).</p>
 </div>
 <div id="frecuencias" class="section level1">
 <h1>Frecuencias</h1>
@@ -570,9 +571,10 @@ n27     ZAF        24</code></pre>
 </div>
 <div id="frecuencias-relativas" class="section level1">
 <h1>Frecuencias relativas</h1>
-<p>También podemos resumir las observaciones calculando la<strong>proporción</strong>de cuántas veces vimos un resultado en particular.</p>
+<p>También podemos resumir las observaciones calculando la <strong>proporción</strong> de cuántas veces vimos un resultado en particular.</p>
 <p><span class="math display">\[f_i= n_i/N\]</span> donde <span class="math inline">\(N\)</span> es el número total de observaciones</p>
-<p>En nuestro ejemplo se registran <span class="math inline">\(N= 5091\)</span> parques eólicos, por lo que pedimos la proporción de parques eólicos en cada país de 5091.</p>
+<p>En nuestro ejemplo se registran <span class="math inline">\(N= 5091\)</span> parques eólicos.</p>
+<p>La frecuencia es la proporción de parques eólicos en cada país de un total de 5091.</p>
 </div>
 <div id="frecuencias-relativas-1" class="section level1">
 <h1>Frecuencias relativas</h1>
@@ -623,7 +625,7 @@ n27     ZAF        24</code></pre>
 </div>
 <div id="resultado-versus-observación" class="section level1">
 <h1>Resultado versus observación</h1>
-<p>Esta es una <strong>observación</strong> del experimento/estudio (un parque eólico)</p>
+<p>Esta es una <strong>observación</strong> del experimento aleatorio: ver el país de un parque eólico en los datos.</p>
 <pre><code>                   name country primary_fuel
 1459 Campo dos Ventos V     BRA         Wind</code></pre>
 <p>Esta es la frecuencia de observación del <strong>resultado</strong> BRA (o número de parques eólicos en Brasil)</p>
@@ -632,7 +634,7 @@ n27     ZAF        24</code></pre>
 </div>
 <div id="variables-categóricas-y-ordenadas" class="section level1">
 <h1>Variables categóricas y ordenadas</h1>
-<p>Los países no están ordenados de manera significativa con respecto a los resultados. Sin embargo, a veces las variables <strong>categóricas</strong> se pueden <strong>ordenar</strong> (días, meses, años)</p>
+<p>Los países no tienen un orden intrínseco con respecto a los resultados. Sin embargo, a veces las variables <strong>categóricas</strong> se pueden <strong>ordenar</strong> (días, meses, años)</p>
 <pre><code>                   name country year_of_capacity_data
 1459 Campo dos Ventos V     BRA                  2017
 1462            Camurim     BRA                  2017
@@ -644,7 +646,7 @@ n27     ZAF        24</code></pre>
 <div id="variables-categóricas-y-ordenadas-1" class="section level1">
 <h1>Variables categóricas y ordenadas</h1>
 <ul>
-<li><p>Podemos ver de nuevo cuántas veces se observó cada año (en qué año se recopilaron los datos de los parques eólicos)</p></li>
+<li><p>Podemos ver de nuevo cuántas veces se observa cada año en los datos (en qué año se recopilaron los datos de los parques eólicos)</p></li>
 <li><p>y la proporción de resultados para cada año (los años son las observaciones ahora)</p></li>
 </ul>
 <pre><code>  outcome   ni         fi
@@ -675,7 +677,7 @@ n27     ZAF        24</code></pre>
 </div>
 <div id="gráfico-de-barras" class="section level1">
 <h1>Gráfico de barras</h1>
-<p>Podemos trazar <span class="math inline">\(n_i\)</span> Vs los resultados, dándonos un diagrama de barras</p>
+<p>Podemos dibujar <span class="math inline">\(n_i\)</span> Vs los resultados, por médio de un diagrama de barras</p>
 <div class="figure">
 <img src="data:image/png;base64,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" alt />
 <p class="caption">plot of chunk unnamed-chunk-11</p>
@@ -683,7 +685,7 @@ n27     ZAF        24</code></pre>
 </div>
 <div id="variables-continuas" class="section level1">
 <h1>Variables continuas</h1>
-<p>El resultado de un experimento aleatorio también puede dar resultados continuos, como la capacidad de MW de la granja.</p>
+<p>El resultado de un experimento aleatorio también puede dar resultados <strong>continuos</strong>, como la capacidad de MW de la granja.</p>
 <pre><code>                           name country capacity_mw
 539      Mortons Lane Wind Farm     AUS        20.0
 542      Mount Millar Wind Farm     AUS        70.0
@@ -696,7 +698,7 @@ n27     ZAF        24</code></pre>
 <h1>Variables continuas</h1>
 <ul>
 <li><p>Podemos conocer el rango de la observación por sus resultados mínimos y máximos observados</p></li>
-<li><p>Para la capacidad de los parques eólicos oscilan entre: (1MW, 200MW)</p></li>
+<li><p>La capacidad de los parques eólicos oscilan entre: (1MW, 200MW)</p></li>
 </ul>
 </div>
 <div id="variables-continuas-2" class="section level1">
@@ -707,7 +709,7 @@ n27     ZAF        24</code></pre>
 </ul>
 <pre class="r"><code>[0.801,20.9], (20.9,40.7], (40.7,60.6], (60.6,80.5], (80.5,100], (100,120], (120,140], (140,160], (160,180], (180,200]</code></pre>
 <ul>
-<li>crear una variable <strong>categórica ordenada</strong>; en este caso con 10 posibles resultados</li>
+<li>creamos una variable <strong>categórica ordenada</strong>; en este caso con 10 posibles resultados</li>
 </ul>
 </div>
 <div id="variables-continuas-3" class="section level1">
@@ -782,10 +784,13 @@ n27     ZAF        24</code></pre>
 </ul>
 <p><span class="math display">\[\bar{x}= \frac{1}{N} \sum_{j= 1..N} x_j\]</span></p>
 <p>donde <span class="math inline">\(x_j\)</span> es la <strong>observación</strong> <span class="math inline">\(j\)</span> (parque eólico) de un total de <span class="math inline">\(N\)</span>.</p>
-<p>La capacidad media se puede calcular directamente a partir de las <strong>observaciones</strong></p>
-<p></br><span class="math inline">\(\bar{capacity}= \frac{1}{N}\sum_j x_j\)</span> </br><span class="math inline">\(= \frac{1}{N}(16.56 1.80 + 2.02 + 25.20+ 25.20 + 6.30+...) = 35.751\)</span></p>
 </div>
 <div id="estadísticos-descriptivos-2" class="section level1">
+<h1>Estadísticos descriptivos</h1>
+<p>La capacidad media se puede calcular directamente a partir de las <strong>observaciones</strong></p>
+<p></br><span class="math inline">\(\bar{c}= \frac{1}{N}\sum_j c_j\)</span> </br><span class="math inline">\(= \frac{1}{N}(16.56 1.80 + 2.02 + 25.20+ 25.20 + 6.30+...) = 35.751\)</span></p>
+</div>
+<div id="estadísticos-descriptivos-3" class="section level1">
 <h1>Estadísticos descriptivos</h1>
 <p>Para variables categoricas ordenadas podemos usar la tabla de frecuencias para calcular el promedio</p>
 <pre><code>  outcome   ni         fi
@@ -793,39 +798,40 @@ n27     ZAF        24</code></pre>
 2    2016  273 0.15311273
 3    2017 1459 0.81828379
 4    2018   39 0.02187325</code></pre>
-<p>El promedio anual de los datos de los parques eólicos <strong>también</strong> se puede calcular a partir de las frecuencias relativas</p>
-<p><span class="math inline">\(\bar{year}=\frac{1}{N}\sum_{j} year=\frac{1}{N}\sum_{year} year*n_{year}=\sum_{year} year*f_{year}\)</span></p>
-<p><span class="math inline">\(=2015*f_{2015}+2016*f_{2016}+2017*f_{2017}+2018*f_{2018}=2016.85\)</span></p>
-</div>
-<div id="estadísticos-descriptivos-3" class="section level1">
-<h1>Estadísticos descriptivos</h1>
-<p>En términos de los <strong>resultados</strong> que pueden tomar las variables categóricas el promedio se puede escribir como</p>
-<p><span class="math display">\[\bar{x}= \sum_{x \in R_x} x f_x\]</span></p>
-<p>de un total de<span class="math inline">\(m= dim (R_x)\)</span> valores observados (número de países).</p>
-<p><span class="math inline">\(\bar{x}\)</span> calcula el <strong>valor central</strong> o el centro de gravedad de los resultados. Como si cada resultado tuviera una densidad de masa <span class="math inline">\(f_i\)</span>.</p>
+<p>El promedio anual de los datos de los parques eólicos <strong>también</strong> se puede calcular a partir de las frecuencias relativas (outcome=y)</p>
+<p><span class="math inline">\(\bar{y}=\frac{1}{N}\sum_{i} y_j=\frac{1}{N}\sum_{i} y_i*n_{i}=\sum_{i} y_i*f_{y}\)</span></p>
+<p><span class="math inline">\(=2015*f_{1}+2016*f_{2}+2017*f_{3}+2018*f_{4}=2016.85\)</span></p>
 </div>
 <div id="estadísticos-descriptivos-4" class="section level1">
 <h1>Estadísticos descriptivos</h1>
-<p>Los promedios no son el resultado de una observación (experimento aleatorio) sino una serie de observaciones. Describen el número en el que se equilibran los valores observados.</p>
-<p>Por eso escuchamos, por ejemplo, que un paciente con coronavirus puede infectar a un promedio de 2,5 personas.</p>
+<p>En términos de los <strong>resultados</strong> que pueden tomar las variables categóricas el <strong>promedio</strong> se puede escribir como</p>
+<p><span class="math display">\[\bar{x}= \sum_{i = 1...m} x_i f_i\]</span></p>
+<p>de un total de <span class="math inline">\(m\)</span> posibles resultados (número de países).</p>
+<p><span class="math inline">\(\bar{x}\)</span> calcula el <strong>valor central</strong> o el centro de gravedad de los resultados. Como si cada resultado tuviera una densidad de masa <span class="math inline">\(f_i\)</span>.</p>
 </div>
 <div id="estadísticos-descriptivos-5" class="section level1">
+<h1>Estadísticos descriptivos</h1>
+<p>Los promedios no son el resultado de una observación (experimento aleatorio) sino una serie de observaciones.</p>
+<p>Describe el número en el que se equilibran los valores observados.</p>
+<p>Por eso escuchamos, por ejemplo, que un paciente con coronavirus puede infectar a un promedio de 2,5 personas.</p>
+</div>
+<div id="estadísticos-descriptivos-6" class="section level1">
 <h1>Estadísticos descriptivos</h1>
 <div class="figure">
 <img src="data:image/png;base64,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" alt />
 <p class="caption">plot of chunk unnamed-chunk-23</p>
 </div>
 </div>
-<div id="estadísticos-descriptivos-6" class="section level1">
+<div id="estadísticos-descriptivos-7" class="section level1">
 <h1>Estadísticos descriptivos</h1>
 <p>Otra medida de centralidad es la mediana. La mediana <span class="math inline">\(q_{0.5}\)</span> es el valor <span class="math inline">\(x_p\)</span></p>
 <p><span class="math inline">\(median(x)=q_{0.5}=x_p\)</span></p>
 <p>debajo del cual encontramos la mitad de las observaciones</p>
 <p><span class="math inline">\(\sum_{x\leq x_p} 1 = \frac{N}{2}\)</span></p>
-<p>o en términos de frecuencias, es el valor<span class="math inline">\(x_p\)</span>que hace que la frecuencia acumulada<span class="math inline">\(F_p\)</span>sea igual a 0.5</p>
+<p>o en términos de frecuencias, es el valor <span class="math inline">\(x_p\)</span> que hace que la frecuencia acumulada <span class="math inline">\(F_p\)</span> sea igual a 0.5</p>
 <p><span class="math inline">\(q_{0.5}=\sum_{x\leq x_p} f_x =F_p=0.5\)</span></p>
 </div>
-<div id="estadísticos-descriptivos-7" class="section level1">
+<div id="estadísticos-descriptivos-8" class="section level1">
 <h1>Estadísticos descriptivos</h1>
 <ul>
 <li>Media: Centro de masa (compensa valores distantes)</li>
@@ -836,46 +842,46 @@ n27     ZAF        24</code></pre>
 <p class="caption">plot of chunk unnamed-chunk-24</p>
 </div>
 </div>
-<div id="estadísticos-descriptivos-8" class="section level1">
+<div id="estadísticos-descriptivos-9" class="section level1">
 <h1>Estadísticos descriptivos</h1>
 <p>Una medida importante de los resultados es su <strong>dispersión</strong>. Muchos experimentos pueden compartir su media, pero difieren en la dispersión de los valores.</p>
 <div class="figure">
-<img src="data:image/png;base64,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" alt />
+<img src="data:image/png;base64,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" alt />
 <p class="caption">plot of chunk unnamed-chunk-25</p>
-</div>
-</div>
-<div id="estadísticos-descriptivos-9" class="section level1">
-<h1>Estadísticos descriptivos</h1>
-<div class="figure">
-<img src="data:image/png;base64,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" alt />
-<p class="caption">plot of chunk unnamed-chunk-26</p>
 </div>
 </div>
 <div id="estadísticos-descriptivos-10" class="section level1">
 <h1>Estadísticos descriptivos</h1>
-<p>La dispersión sobre la media se mide con la</p>
-<ul>
-<li>La varianza de la muestra:</li>
-</ul>
-<p><span class="math display">\[s^2=\frac{1}{N-1} \sum_{j=1..N} (x_j-\bar{x})^2\]</span></p>
-<p>Mide la distancia cuadrada promedio de las <strong>observaciones</strong> al promedio. La razón de N-1 se explicará cuando hablemos de inferencia.</p>
+<div class="figure">
+<img src="data:image/png;base64,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" alt />
+<p class="caption">plot of chunk unnamed-chunk-26</p>
+</div>
 </div>
 <div id="estadísticos-descriptivos-11" class="section level1">
+<h1>Estadísticos descriptivos</h1>
+<p>La dispersión sobre la media se mide con</p>
+<ul>
+<li>La varianza muestral:</li>
+</ul>
+<p><span class="math display">\[s^2=\frac{1}{N-1} \sum_{j=1..N} (x_j-\bar{x})^2\]</span></p>
+<p>que mide la distancia cuadrada promedio de las <strong>observaciones</strong> al promedio. La razón de N-1 se explicará cuando hablemos de inferencia.</p>
+</div>
+<div id="estadísticos-descriptivos-12" class="section level1">
 <h1>Estadísticos descriptivos</h1>
 <ul>
 <li>En términos de las frecuencias de las variables <strong>categóricas</strong> observadas (momento de inercia)</li>
 </ul>
-<p><span class="math display">\[s^2=\frac{N}{N-1} \sum_{x} (x-\bar{x})^2 f_x\]</span></p>
+<p><span class="math display">\[s^2=\frac{N}{N-1} \sum_{i=1...m} (x_i-\bar{x_i})^2 f_i\]</span></p>
 </div>
-<div id="estadísticos-descriptivos-12" class="section level1">
+<div id="estadísticos-descriptivos-13" class="section level1">
 <h1>Estadísticos descriptivos</h1>
-<p>La raíz cuadrada de la varianza muestral se llama <strong>desviación estándar</strong> <span class="math inline">\(s\)</span>.</p>
+<p>La raíz cuadrada de la varianza muestral <span class="math inline">\(s\)</span> se llama <strong>desviación estándar</strong> o típica.</p>
 <p>La desviación estándar de la capacidad de los parques eólicos es</p>
 <p><span class="math inline">\(s= [\frac{1}{N-1}((16.56-35.751)^2+ (1.80-35.751)^2\)</span><br />
 </br><span class="math inline">\(+ (2.02-35.751)^2 + ...)]^{1/2} = 37.487\)</span></p>
 <p>La capacidad de los parques eólicos se desvía de su media en 37.487MW.</p>
 </div>
-<div id="estadísticos-descriptivos-13" class="section level1">
+<div id="estadísticos-descriptivos-14" class="section level1">
 <h1>Estadísticos descriptivos</h1>
 <ul>
 <li><p>La dispersión de datos también se puede medir con respecto a los medios mediante el <strong>rango intercuartil</strong></p></li>
@@ -886,7 +892,7 @@ n27     ZAF        24</code></pre>
 <li>También definimos el tercer cuartil como el valor <span class="math inline">\(p\)</span> <strong>por encima de</strong> donde se encuentran el primer 25% de las observaciones</li>
 </ul>
 </div>
-<div id="estadísticos-descriptivos-14" class="section level1">
+<div id="estadísticos-descriptivos-15" class="section level1">
 <h1>Estadísticos descriptivos</h1>
 <p>La distancia entre el tercer cuartil y el primer cuartil se llama <strong>rango intercuartil</strong> (IQR) y captura el 50% central de las observaciones</p>
 <div class="figure">
@@ -894,7 +900,7 @@ n27     ZAF        24</code></pre>
 <p class="caption">plot of chunk unnamed-chunk-27</p>
 </div>
 </div>
-<div id="estadísticos-descriptivos-15" class="section level1">
+<div id="estadísticos-descriptivos-16" class="section level1">
 <h1>Estadísticos descriptivos</h1>
 <p>El rango intercuartílico, la mediana y el 5% y el 95% de los datos se pueden visualizar en una <strong>gráfica de caja</strong>, aquí los valores de los resultados están en el eje y. El IQR es la caja, la mediana la línea en el medio y los bigotes marcan el 5% y el 95% de los datos.</p>
 <div class="figure">
@@ -905,47 +911,44 @@ n27     ZAF        24</code></pre>
 <div id="resumen" class="section level1">
 <h1>Resumen</h1>
 <ul>
-<li><p>Hemos visto datos <strong>observacionales</strong>: Cada molino de viento tenía algunas variables medidas:</p></li>
+<li><p>Hemos visto datos <strong>observacionales</strong>: Cada parque eólico de viento tenía algunas variables medidas:</p></li>
 <li><p>Categórico: año, país</p></li>
 <li><p>Continuo: Capacidad en MW</p></li>
 </ul>
-<p>Consideramos que observar un parque eólico es la observación de un experimento aleatorio: observar parques eólicos en todo el mundo. Cada vez que observamos un parque eólico las variables toman valores diferentes. Cada variable tiene una <strong>frecuencia</strong> de observación.</p>
+<p>Consideramos que observar un parque eólico es la observación de un experimento aleatorio: observar parques eólicos en todo el mundo.</p>
+<p>Cada vez que observamos un parque eólico las variables toman valores diferentes.</p>
+<p>Cada variable tiene una <strong>frecuencia</strong> de observación.</p>
 </div>
 <div id="resumen-1" class="section level1">
 <h1>Resumen</h1>
 <ul>
 <li><p>Las frecuencias de las variables <span class="math inline">\(f_i\)</span> o su acumulación <span class="math inline">\(F_i\)</span> (en variables ordenadas) son características del sistema (humanos construyendo parques eólicos).</p></li>
-<li><p>No dependen (no deberían) de quién está ejecutando el experimento, a diferencia de <span class="math inline">\(n_i\)</span> o <span class="math inline">\(N\)</span>.</p></li>
-<li><p>Pero dependen de <span class="math inline">\(n_i\)</span> y <span class="math inline">\(N\)</span>. ¿Cuándo pierden su dependencia de <span class="math inline">\(n_i\)</span>?</p></li>
+<li><p>No deberían depender de quién está ejecutando el experimento, a diferencia de <span class="math inline">\(n_i\)</span> o <span class="math inline">\(N\)</span>.</p></li>
+<li><p>Pero dependen (en su definición) de <span class="math inline">\(n_i\)</span> y <span class="math inline">\(N\)</span>. ¿Cuándo pierden su dependencia de <span class="math inline">\(n_i\)</span>?</p></li>
 </ul>
 </div>
 <div id="experimento-aleatorio-3" class="section level1">
 <h1>Experimento aleatorio</h1>
-<pre><code>  outcome ni  fi
-1       1  2 0.2
-2       3  2 0.2
-3       4  1 0.1
-4       5  3 0.3
-5       6  2 0.2</code></pre>
+<p>Lanzemos un dado 10 veces y calculemos las frecuencias para cada resultado</p>
 <pre><code>  outcome ni  fi Ni  Fi
 1       1  2 0.2  2 0.2
-2       2  1 0.1  3 0.3
-3       3  1 0.1  4 0.4
-4       4  3 0.3  7 0.7
-5       6  3 0.3 10 1.0</code></pre>
+2       2  2 0.2  4 0.4
+3       3  1 0.1  5 0.5
+4       5  1 0.1  6 0.6
+5       6  4 0.4 10 1.0</code></pre>
 </div>
 <div id="resumen-2" class="section level1">
 <h1>Resumen</h1>
 <ul>
-<li>¿Qué sucede cuando<span class="math inline">\(N\)</span>aumenta a 1,000?</li>
+<li>¿Qué sucede cuando <span class="math inline">\(N\)</span> aumenta a 1,000?</li>
 </ul>
 <pre><code>  outcome  ni    fi   Ni    Fi
 1       1 162 0.162  162 0.162
-2       2 173 0.173  335 0.335
-3       3 163 0.163  498 0.498
-4       4 171 0.171  669 0.669
-5       5 176 0.176  845 0.845
-6       6 155 0.155 1000 1.000</code></pre>
+2       2 165 0.165  327 0.327
+3       3 159 0.159  486 0.486
+4       4 168 0.168  654 0.654
+5       5 185 0.185  839 0.839
+6       6 161 0.161 1000 1.000</code></pre>
 <ul>
 <li>¿Qué sucede cuando<span class="math inline">\(N \rightarrow \infty\)</span>?</li>
 </ul>
@@ -954,8 +957,8 @@ n27     ZAF        24</code></pre>
 <h1>Resumen</h1>
 <p><span class="math display">\[lim_{N\rightarrow \infty} f_i = P_i\]</span></p>
 <div class="figure">
-<img src="data:image/png;base64,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" alt />
-<p class="caption">plot of chunk unnamed-chunk-32</p>
+<img src="data:image/png;base64,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" alt />
+<p class="caption">plot of chunk unnamed-chunk-31</p>
 </div>
 </div>
 <div id="próximo" class="section level1">
@@ -963,13 +966,12 @@ n27     ZAF        24</code></pre>
 <p>Llamamos <strong>Probabilidad</strong> <span class="math inline">\(P_i\)</span> al límite cuando<span class="math inline">\(N \rightarrow \infty\)</span> de la frecuencia de observación del valor <span class="math inline">\(i\)</span> en un experimento aleatorio.</p>
 <ul>
 <li><p>Entendemos que estos valores pertenecen a la Naturaleza, no dependen del experimentador ni del observador: describen las cosas como son.</p></li>
-<li><p>Si es así, ¿podemos trabajar al revés? Si creemos que los <span class="math inline">\(P_i\)</span> describen las cosas como son, ¿podemos <strong>predecir</strong> los valores esperados de <span class="math inline">\(f_i\)</span> a <span class="math inline">\(N\)</span> más bajos?</p></li>
+<li><p>Como no podemos hacer un experimento infinitas veces, ¿podemos comenzar al revés? Si creemos que los <span class="math inline">\(P_i\)</span> describen las cosas como son, ¿podemos <strong>predecir</strong> de ellos los valores observados de <span class="math inline">\(f_i\)</span> a <span class="math inline">\(N\)</span> reales?</p></li>
 <li><p>¿Cuáles son las principales propiedades lógicas de estos <span class="math inline">\(P_i\)</span>?</p></li>
 </ul>
 </div>
-<div id="experimento-aleatorio-4" class="section level1">
-<h1>Experimento aleatorio</h1>
-<p>Deber para la próxima clase:</p>
+<div id="ejercicio" class="section level1">
+<h1>Ejercicio</h1>
 <p>Pensemos en un experimento aleatorio arquetípico: <strong>el lanzamiento un dado</strong>.</p>
 <ul>
 <li>Lanzamos un dado 20 veces y obtuvimos:</li>
@@ -978,6 +980,11 @@ n27     ZAF        24</code></pre>
 <ul>
 <li><p>¿Cuál es la duodécima observación?</p></li>
 <li><p>¿Cuales es la frecuencia absoluta, la frecuencia relativa, la frecuencias absoluta acumulada y la frecuencia relativa acumulada de cada resultado?</p></li>
+</ul>
+</div>
+<div id="ejercicio-1" class="section level1">
+<h1>Ejercicio</h1>
+<ul>
 <li><p>¿Qué resultado se observó 4 veces?</p></li>
 <li><p>¿Cuantas observaciones tuvo el evento de obtener un número menor o igual a 3?</p></li>
 <li><p>¿Cuál es el conjunto de todos los resultados?</p></li>

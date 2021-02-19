@@ -469,7 +469,8 @@ Capítulo 2
 <ul>
 <li>media:</li>
 </ul>
-<p><span class="math inline">\(\bar{x}=\frac{1}{20}\sum_{obs=1,..20} x_{obs}=\sum_{i=1,..6}x_{i}*f_i\)</span> </br><span class="math inline">\(=1*0.3+2*0.2+3*0.2+4*0.1+5*0.1+6*0.1=2.8\)</span></p>
+<p><span class="math inline">\(\bar{x}=\frac{1}{20}\sum_{j=1,..20} x_{j}=\sum_{i=1,..6}x_{i}*f_i\)</span> </br><span class="math inline">\(=1*0.3+2*0.2+3*0.2+4*0.1+5*0.1+6*0.1=2.8\)</span></p>
+<p><span class="math inline">\(j\)</span> enumera <strong>observaciones</strong>, <span class="math inline">\(i\)</span> enumera <strong>resultados</strong></p>
 </div>
 <div id="resultados-de-las-observaciones-y-eventos-2" class="section level1">
 <h1>Resultados de las observaciones y eventos</h1>
@@ -481,7 +482,7 @@ Capítulo 2
 <ul>
 <li>¿Cuál es la deviación típica?</li>
 </ul>
-<p><span class="math inline">\(s^2=\frac{1}{N-1} \sum_{obs=1,..20} (x_{obs}-\bar{x})^2=\frac{N}{N-1} \sum_{i=1,..6} (x_i-\bar{x})^2 f_i=1.70\)</span></p>
+<p><span class="math inline">\(s^2=\frac{1}{N-1} \sum_{j=1,..20} (x_{j}-\bar{x})^2=\frac{N}{N-1} \sum_{i=1,..6} (x_i-\bar{x})^2 f_i=1.70\)</span></p>
 <ul>
 <li>el experimento aleatorio es</li>
 </ul>
@@ -568,7 +569,7 @@ Capítulo 2
 <div id="espacio-muestral" class="section level1">
 <h1>Espacio muestral</h1>
 <p>Comenzamos razonando cuáles son todos los valores posibles (resultados) que podría dar un experimento aleatorio.</p>
-<p>Tenga en cuenta que no tenemos que observarlos en un experimento en particular: estamos usando lógica y no observación.</p>
+<p>Ten en cuenta que no tenemos que observarlos en un experimento en particular: estamos usando lógica y no observación.</p>
 <p><strong>Definición:</strong></p>
 <p>El conjunto de todos los valores posibles que puede tomar una observación de un experimento aleatorio se denomina espacio muestral del experimento. El espacio muestral se denota como S.</p>
 </div>
@@ -613,7 +614,7 @@ Capítulo 2
 <li>El caso de producir un tornillo con tamaño: 71,5 mm</li>
 <li>El evento de recibir más de 4 correos electrónicos en una hora.</li>
 </ul>
-<p>Tenga en cuenta que los resultados de diferentes experimentos pueden pertenecer al mismo evento.</p>
+<p>Ten en cuenta que los resultados de diferentes experimentos pueden pertenecer al mismo evento.</p>
 </div>
 <div id="operaciones-de-eventos" class="section level1">
 <h1>Operaciones de eventos</h1>
@@ -641,7 +642,7 @@ Capítulo 2
 </div>
 <div id="operaciones-de-eventos-3" class="section level1">
 <h1>Operaciones de eventos</h1>
-<p>Tenga en cuenta que</p>
+<p>Ten en cuenta que</p>
 <p><span class="math inline">\(E3=E1\cup E2= [35,37) \cup (38,42]\)</span></p>
 <p><span class="math inline">\(E3&#39;= [37, 38]\)</span>=saludable</p>
 <p>El evento de observar a un paciente sin hipotermia <strong>O</strong> sin fiebre es el evento de observar a un paciente sano.</p>
@@ -664,14 +665,14 @@ Capítulo 2
 <div id="suma-de-probabilidades" class="section level1">
 <h1>Suma de probabilidades</h1>
 <p>Para un espacio muestral discreto, la probabilidad de un evento E, denotado como <span class="math inline">\(P(E)\)</span>, es igual a la suma de las probabilidades de los eventos en <span class="math inline">\(E\)</span>.</p>
-<p>Piense en Laplace y frene todos los eventos posibles de E en partes iguales.</p>
+<p>Piensa en Laplace y frene todos los eventos posibles de E en partes iguales.</p>
 </div>
 <div id="suma-de-probabilidades-1" class="section level1">
 <h1>Suma de probabilidades</h1>
 <p>¿Cuál es la probabilidad de lanzar un dado y obtener menos de 3?</p>
 <p>Posibles resultados: 1, 2 y 3 luego</p>
 <p><span class="math display">\[P(1)+P(2)+P(3)=1/6+1/6+1/6=1/2\]</span></p>
-<p>Piense en Venn y está claro que si P es una frecuencia en el caso límite, entonces, como las frecuencias se pueden agregar, las probabilidades también.</p>
+<p>Piensa en Venn y está claro que si P es una frecuencia en el caso límite, entonces, como las frecuencias se pueden agregar, las probabilidades también.</p>
 </div>
 <div id="axiomas-de-probabilidad" class="section level1">
 <h1>Axiomas de probabilidad</h1>
@@ -687,17 +688,17 @@ Capítulo 2
 <div id="regla-de-suma" class="section level1">
 <h1>Regla de suma</h1>
 <p><span class="math display">\[P(A\cup B) = P(A) + P(B) - P(A\cap B)\]</span></p>
-<p>Piense en los siguientes eventos para un dado</p>
+<p>Piensa en los siguientes eventos para un dado</p>
 <p><span class="math inline">\(A=\{1,2,3,4\}\)</span> and <span class="math inline">\(B=\{4,5\}\)</span></p>
 <p>entonces <span class="math inline">\(P(A\cup B)\)</span>: la probabilidad de que ocurra <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span> viene dada por </br><span class="math inline">\(P(A\cup B) = [P(1)+ P(2)+P(3) +P(4)]+ [P(4)+P(5)]\)</span> </br><span class="math inline">\(- P(4)=5/6\)</span></p>
 <p><span class="math inline">\(P(4)= P(A\cap B)\)</span> aparece dos veces: necesitamos restar uno de ellos.</p>
 </div>
 <div id="regla-de-suma-1" class="section level1">
 <h1>Regla de suma</h1>
-<p>Piense en los siguientes eventos para un dado</p>
+<p>Piensa en los siguientes eventos para un dado</p>
 <p><span class="math inline">\(A=\{1,2,3,4\}\)</span></p>
 <p><span class="math inline">\(B=\{4,5\}\)</span></p>
-<p>Tenga en cuenta también que la probabilidad de que el resultado esté o no en <span class="math inline">\(A\cup B\)</span> es uno.</p>
+<p>Ten en cuenta también que la probabilidad de que el resultado esté o no en <span class="math inline">\(A\cup B\)</span> es uno.</p>
 <p><span class="math display">\[P([A\cup B]&#39;)+P([A\cup B])=1\]</span></p>
 <p>Por lo tanto <span class="math display">\[P([A\cup B])=1-P([A\cup B]&#39;)=1-P(6)=1-1/6=5/6\]</span></p>
 </div>
@@ -705,9 +706,22 @@ Capítulo 2
 <h1>Ejercicio</h1>
 <p>En una avenida hay un sistema de 3 semáforos sucesivos. <span class="math inline">\(R_j\)</span> representa el suceso: encontramos en rojo el semáforo j-ésimo.</p>
 <ul>
-<li><p>¿Cuál es la expresión matemática de la probabilidad de encontrar <strong>todos</strong> los semáforos en rojo?</p></li>
-<li><p>¿Cuál es la expresión matemática la probabilidad de encontrar <strong>algún</strong> semáforo en rojo? Intenta usar un diagrama de Venn para escribir esta probabilidad en términos de probabilidades de intersecciones, también llamadas probabilidades conjuntas.</p></li>
+<li><p>¿Cuál es la expresión matemática para la probabilidad de encontrar <strong>todos</strong> los semáforos en rojo?</p></li>
+<li><p>¿Cuál es la expresión matemática para la probabilidad de encontrar <strong>algún</strong> semáforo en rojo?</p></li>
 </ul>
+<p>Intentremos usar un diagrama de Venn para escribir esta probabilidad en términos de probabilidades de intersecciones, también llamadas probabilidades conjuntas.</p>
+</div>
+<div id="ejercicio-1" class="section level1">
+<h1>Ejercicio</h1>
+<p>En una avenida hay un sistema de 3 semáforos sucesivos. <span class="math inline">\(R_j\)</span> representa el suceso: encontramos en rojo el semáforo j-ésimo.</p>
+<ul>
+<li>¿Cuál es la expresión matemática para la probabilidad de encontrar <strong>todos</strong> los semáforos en rojo?</li>
+</ul>
+<p><span class="math inline">\(P(R_1 \cap R_2 \cap R_3 )\)</span></p>
+<ul>
+<li>¿Cuál es la expresión matemática para la probabilidad de encontrar <strong>algún</strong> semáforo en rojo?</li>
+</ul>
+<p><span class="math inline">\(P(R_1\cup R_2 \cup R_3)= P(R_1) + P(R_2) + P(R_3)\)</span> </br><span class="math inline">\(- P(R_2 \cap R_1) - P(R_3 \cap R_2) - P(R_3 \cap R_1)\)</span> </br><span class="math inline">\(+ P(R_1\cap R_2 \cap R_3)\)</span></p>
 </div>
 <div id="regla-de-suma-2" class="section level1">
 <h1>Regla de suma</h1>
@@ -784,7 +798,7 @@ Capítulo 2
 <table>
 <thead>
 <tr class="header">
-<th>- Asunto -</th>
+<th>- sujeto -</th>
 <th>- Infección -</th>
 <th>- Prueba -</th>
 </tr>
@@ -1035,7 +1049,7 @@ Capítulo 2
 </div>
 <div id="matriz-de-diagnóstico" class="section level1">
 <h1>Matriz de diagnóstico</h1>
-<p>Matriz condicional sobre el valor del estado de infección.</p>
+<p>Matriz <strong>condicional</strong> sobre el valor del estado de infección.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1118,7 +1132,7 @@ Capítulo 2
 </div>
 <div id="matriz-de-predicción-2" class="section level1">
 <h1>Matriz de predicción</h1>
-<p>Matriz condicional sobre el valor del resultado de la prueba.</p>
+<p>Matriz <strong>condicional</strong> sobre el valor del resultado de la prueba.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1178,7 +1192,7 @@ Capítulo 2
 <li><p>si la prueba es negativa, existe una alta probabilidad del 83% de que no sea infeccioso. </br> La prueba es buena para descartar infecciones pero no para confirmarlas.</p></li>
 </ul>
 </div>
-<div id="ejercicio-1" class="section level1">
+<div id="ejercicio-2" class="section level1">
 <h1>Ejercicio</h1>
 <p>Tenemos tres cajas (caja 1, caja 2, caja 3) en las que se almacenan condensadores de tres capacidades diferentes <span class="math inline">\((0.01\mu F, 0.1 \mu F, 1.0\mu F)\)</span>, como se muestra en el cuadro siguiente:</p>
 <table>
