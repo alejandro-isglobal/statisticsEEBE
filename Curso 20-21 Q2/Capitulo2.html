@@ -438,7 +438,7 @@ Capítulo 2
 </ul>
 <p>1 5 1 2 2 1 2 2 3 1 1 3 3 1 6 3 5 6 4 4</p>
 <ul>
-<li>la duodécima observación tuvo el valor de resultado de 3:</li>
+<li>la duodécima observación tuvo el resultado de 3:</li>
 </ul>
 <p>1 5 1 2 2 1 2 2 3 1 1 <strong>3</strong> 3 1 6 3 5 6 4 4</p>
 </div>
@@ -559,19 +559,19 @@ Capítulo 2
 </div>
 <div id="probabilidad-3" class="section level1">
 <h1>Probabilidad</h1>
-<p>Llamamos <strong>Probabilidad</strong> <span class="math inline">\(P_i\)</span> al límite cuando <span class="math inline">\(N \rightarrow \infty\)</span> de la frecuencia de observación del valor <span class="math inline">\(i\)</span> en un experimento aleatorio.</p>
+<p>Llamamos <strong>Probabilidad</strong> <span class="math inline">\(P_i\)</span> al límite cuando<span class="math inline">\(N \rightarrow \infty\)</span> de la frecuencia de observación del valor <span class="math inline">\(i\)</span> en un experimento aleatorio.</p>
 <ul>
-<li><p>Entendemos que estos valores pertenecen a la Naturaleza, no dependen del experimentador <span class="math inline">\(n_i\)</span> del observador: describen las cosas como son.</p></li>
-<li><p>Si es así, ¿podemos trabajar al revés? Si creemos que los <span class="math inline">\(P_i\)</span> describen las cosas como son, ¿podemos <strong>predecir</strong> los valores esperados de <span class="math inline">\(f_i\)</span> a <span class="math inline">\(N\)</span> más bajos?</p></li>
+<li><p>Entendemos que estos valores pertenecen a la Naturaleza, no dependen del experimentador ni del observador: describen las cosas como son.</p></li>
+<li><p>Como no podemos hacer un experimento infinitas veces, ¿podemos comenzar al revés? Si creemos que los <span class="math inline">\(P_i\)</span> describen las cosas como son, ¿podemos <strong>predecir</strong> de ellos los valores observados de <span class="math inline">\(f_i\)</span> a <span class="math inline">\(N\)</span> reales?</p></li>
 <li><p>¿Cuáles son las principales propiedades lógicas de estos <span class="math inline">\(P_i\)</span>?</p></li>
 </ul>
 </div>
 <div id="espacio-muestral" class="section level1">
 <h1>Espacio muestral</h1>
 <p>Comenzamos razonando cuáles son todos los valores posibles (resultados) que podría dar un experimento aleatorio.</p>
-<p>Ten en cuenta que no tenemos que observarlos en un experimento en particular: estamos usando lógica y no observación.</p>
+<p>Ten en cuenta que no tenemos que observarlos en un experimento en particular: estamos usando la <strong>lógica</strong> y no observación.</p>
 <p><strong>Definición:</strong></p>
-<p>El conjunto de todos los valores posibles que puede tomar una observación de un experimento aleatorio se denomina espacio muestral del experimento. El espacio muestral se denota como S.</p>
+<p>El conjunto de todos los valores posibles que puede tomar una observación de un experimento aleatorio se denomina el <strong>espacio muestral</strong> del experimento. El espacio muestral se denota como <span class="math inline">\(S\)</span>.</p>
 </div>
 <div id="espacio-muestral-1" class="section level1">
 <h1>Espacio muestral</h1>
@@ -587,8 +587,8 @@ Capítulo 2
 <h1>Espacio muestral</h1>
 <p><strong>Espacios muestrales discretos y continuos</strong></p>
 <ul>
-<li>Un espacio muestral es discreto si consta de un conjunto infinito finito o contable de resultados.</li>
-<li>Un espacio muestral es continuo si contiene un intervalo (finito o infinito en longitud) de numeros reales.</li>
+<li>Un espacio muestral es discreto si consta de un conjunto contable de resultados (finito o infinito).</li>
+<li>Un espacio muestral es continuo si consta de un intervalo de numeros reales.</li>
 </ul>
 </div>
 <div id="evento" class="section level1">
@@ -605,15 +605,6 @@ Capítulo 2
 <li>El evento de recibir más de 4 correos electrónicos en una hora.</li>
 </ul>
 <p>El evento se refiere a un conjunto de <strong>valores</strong> que pueden tomar los resultados.</p>
-</div>
-<div id="evento-2" class="section level1">
-<h1>Evento</h1>
-<p>Ejemplos:</p>
-<ul>
-<li>El evento de una temperatura saludable: temperatura 37-38 grados centígrados</li>
-<li>El caso de producir un tornillo con tamaño: 71,5 mm</li>
-<li>El evento de recibir más de 4 correos electrónicos en una hora.</li>
-</ul>
 <p>Ten en cuenta que los resultados de diferentes experimentos pueden pertenecer al mismo evento.</p>
 </div>
 <div id="operaciones-de-eventos" class="section level1">
@@ -658,26 +649,31 @@ Capítulo 2
 </div>
 <div id="probabilidad-4" class="section level1">
 <h1>Probabilidad</h1>
-<p>La probabilidad es una función de los eventos de S que toman valores entre 0 y 1. Es un objeto matemático (¡no tiene nada de aleatorio!)</p>
+<p>La probabilidad es una función de los eventos de <span class="math inline">\(S\)</span> que toma valores reales entre 0 y 1. Es un objeto matemático (¡no tiene nada de aleatorio!)</p>
 <p><span class="math display">\[P(E) \in (0,1)\]</span></p>
-<p>¿Cuáles deberían ser sus propiedades?</p>
+<p>para <span class="math inline">\(E \subseteq S\)</span>.</p>
+<ul>
+<li><p>0: totalmente cierto que el evento <span class="math inline">\(E\)</span> no ocurre.</p></li>
+<li><p>1: totalemente cierto que el evento <span class="math inline">\(E\)</span> ocurre.</p></li>
+</ul>
+<p>¿Cuáles deberían ser las propiedades de <span class="math inline">\(P\)</span>?</p>
 </div>
 <div id="suma-de-probabilidades" class="section level1">
 <h1>Suma de probabilidades</h1>
-<p>Para un espacio muestral discreto, la probabilidad de un evento E, denotado como <span class="math inline">\(P(E)\)</span>, es igual a la suma de las probabilidades de los eventos en <span class="math inline">\(E\)</span>.</p>
-<p>Piensa en Laplace y frene todos los eventos posibles de E en partes iguales.</p>
+<p>Para un espacio muestral discreto pensemos que la probabilidad de un evento <span class="math inline">\(E\)</span>, denotado como <span class="math inline">\(P(E)\)</span>, debería igual a la suma de las probabilidades de los elementos que componen <span class="math inline">\(E\)</span>.</p>
+<p>Pensemos en el dado y descompongamos todos los eventos posibles de <span class="math inline">\(E\)</span> en los elementos que lo componen.</p>
 </div>
 <div id="suma-de-probabilidades-1" class="section level1">
 <h1>Suma de probabilidades</h1>
-<p>¿Cuál es la probabilidad de lanzar un dado y obtener menos de 3?</p>
-<p>Posibles resultados: 1, 2 y 3 luego</p>
-<p><span class="math display">\[P(1)+P(2)+P(3)=1/6+1/6+1/6=1/2\]</span></p>
-<p>Piensa en Venn y está claro que si P es una frecuencia en el caso límite, entonces, como las frecuencias se pueden agregar, las probabilidades también.</p>
+<p>¿Cuál es la probabilidad de lanzar un dado y obtener un número menor o igual a 3?</p>
+<p>La certeza (probabilidad) de que 1 <span class="math inline">\(o\)</span> 2 <span class="math inline">\(o\)</span> 3 acurra debería ser la suma de las certezas.</p>
+<p><span class="math display">\[P(1 \cup 2 \cup 3)=P(1)+P(2)+P(3)=1/6+1/6+1/6=1/2\]</span></p>
+<p>Es claro que si <span class="math inline">\(P\)</span> es un tipo de límite de una frecuencia, entonces, como las frecuencias se pueden agregar para eventos mutuamente excluyentes (<span class="math inline">\(1 \cap 2 = \emptyset\)</span>), las probabilidades también deberían poder hacerlo.</p>
 </div>
 <div id="axiomas-de-probabilidad" class="section level1">
 <h1>Axiomas de probabilidad</h1>
-<p>La probabilidad es un número que se asigna a cada miembro de una colección de eventos de un espacio muestral de un experimento aleatorio que satisface las siguientes propiedades:</p>
-<p>Si S es el espacio muestral y E es cualquier evento en un experimento aleatorio,</p>
+<p>La probabilidad es un número que se asigna a los eventos de un espacio muestral de un experimento aleatorio y que satisface las siguientes propiedades:</p>
+<p>Si <span class="math inline">\(S\)</span> es el espacio muestral y <span class="math inline">\(E\)</span> es cualquier evento en un experimento aleatorio,</p>
 <ul>
 <li><span class="math inline">\(P(S)=1\)</span></li>
 <li><span class="math inline">\(0 \leq P(E) \leq 1\)</span></li>
@@ -687,6 +683,8 @@ Capítulo 2
 </div>
 <div id="regla-de-suma" class="section level1">
 <h1>Regla de suma</h1>
+<p>¿Qué ocurre cuando los eventos <strong>no</strong> son mutuamente excluyentes?</p>
+<p>Los axiomas nos permiten demostrar que:</p>
 <p><span class="math display">\[P(A\cup B) = P(A) + P(B) - P(A\cap B)\]</span></p>
 <p>Piensa en los siguientes eventos para un dado</p>
 <p><span class="math inline">\(A=\{1,2,3,4\}\)</span> and <span class="math inline">\(B=\{4,5\}\)</span></p>
@@ -725,7 +723,7 @@ Capítulo 2
 </div>
 <div id="regla-de-suma-2" class="section level1">
 <h1>Regla de suma</h1>
-<p>Cuando tenemos tres eventos A, B y C:</p>
+<p>Cuando tenemos tres eventos <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span>:</p>
 <p><span class="math inline">\(P(A\cup B \cup C) = P([A\cup B] \cup C)\)</span></p>
 <p><span class="math inline">\(= [P(A) + P(B) - P(A\cap B)] + P(C)-P([A\cup B] \cap C)\)</span></p>
 <p><span class="math inline">\(= [P(A) + P(B) - P(A\cap B)] + P(C)-P([A \cap C]\cup [B \cap C])\)</span></p>
@@ -745,28 +743,28 @@ Capítulo 2
 <div id="probabilidad-conjunta" class="section level1">
 <h1>Probabilidad conjunta</h1>
 <p>La probabilidad conjunta de dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es <span class="math display">\[P(A,B)=P(A \cap B)\]</span></p>
-<p>Imaginemos un experimento aleatorio que mida dos tipos diferentes de resultados, experimento de tipo <span class="math inline">\(A\)</span> y experimento de tipo <span class="math inline">\(B\)</span></p>
+<p>Imaginemos un experimento aleatorio que mida dos tipos diferentes de resultados, resultado de tipo <span class="math inline">\(A\)</span> y resultado de tipo <span class="math inline">\(B\)</span></p>
 <ul>
 <li><p>altura y peso de un individuo: (<span class="math inline">\(1.78m\)</span>, <span class="math inline">\(75Kg\)</span>)</p></li>
 <li><p>posición y tiempo de una carga eléctrica: <span class="math inline">\((1\mu m, 0.05ms)\)</span></p></li>
 <li><p>un lanzamiento de dos dados: (<span class="math inline">\(1\)</span>, <span class="math inline">\(6\)</span>)</p></li>
 <li><p>cruzar dos semáforos sucesivos en verde: (<span class="math inline">\(\bar{R_1}\)</span>, <span class="math inline">\(\bar{R_2}\)</span>)</p></li>
 </ul>
-<p>En muchos casos, nos interesa saber si el resulatdo de un experimento <strong>condiciona</strong> el resultado de otro.</p>
+<p>En muchos casos, nos interesa saber si un resultado <strong>condiciona</strong> el otro resultado.</p>
 </div>
 <div id="probabilidad-conjunta-1" class="section level1">
 <h1>Probabilidad conjunta</h1>
 <ul>
-<li><p>si observamos que un individuo alto es probable que sea pesado.</p></li>
-<li><p>el tiempo que tarda una carga en golpear un detector en un lugar en particular podría decirnos si pasó a través de un campo eléctrico.</p></li>
-<li><p>si observamos un número en un dado, no nos dirá cuál es el número del otro dado.</p></li>
+<li><p>si observamos que un individuo es alto es probable que también sea pesado.</p></li>
+<li><p>el tiempo que tarda una carga eléctrica en golpear un detector en un lugar en particular podría decirnos si atravezó un campo eléctrico.</p></li>
+<li><p>si observamos un número en un dado, no nos dirá cuál es el número otro dado.</p></li>
 <li><p>La probabilidad de pasar un semáforo en verde en gran vía aumneta la probabilidad de cruzar el siguiente en verde.</p></li>
 </ul>
 </div>
 <div id="diagnóstico" class="section level1">
 <h1>Diagnóstico</h1>
 <p>Consideremos una herramienta de diagnóstico</p>
-<p>Queremos encontrar el estado de un sistema (s):</p>
+<p>Queremos encontrar el estado de un sistema:</p>
 <ul>
 <li>inadecuado (sí)</li>
 <li>adecuado (no)</li>
@@ -776,7 +774,7 @@ Capítulo 2
 <li>positivo</li>
 <li>negativo</li>
 </ul>
-<p>Probamos una batería para saber cuánto tiempo puede durar Cargamos en un cable para saber si se resiste una determinada carga. Realizamos una PCR para ver si alguien está infectado.</p>
+<p>Hacemos pruebas de carga a una batería para saber su vida útil. Cargamos en un cable para saber si se resiste un determinado peso. Realizamos una PCR para ver si alguien tiene una infección.</p>
 </div>
 <div id="probabilidad-conjunta-2" class="section level1">
 <h1>Probabilidad conjunta</h1>
@@ -1015,7 +1013,7 @@ Capítulo 2
 <div id="la-probabilidad-condicional" class="section level1">
 <h1>La probabilidad condicional</h1>
 <p>Pensemos primero en términos de aquellos que están <strong>infectados</strong></p>
-<p><br /> Entre los que están infectados (<strong>sí</strong>), ¿cuál es la frecuencia relativa con la que muchos dieron positivo?</p>
+<p><br /> Entre los que están infectados (<strong>sí</strong>), ¿cuál es la frecuencia relativa con la que los individuos testados dieron positivo?</p>
 <ul>
 <li><b> Sensibilidad </b> (tasa de verdaderos positivos)</li>
 </ul>
@@ -1028,20 +1026,20 @@ Capítulo 2
 <p><span class="math display">\[fr(positivo | sí) =\frac{n_{positivo, sí}} {n_{sí}} =\frac {\frac {n_{positivo, sí}} {n}} {\frac {n_{sí }} {n}} =\frac {fr(positivo, sí)} {fr (sí)}\]</span></p>
 <p>Por lo tanto, en el límite, esperamos tener una probabilidad del tipo</p>
 <p><span class="math display">\[P(positivo | sí) =\frac{P (positivo \cap sí)} {P(sí)}\]</span></p>
-<p>A eso lo llamaremos probabilidad condicional de un valor <strong>positivo</strong> en la prueba dado un valor de <strong>sí</strong> en la enfermedad.</p>
+<p>A eso lo llamaremos probabilidad condicional de un valor <strong>positivo</strong> en la prueba dado un valor de <strong>sí</strong> en la infección.</p>
 </div>
 <div id="la-probabilidad-condicional-2" class="section level1">
 <h1>La probabilidad condicional</h1>
 <p><strong>Definición:</strong></p>
-<p>La probabilidad condicional de un evento B dado un evento A, denotado como <span class="math inline">\(P (A | B)\)</span>, es <span class="math display">\[P (A | B) =\frac {P (A \cap B)} {P (B)}\]</span></p>
+<p>La probabilidad condicional de un evento <span class="math inline">\(B\)</span> dado un evento <span class="math inline">\(A\)</span>, denotado como <span class="math inline">\(P (A | B)\)</span>, es <span class="math display">\[P (A | B) =\frac {P (A \cap B)} {P (B)}\]</span></p>
 <ul>
-<li>puedes probar que la probabilidad condicional satisface los axiomas de probabilidad.</li>
-<li>es la probabilidad con el espacio muestral dado por <span class="math inline">\(B\)</span>: <span class="math inline">\(S_B\)</span>.</li>
+<li><p>puedes probar que la probabilidad condicional satisface los axiomas de probabilidad.</p></li>
+<li><p>es la probabilidad con el espacio muestral dado por <span class="math inline">\(B\)</span>: <span class="math inline">\(S_B\)</span>.</p></li>
 </ul>
 </div>
 <div id="la-probabilidad-condicional-3" class="section level1">
 <h1>La probabilidad condicional</h1>
-<p>Veamos otra probabilidad condicional <br /> Dentro de los que responden (<strong>no</strong>), ¿cuál es la probabilidad de que la prueba sea negativa?</p>
+<p>Veamos la otra probabilidad condicional <br /> Dentro de los que <strong>no</strong> están infectados, ¿cuál es la probabilidad de que la prueba sea negativa?</p>
 <ul>
 <li><b> Especificidad </b> (tasa de verdaderos negativos)</li>
 </ul>
@@ -1077,8 +1075,8 @@ Capítulo 2
 </tbody>
 </table>
 <ul>
-<li><p>Tasa de falsos positivos: la probabilidad de dar positivo <strong>si</strong> tener la enfermedad <span class="math inline">\(P (positivo | no)\)</span></p></li>
-<li><p>Tasa de falsos negativos: la probabilidad de que la prueba sea negativa <strong>si</strong> tener la enfermedad <span class="math inline">\(P (negativo | sí)\)</span></p></li>
+<li><p>Tasa de falsos positivos: la probabilidad de dar positivo <strong>si</strong> no se tiene la enfermedad <span class="math inline">\(P (positivo | no)\)</span></p></li>
+<li><p>Tasa de falsos negativos: la probabilidad de que la prueba sea negativa <strong>si</strong> se tiene la enfermedad <span class="math inline">\(P (negativo | sí)\)</span></p></li>
 </ul>
 </div>
 <div id="matriz-de-diagnóstico-1" class="section level1">
@@ -1111,6 +1109,21 @@ Capítulo 2
 </tbody>
 </table>
 <p>Nuestra herramienta de diagnóstico tiene baja sensibilidad (0.375) pero alta especificidad (0,962).</p>
+</div>
+<div id="matriz-de-diagnóstico-2" class="section level1">
+<h1>Matriz de diagnóstico</h1>
+<p>En el <strong>desarrollo</strong> de una prueba de diagnóstico, hacemos experimentos en el laboratorio sabiendo <strong>si</strong> el sistema está en un estado</p>
+<ul>
+<li>inadecuado (sí)</li>
+<li>adecuado (no)</li>
+</ul>
+<p>Bajo estas condiciones realizamos los test:</p>
+<p>con una prueba (t):</p>
+<ul>
+<li>positivo</li>
+<li>negativo</li>
+</ul>
+<p>Por lo tanto estamos interesados en la sensibilidad y especificidad, que son probabilidades condicionales al estado del sistema.</p>
 </div>
 <div id="matriz-de-predicción" class="section level1">
 <h1>Matriz de predicción</h1>
@@ -1158,7 +1171,7 @@ Capítulo 2
 </tbody>
 </table>
 <p>PPV: valor predicho positivo VPN: valor predicho negativo</p>
-<p>¡Estos son realmente los valores que queremos saber cuando hacemos un examen!</p>
+<p>¡Estos son realmente los valores que queremos saber cuando hacemos un test!</p>
 </div>
 <div id="matriz-de-predicción-3" class="section level1">
 <h1>Matriz de predicción</h1>
@@ -1191,6 +1204,21 @@ Capítulo 2
 <li><p>si la prueba es positiva, solo hay un 27% de posibilidades de que sea infeccioso.</p></li>
 <li><p>si la prueba es negativa, existe una alta probabilidad del 83% de que no sea infeccioso. </br> La prueba es buena para descartar infecciones pero no para confirmarlas.</p></li>
 </ul>
+</div>
+<div id="matriz-de-predicción-4" class="section level1">
+<h1>Matriz de predicción</h1>
+<p>En el <strong>despliegue</strong> de una prueba de diagnóstico en una situación real realizamos los test:</p>
+<p>con una prueba (t):</p>
+<ul>
+<li>positivo</li>
+<li>negativo</li>
+</ul>
+<p>y <strong>confirmamos</strong> el estado del sistema</p>
+<ul>
+<li>inadecuado (sí)</li>
+<li>adecuado (no)</li>
+</ul>
+<p>Por lo tanto estamos interesados en los valores <strong>predictivos</strong>, que son probabilidades condicionales al resultado del test.</p>
 </div>
 <div id="ejercicio-2" class="section level1">
 <h1>Ejercicio</h1>

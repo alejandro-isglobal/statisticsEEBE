@@ -530,7 +530,7 @@ Estadísticos descriptivos
 La capacidad media se puede calcular directamente a partir de las **observaciones**
 
 </br>$\bar{c}= \frac{1}{N}\sum_j c_j$
-</br>$= \frac{1}{N}(16.56  1.80  + 2.02 + 25.20+ 25.20 + 6.30+...) = 35.751$
+</br>$= \frac{1}{N}(16.56 + 1.80  + 2.02 + 25.20+ 25.20 + 6.30+...) = 35.751$
 
 
 Estadísticos descriptivos
@@ -549,7 +549,7 @@ Para variables categoricas ordenadas podemos usar la tabla de frecuencias para c
 
 El promedio anual de los datos de los parques eólicos **también** se puede calcular a partir de las frecuencias relativas (outcome=y)
 
-$\bar{y}=\frac{1}{N}\sum_{i} y_j=\frac{1}{N}\sum_{i} y_i*n_{i}=\sum_{i} y_i*f_{y}$
+$\bar{y}=\frac{1}{N}\sum_{i=1...N} y_j=\frac{1}{N}\sum_{i=1...m} y_i*n_{i}=\sum_{i=1...m} y_i*f_{i}$
 
 $=2015*f_{1}+2016*f_{2}+2017*f_{3}+2018*f_{4}=2016.85$
 
@@ -720,10 +720,10 @@ Lanzemos un dado 10 veces y calculemos las frecuencias para cada resultado
 ```
   outcome ni  fi Ni  Fi
 1       1  2 0.2  2 0.2
-2       2  2 0.2  4 0.4
-3       3  1 0.1  5 0.5
-4       5  1 0.1  6 0.6
-5       6  4 0.4 10 1.0
+2       2  3 0.3  5 0.5
+3       3  2 0.2  7 0.7
+4       4  1 0.1  8 0.8
+5       5  2 0.2 10 1.0
 ```
 
 
@@ -736,12 +736,12 @@ Resumen
 
 ```
   outcome  ni    fi   Ni    Fi
-1       1 162 0.162  162 0.162
-2       2 165 0.165  327 0.327
-3       3 159 0.159  486 0.486
-4       4 168 0.168  654 0.654
-5       5 185 0.185  839 0.839
-6       6 161 0.161 1000 1.000
+1       1 159 0.159  159 0.159
+2       2 178 0.178  337 0.337
+3       3 161 0.161  498 0.498
+4       4 171 0.171  669 0.669
+5       5 180 0.180  849 0.849
+6       6 151 0.151 1000 1.000
 ```
 
 - ¿Qué sucede cuando$N \rightarrow \infty$?

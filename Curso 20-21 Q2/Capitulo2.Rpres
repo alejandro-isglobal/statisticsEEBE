@@ -28,7 +28,7 @@ Pensemos en un experimento aleatorio arquetípico: el  **lanzamiento de un dado*
 
 1 5 1 2 2 1 2 2 3 1 1 3 3 1 6 3 5 6 4 4
 
-- la duodécima observación tuvo el valor de resultado de 3:
+- la duodécima observación tuvo el resultado de 3:
 
 1 5 1 2 2 1 2 2 3 1 1 **3** 3 1 6 3 5 6 4 4
 
@@ -202,11 +202,12 @@ text(1.9,frdice[i,5]-0.07, paste0("f", i))
 Probabilidad
 ==================================================
 
-Llamamos **Probabilidad** $P_i$ al límite cuando $N \rightarrow \infty$ de la frecuencia de observación del valor $i$ en un experimento aleatorio.
 
-- Entendemos que estos valores pertenecen a la Naturaleza, no dependen del experimentador $n_i$ del observador: describen las cosas como son.
+Llamamos **Probabilidad** $P_i$ al límite cuando$N \rightarrow \infty$ de la frecuencia de observación del valor $i$ en un experimento aleatorio.
 
-- Si es así, ¿podemos trabajar al revés? Si creemos que los $P_i$ describen las cosas como son, ¿podemos **predecir** los valores esperados de $f_i$ a $N$ más bajos?
+- Entendemos que estos valores pertenecen a la Naturaleza, no dependen del experimentador ni del observador: describen las cosas como son.
+
+- Como no podemos hacer un experimento infinitas veces, ¿podemos comenzar al revés? Si creemos que los $P_i$ describen las cosas como son, ¿podemos **predecir** de ellos los valores observados de $f_i$ a $N$ reales?
 
 - ¿Cuáles son las principales propiedades lógicas de estos $P_i$?
 
@@ -215,12 +216,11 @@ Espacio muestral
 
 Comenzamos razonando cuáles son todos los valores posibles (resultados) que podría dar un experimento aleatorio.
 
-Ten en cuenta que no tenemos que observarlos en un experimento en particular: estamos usando lógica y no observación.
+Ten en cuenta que no tenemos que observarlos en un experimento en particular: estamos usando la **lógica** y no observación.
 
 **Definición:**
 
-El conjunto de todos los valores posibles que puede tomar una observación de un experimento aleatorio se denomina espacio muestral
-del experimento. El espacio muestral se denota como S.
+El conjunto de todos los valores posibles que puede tomar una observación de un experimento aleatorio se denomina el **espacio muestral** del experimento. El espacio muestral se denota como $S$.
 
 
 Espacio muestral
@@ -238,9 +238,10 @@ Espacio muestral
 
 **Espacios muestrales discretos y continuos**
 
-- Un espacio muestral es discreto si consta de un conjunto infinito finito o contable de resultados.
-- Un espacio muestral es continuo si contiene un intervalo (finito o infinito en longitud) de
+- Un espacio muestral es discreto si consta de un conjunto   contable de resultados (finito o infinito).
+- Un espacio muestral es continuo si consta de un intervalo  de
 numeros reales.
+
 
 
 Evento
@@ -264,16 +265,6 @@ Ejemplos:
 
 El evento se refiere a un conjunto de **valores** que pueden tomar los resultados.
 
-
-
-Evento
-==================================================
-
-Ejemplos:
-
-- El evento de una temperatura saludable: temperatura 37-38 grados centígrados
-- El caso de producir un tornillo con tamaño: 71,5 mm
-- El evento de recibir más de 4 correos electrónicos en una hora.
 
 Ten en cuenta que los resultados de diferentes experimentos pueden pertenecer al mismo evento.
 
@@ -355,38 +346,45 @@ se dice que son mutuamente excluyentes.
 Probabilidad
 ==================================================
 
-La probabilidad es una función de los eventos de S que toman valores entre 0 y 1. Es un objeto matemático (¡no tiene nada de aleatorio!)
+La probabilidad es una función de los eventos de $S$ que toma valores reales entre 0 y 1. Es un objeto matemático (¡no tiene nada de aleatorio!)
 
 $$P(E) \in (0,1)$$
 
-¿Cuáles deberían ser sus propiedades?
+para $E \subseteq S$. 
+
+- 0: totalmente cierto que el evento $E$ no ocurre.
+
+- 1: totalemente cierto que el evento $E$ ocurre.
+
+¿Cuáles deberían ser las propiedades de $P$?
 
 
 Suma de probabilidades
 ==================================================
 
-Para un espacio muestral discreto, la probabilidad de un evento E, denotado como $P(E)$, es igual a la suma de las probabilidades de los eventos en $E$.
+Para un espacio muestral discreto pensemos que la probabilidad de un evento $E$, denotado como $P(E)$, debería igual a la suma de las probabilidades de los elementos que componen $E$.
 
-Piensa en Laplace y frene todos los eventos posibles de E en partes iguales.
+Pensemos en el dado y descompongamos todos los eventos posibles de $E$ en los elementos que lo componen.
+
 
 Suma de probabilidades
 ==================================================
 
-¿Cuál es la probabilidad de lanzar un dado y obtener menos de 3?
+¿Cuál es la probabilidad de lanzar un dado y obtener un número menor o igual a 3?
 
-Posibles resultados: 1, 2 y 3 luego
+La certeza (probabilidad) de que 1 $o$ 2 $o$ 3 acurra debería ser la suma de las certezas. 
 
 
-$$P(1)+P(2)+P(3)=1/6+1/6+1/6=1/2$$
+$$P(1 \cup 2 \cup 3)=P(1)+P(2)+P(3)=1/6+1/6+1/6=1/2$$
 
-Piensa en Venn y está claro que si P es una frecuencia en el caso límite, entonces, como las frecuencias se pueden agregar, las probabilidades también.
+Es claro que si $P$ es un tipo de límite de una frecuencia, entonces, como las frecuencias se pueden agregar para eventos mutuamente excluyentes ($1 \cap 2 = \emptyset$), las probabilidades también deberían poder hacerlo.
 
 Axiomas de probabilidad
 ==================================================
 
-La probabilidad es un número que se asigna a cada miembro de una colección de eventos de un espacio muestral de un experimento aleatorio que satisface las siguientes propiedades:
+La probabilidad es un número que se asigna a los eventos de un espacio muestral de un experimento aleatorio y que satisface las siguientes propiedades:
 
-Si S es el espacio muestral y E es cualquier evento en un experimento aleatorio,
+Si $S$ es el espacio muestral y $E$ es cualquier evento en un experimento aleatorio,
 
 - $P(S)=1$ 
 - $0 \leq P(E) \leq 1$
@@ -396,6 +394,10 @@ Propuesto por Kolmogorov (1933)
 
 Regla de suma
 ==================================================
+
+¿Qué ocurre cuando los eventos **no** son mutuamente excluyentes?
+
+Los axiomas nos permiten demostrar que:
 
 $$P(A\cup B) = P(A) + P(B) - P(A\cap B)$$
 
@@ -462,7 +464,7 @@ $P(R_1\cup R_2 \cup R_3)= P(R_1) + P(R_2) + P(R_3)$
 Regla de suma
 ==================================================
 
-Cuando tenemos tres eventos A, B y C:
+Cuando tenemos tres eventos $A$, $B$ y $C$:
 
 $P(A\cup B \cup C) = P([A\cup B] \cup C)$
 
@@ -496,7 +498,7 @@ Probabilidad conjunta
 La probabilidad conjunta de dos eventos $A$ y $B$ es
 $$P(A,B)=P(A \cap B)$$
 
-Imaginemos un experimento aleatorio que mida dos tipos diferentes de resultados, experimento de tipo $A$ y experimento de tipo $B$
+Imaginemos un experimento aleatorio que mida dos tipos diferentes de resultados, resultado de tipo $A$ y resultado de tipo $B$
 
 - altura y peso de un individuo: ($1.78m$, $75Kg$)
 
@@ -506,17 +508,17 @@ Imaginemos un experimento aleatorio que mida dos tipos diferentes de resultados,
 
 - cruzar dos semáforos sucesivos en verde: ($\bar{R_1}$, $\bar{R_2}$)
 
-En muchos casos, nos interesa saber si el resulatdo de un experimento **condiciona** el resultado de otro.
+En muchos casos, nos interesa saber si un resultado **condiciona** el otro resultado.
 
 
 Probabilidad conjunta
 ==================================================
 
-- si observamos que un individuo alto es probable que sea pesado.
+- si observamos que un individuo es alto es probable que también sea pesado.
 
-- el tiempo que tarda una carga en golpear un detector en un lugar en particular podría decirnos si pasó a través de un campo eléctrico.
+- el tiempo que tarda una carga eléctrica en golpear un detector en un lugar en particular podría decirnos si atravezó un campo eléctrico.
 
-- si observamos un número en un dado, no nos dirá cuál es el número del otro dado.
+- si observamos un número en un dado, no nos dirá cuál es el número otro dado.
 
 - La probabilidad de pasar un semáforo en verde en gran vía aumneta la probabilidad de cruzar el siguiente en verde.
 
@@ -526,7 +528,7 @@ Diagnóstico
 
 Consideremos una herramienta de diagnóstico
 
-Queremos encontrar el estado de un sistema (s):
+Queremos encontrar el estado de un sistema:
 
 - inadecuado (sí)
 - adecuado (no)
@@ -536,7 +538,7 @@ con una prueba (t):
 - positivo
 - negativo
 
-Probamos una batería para saber cuánto tiempo puede durar Cargamos en un cable para saber si se resiste una determinada carga. Realizamos una PCR para ver si alguien está infectado.
+Hacemos pruebas de carga a una batería para saber su vida útil.  Cargamos en un cable para saber si se resiste un determinado peso. Realizamos una PCR para ver si alguien tiene una infección.
 
 
 Probabilidad conjunta
@@ -632,7 +634,7 @@ La probabilidad condicional
 Pensemos primero en términos de aquellos que están **infectados**
 
 <br/>
-Entre los que están infectados (**sí**), ¿cuál es la frecuencia relativa con la que muchos dieron positivo?
+Entre los que están infectados (**sí**), ¿cuál es la frecuencia relativa con la que los individuos testados dieron positivo?
 
 - <b> Sensibilidad </b> (tasa de verdaderos positivos)
 
@@ -656,26 +658,27 @@ Por lo tanto, en el límite, esperamos tener una probabilidad del tipo
 
 $$P(positivo | sí) =\frac{P (positivo \cap sí)} {P(sí)}$$
 
-A eso lo llamaremos probabilidad condicional de un valor **positivo** en la prueba dado un valor de **sí** en la enfermedad.
+A eso lo llamaremos probabilidad condicional de un valor **positivo** en la prueba dado un valor de **sí** en la infección.
 
 La probabilidad condicional
 ======================================================
 
 **Definición:**
 
-La probabilidad condicional de un evento B dado un evento A, denotado como $P (A | B)$, es
+La probabilidad condicional de un evento $B$ dado un evento $A$, denotado como $P (A | B)$, es
 $$P (A | B) =\frac {P (A \cap B)} {P (B)}$$
 
 - puedes probar que la probabilidad condicional satisface los axiomas de probabilidad.
+
 - es la probabilidad con el espacio muestral dado por $B$: $S_B$.
 
 
 La probabilidad condicional
 ======================================================
 
-Veamos otra probabilidad condicional
+Veamos la otra probabilidad condicional
 <br />
-Dentro de los que responden (**no**), ¿cuál es la probabilidad de que la prueba sea negativa?
+Dentro de los que **no** están infectados, ¿cuál es la probabilidad de que la prueba sea negativa?
 
 - <b> Especificidad </b> (tasa de verdaderos negativos)
 
@@ -694,9 +697,9 @@ Matriz **condicional** sobre el valor del estado de infección.
 | - <b> suma </b> - | 1 | 1 |
 
 
-- Tasa de falsos positivos: la probabilidad de dar positivo **si** tener la enfermedad $P (positivo | no)$
+- Tasa de falsos positivos: la probabilidad de dar positivo **si** no se tiene la enfermedad $P (positivo | no)$
 
-- Tasa de falsos negativos: la probabilidad de que la prueba sea negativa **si** tener la enfermedad $P (negativo | sí)$
+- Tasa de falsos negativos: la probabilidad de que la prueba sea negativa **si** se tiene la enfermedad $P (negativo | sí)$
 
 
 
@@ -715,8 +718,22 @@ Nuestra herramienta de diagnóstico tiene baja sensibilidad (0.375) pero alta
 especificidad (0,962).
 
 
+Matriz de diagnóstico
+======================================================
 
+En el **desarrollo** de una prueba de diagnóstico, hacemos experimentos en el laboratorio sabiendo **si** el sistema está en un estado  
 
+- inadecuado (sí)
+- adecuado (no)
+
+Bajo estas condiciones realizamos los test:
+
+con una prueba (t):
+
+- positivo
+- negativo
+
+Por lo tanto estamos interesados en la sensibilidad y especificidad, que son probabilidades condicionales al estado del sistema. 
 
 Matriz de predicción
 ======================================================
@@ -760,7 +777,7 @@ Matriz **condicional** sobre el valor del resultado de la prueba.
 PPV: valor predicho positivo
 VPN: valor predicho negativo
 
-¡Estos son realmente los valores que queremos saber cuando hacemos un examen!
+¡Estos son realmente los valores que queremos saber cuando hacemos un test!
 
 
 Matriz de predicción
@@ -779,6 +796,25 @@ Supongamos que las frecuencias son de $n$ suficientemente grandes para **estimar
 
 - si la prueba es negativa, existe una alta probabilidad del 83% de que no sea infeccioso.
 </br> La prueba es buena para descartar infecciones pero no para confirmarlas.
+
+
+
+Matriz de predicción
+======================================================
+
+En el **despliegue** de una prueba de diagnóstico en una situación real realizamos los test:
+
+con una prueba (t):
+
+- positivo
+- negativo
+
+y **confirmamos** el estado del sistema  
+
+- inadecuado (sí)
+- adecuado (no)
+
+Por lo tanto estamos interesados en los valores **predictivos**, que son probabilidades condicionales al resultado del test. 
 
 
 Ejercicio
