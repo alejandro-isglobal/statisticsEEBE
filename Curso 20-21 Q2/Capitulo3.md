@@ -48,7 +48,7 @@ Probabilidad
 
 **Interpretación frecuentista:**
 
-la probabilidad $P(E)$ de un evento E en el espacio muestral $S$ es una función tal
+la probabilidad $P(E)$ de un evento $E$ en el espacio muestral $S$ es una función tal
 
 
 - $P(S)=1$ 
@@ -123,6 +123,7 @@ Pistas:
 
 Ejercicio
 ======================================================
+- La tabla del ejercicio NO es una tabla de contingencia (probabilidad conjunta)!
 
 - Probabilidad de escoger cualquier caja:
 $P(c1)=P(c2)=P(c3)=1/3$
@@ -141,7 +142,7 @@ $P(c1)=P(c2)=P(c3)=1/3$
 Ejercicio
 ========================================================
 
-$P(0.1\mu F |c2) = P(0.1\mu F |c2)$
+$P(0.1\mu F |c2) = \frac{P(0.1\mu F \cap c2)}{P(C2)}$
 
 
 - la probabilidad de seleccionar la caja 2 **y** un condensador de $0.1\mu F$ es
@@ -166,21 +167,21 @@ Regla de multiplicación
 
 Los discos duros tienen tipos de errores:
 
-- Tiempo de espera del comando: cuando un programa se cuelga / congela el acceso al disco (estadísticas SMART 188).
+- **Tiempo de espera** en ejecutar un comando: cuando un programa se cuelga / congela el acceso al disco (estadísticas SMART 188).
 
-- Error incorregible sin conexión: al escribir hay un error con pérdida de información (estadísticas SMART 198).
+- Error **incorregible** sin conexión: al escribir hay un error con pérdida de información (estadísticas SMART 198).
 
 
 Regla de multiplicación
 ======================================================
 
-- La probabilidad de que un disco duro muestre un error de tiempo de espera es de 0,02.
+- La probabilidad de que un disco duro muestre un error de **tiempo de espera** es de 0.02.
 
-- **Cuando** hay un error de tiempo de espera, la probabilidad de un error incorregible es 0.0077.
+- **Cuando** hay un error de **tiempo de espera**, la probabilidad de un error **incorregible** es 0.0077.
 
-Estos son los datos reales obtenidos de [data.world] (https://data.world/scuttlemonkey/hard-drive-reliability-sample)
+Estos son los datos reales obtenidos de [data.world](https://data.world/scuttlemonkey/hard-drive-reliability-sample)
 
-- ¿Cuál es la probabilidad de un tiempo de espera **Y** errores incorregibles?
+- ¿Cuál es la probabilidad de observar errores en tiempo de espera **Y** errores incorregibles?
 
 
 
@@ -190,9 +191,9 @@ Regla de multiplicación
 
 ¿Cuáles son las expresiones matemáticas de las siguientes dos oraciones?
 
-- La probabilidad de que un disco duro muestre un error de tiempo de espera es de 0,02.
+- La probabilidad de que un disco duro muestre un error de **tiempo de espera** es de 0.02.
 
-- **Cuando** hay un error de tiempo de espera, la probabilidad de un error incorregible es 0.0077.
+- **Cuando** hay un error de **tiempo de espera**, la probabilidad de un error **incorregible** es 0.0077.
 
 - La probabilidad de un tiempo de espera **Y** errores incorregibles
 
@@ -202,14 +203,15 @@ Regla de multiplicación
 
 ¿Cuáles son las expresiones matemáticas de las siguientes dos oraciones?
 
-- La probabilidad de que un disco duro muestre un error de tiempo de espera es 0.02: $P(T)=0.02$
+- La probabilidad de que un disco duro muestre un error de **tiempo de espera** es de 0.02: $P(T)=0.02$
 
-- **Cuando** hay un error de tiempo de espera, la probabilidad de un error incorregible es $0.0077$: $P(U|T)=0.0077$
+- **Cuando** hay un error de **tiempo de espera**, la probabilidad de un error **incorregible** es 0.0077: $P(U|T)=0.0077$
 
 - La probabilidad de un tiempo de espera **Y** errores incorregibles: $P(U\cap T)=?$
 
 Regla de multiplicación
 ======================================================
+
 De la definición de probabilidad condicional
 
 $$P(U|T) = \frac{P(U \cap T)}{P(T)}$$
@@ -244,7 +246,7 @@ Regla de probabilidad total
 
 $$P (A) =P (A | B ') P (B') + P (A | B) P (B)$$
 
-cuando B 'y B son mutuamente excluyentes ($B \cap B' =\emptyset$).
+cuando $B$ y $B'$ son mutuamente excluyentes ($B \cap B' =\emptyset$).
 
 La regla se sigue de:
 </br> $P (A) =P (A \cap S) =P (A \cap [B \cup B '])$
@@ -253,12 +255,39 @@ La regla se sigue de:
 </br> $=P (A | B ') P (B') + P (A | B) P (B)$
 
 
+Probabilidad conjunta 
+==================================================
+
+Probabilidad conjunta  $P(A,B)=P(A\cap B)$
+
+|  |  B  |  B'  |  suma |
+| --------- | --------- | -------- |  -------- |
+| <b> A </b> | $P(A \cap B)$ | $P(A \cap B')$ | $P(A)$ |
+| <b> A' </b> | $P(A' \cap B)$ | $P(A' \cap B')$ | $P(A')$|
+| <b>suma</b>      | $P(B)$  | $P(B')$| 1 |
+
+
+
 Regla de probabilidad total
 ======================================================
 
 Para muchos eventos mutuamente excluyentes $\{E1, E2, ... En \}$, la **regla de probabilidad total** es
 
 $$P(A)= P(A|E1)P(E1) + P(A|E2)P(E2) + ... +P(A|En)P(En)$$
+
+
+
+
+Probabilidad conjunta 
+==================================================
+
+Probabilidad conjunta  $P(A,B)=P(A\cap B)$
+
+|  |  E1  |  E2  | ... | En  | suma |
+| ----- | ------ | ----- |----- |  ------ |------ |
+| <b> A </b> | $P(A \cap E1)$ | $P(A \cap E3)$ | ... | $P(A \cap En)$| $P(A)$ |
+| <b> A' </b> | $P(A' \cap E1)$ | $P(A' \cap E2)$| ...  | $P(A \cap En)$ | $P(A')$|
+
 
 
 Regla de probabilidad total
@@ -315,7 +344,7 @@ Ejercicio
 - Probabilidad de escoger cualquier caja:
 $P(c1)=P(c2)=P(c3)=1/3$
 
-- Matriz condicional para el experimento
+- Matriz condicional sobre las cajas
 
 |$\mu$ F| box 1| box 2| box 3| 
 |-------|-------|-------|-------|
@@ -325,6 +354,8 @@ $P(c1)=P(c2)=P(c3)=1/3$
 |sum | 1 | 1 | 1 | 600 |
 
 ¿Cuál es la probabilidad de que se haya seleccionado un condensador de $0.01 \mu F$?
+
+- obten la matriz de probabilidad conjunta.
 
 Independencia estadística
 ======================================================
@@ -345,7 +376,7 @@ Considere los conductores para los que medimos si tienen fracturas y si su capac
 | <b> Defectuoso: no </b> | 38 | 342 | 380 |
 | <b> suma </b>| 40 | 360 | 400 |
 
-¿La probabilidad de tener defectos aumenta la probabilidad de tener defectos?
+¿La probabilidad de tener fracturas aumenta la probabilidad de tener una conducción defectuasa?
 
 Independencia estadística
 ======================================================
@@ -370,7 +401,7 @@ Las marginales son
 Independencia estadística
 ======================================================
 
-¿Cuál es la probabilidad condicional de observar un conductor defectuoso si tiene fracturas?
+¿Cuál es la probabilidad condicional de observar un conductor defectuoso **si** tiene fracturas?
 
 |  | F  |  F' 
 | --------- | --------- | -------- |
@@ -389,7 +420,7 @@ Independencia estadística
 ======================================================
 
 
-La probabilidad de observar un conductor defectuoso **no** depende de haber observado una fractura.
+La probabilidad de que un conductor tenga una conducción defectuosa **no** depende de la probabilidad de que presente una fractura.
 
 $$P (D) =P (D | F)$$
 
@@ -398,10 +429,10 @@ Independencia estadística
 ======================================================
 
 
-Dos eventos A y B son estadísticamente independientes si
+Dos eventos $A$ y $B$ son estadísticamente independientes si
 
-- $P (A | B) =P (A)$; A es independiente de B
-- $P (B | A) =P (B)$; B es independiente de A
+- $P (A | B) =P (A)$; $A$ es independiente de $B$
+- $P (B | A) =P (B)$; $B$ es independiente de $A$
 
 y por la regla de la multiplicación, su probabilidad conjunta es
 
@@ -422,7 +453,7 @@ Independencia estadística
 
 
 
-Confirme que todas las entradas de la matriz son el producto de los marginales.
+Confirma que todas los elementos de la matriz de probabilidad conjunta son el producto de las probababilidades marginales.
 
 Por ejemplo:
 
@@ -456,9 +487,23 @@ Ejercicio
 
 En una avenida hay un sistema de 3 semáforos sucesivos. La probabilidad de encontrar el primer semáforo en rojo es 0.6. En los siguientes semáforos, tenemos las probabilidades $P(R_{j+1}|R_j) = 0.15$ y $P(R_{j+1}|R_j) = 0.25$, para $j = 1,2$, donde $R_j$ representa el suceso [encontramos en rojo el semáforo j-ésimo]. Aceptando que la probabilidad de encontrar en rojo un semáforo depende únicamente del estado del semáforo anterior, calcula la probabilidad de que, al circular por el sistema de tres semáforos, ocurran los siguientes sucesos:
 
-(a)  Encontramos todos los semáforos en rojo.
-(b)  Encontramos algún semáforo en rojo.
-(c)  Encontramos, exactamente, un semáforo en rojo
+1.  Encontramos todos los semáforos en rojo.
+
+Pista
+
+- Escribe las matrices de probabilidad condicional.
+
+2.  Encontramos algún semáforo en rojo.
+
+Pistas: 
+
+- Si $R_1 \cup R_2 \cup R_3$ y $\overline{R_1 \cup R_2 \cup R_3}$ son mutuamente excluyentes y su unión es $S$, ¿cómo se relacionan sus probabilidades?. 
+
+- Recuerda las propiedades del álgebra de conjuntos: $\overline{R_1 \cup R_2 \cup R_3}= \bar{R}_1 \cap \bar{R}_2 \cap \bar{R}_3$
+
+- desarrolla la intersección en términos de probabilidades condicionales. 
+
+3.  Encontramos, exactamente, un semáforo en rojo
 
 
 
@@ -486,7 +531,7 @@ Asumimos **sabíamos** todas las entradas en la **matriz de probabilidad conjunt
 Teorema de Bayes
 ======================================================
 
-calculamos la **matriz condicional**
+calculamos la **matriz condicional** en el estado de infección
 
 | | Infección: Sí  |  Infección: No  |
 | --------- | --------- | -------- |
@@ -502,7 +547,7 @@ calculamos la **matriz condicional**
 Teorema de Bayes
 ======================================================
 
-y también calculamos la otra *matriz condicional**
+y también calculamos la otra **matriz condicional** en el resultado de la prueba
 
 | | Infección: Sí  |  Infección: No  | sum |
 | --------- | --------- | -------- | -------- |
@@ -520,11 +565,11 @@ Teorema de Bayes
 
 Ahora imaginemos una situación real actual.
 
-- Se han (realizado) PCR para coronavirus [https://www.nejm.org/doi/full/10.1056/NEJMp2015897] en personas en el hospital que seguramente estén infectadas. Tienen una sensibilidad del 70%. También se han probado en el laboratorio en condiciones sin infección con una sensibilidad del 96%.
+- Se han realizado PCRs para coronavirus [https://www.nejm.org/doi/full/10.1056/NEJMp2015897] en personas en el hospital que seguramente están infectadas. Las pruebas tienen una sensibilidad del 70%. También se han probado en el laboratorio en condiciones sin infección con una sensibilidad del 96%.
 
-- Un estudio de prevalencia en España mostró que $P (sí) =0.05$, $P (no) =0.95$ antes del verano.
+- Un estudio de prevalencia en España mostró que el el verano del 2020 $P (sí) =0.05$, $P (no) =0.95$.
 
-Con estos datos, ¿cuál es la probabilidad de que esté infectado si da positivo en un PCR: $P (sí | positivo)$?
+Con estos datos, ¿cuál es la probabilidad de que estar infectado **si** la prueba de PCR es positiva: $P (sí | positivo)$?
 
 
 Teorema de Bayes
@@ -565,14 +610,14 @@ Pero no conocemos esta matriz
 |  <b> Prueba: negativa </b>  | P (sí <span>&#124;</span> negativo) | P (no <span>&#124;</span> negativo) | 1 |
 
 
-¿Cómo pasar de una matriz a otra ?, eso es revirtiendo el condicionamiento:
+¿Cómo pasar de una matriz a otra? ¿cómo revirtimos el condicionamiento?:
 
 $P (positivo | sí) \rightarrow P (sí | positivo)$
 
 Teorema de Bayes
 ======================================================
 
-Queremos averiguar cuál es la probabilidad de estar infectado si la prueba es positiva $P (sí | positivo)$, cuando por experimentos tenemos,
+Queremos averiguar cuál es la probabilidad de estar infectado si la prueba es positiva $P (sí | positivo)$, cuando por experimentos en el laboratorio tenemos,
 
 - la probabilidad de dar positivo si está infectado $P (positivo | sí)$ (sensibilidad)
 
@@ -600,7 +645,7 @@ Teorema de Bayes
 ======================================================
 
 
-Tenga en cuenta que
+Ten en cuenta que
 
 $P (positivo \cap sí) =P (sí \cap positivo)$
 
@@ -623,10 +668,11 @@ Teorema de Bayes:
 $P (sí | positivo) =\frac {P (positivo | sí) \times P (sí)} {P (positivo)}$
 
 Sabemos
+
 - la sensibilidad $P (positivo | sí)$
 - la prevalencia $P (sí)$
 
-y necesita la probabilidad de dar positivo $P (positivo)$ en la población.
+y necesitamos la probabilidad de dar positivo $P (positivo)$ en la población.
 
 
 Teorema de Bayes
@@ -659,11 +705,11 @@ $P(sí | positivo) =\frac {P (positivo | sí) \times P (sí)} {P (positivo | sí
 
 sabemos:
 
-- $P (positivo | sí) =0,70$
+- $P (positivo | sí) =0.70$
 
-- $P (positivo | no) =1- P (negativo | no) =0,06$
+- $P (positivo | no) =1- P (negativo | no) =0.06$
 
-- la probabilidad de infección y no infección en la población: $P (sí) =0,05$ y $P (no) =1-P (sí) =0,95$.
+- la probabilidad de infección y no infección en la población: $P (sí) =0.05$ y $P (no) =1-P (sí) =0.95$.
 
 Por lo tanto: $P (sí | positivo) =0.47$
 
@@ -672,7 +718,7 @@ Teorema de Bayes
 
 **Teorema**
 
-Si $E1, E2, ..., Ek$ son $k$ eventos mutuamente excluyentes y exhaustivos y $B$ es cualquier evento,
+Si $E1, E2, ..., Ek$ son $k$ eventos mutuamente excluyentes y exhaustivos ($\cup_{i=1..k} E_k=S$) y $B$ es cualquier evento,
 
 $$P (Ei | B) =\frac {P (B | Ei) P (Ei)} {P (B | E1) P (E1) + ... + P (B | Ek) P (Ek)}$$
 
@@ -693,8 +739,121 @@ Las pruebas son buenas para descartar infecciones y no tan buenas para confirmar
 
 
 
-
 Ejercicio
 ======================================================
 
 En una determinada población, el $20\%$ de los individuos son hipertensos (H). Además, algunas de las personas saben (S) si son o no hipertensas, y otras no lo saben. La probabilidad que siendo hipertensos sepan si lo son o no es del $0.7$ y la probabilidad que no siendo hipertensos no sepan si lo son o no es de $0.6$. En esta población, si una persona no sabe si es o no hipertensa, ¿cuál es la probabilidad que lo sea?
+
+Ejercicio
+========================================================
+
+Escribamos lo que nos da el problema
+
+- $P(H)=0.2$
+- $P(S|H)=0.7$
+- $P(\bar{S}|\bar{H})=0.6$
+
+Ejercicio
+========================================================
+
+si una persona no sabe si es o no hipertensa, ¿cuál es la probabilidad que lo sea?
+
+$P(H|\bar{S})=\frac{P(\bar{S}|H)P(H)}{P(\bar{S})}$
+
+$=\frac{P(\bar{S}|H)P(H)}{P(\bar{S}|H)P(H) +P(\bar{S}|\bar{H})P(\bar{H})}$
+
+$=\frac{[1-P(S|H)]P(H)}{[1-P(S|H)]P(H) +P(\bar{S}|\bar{H})[1-P(H)]}=0.111$
+
+Ejercicio
+========================================================
+
+Para detectar la presencia de un cierto tipo de bacteria en el agua se realiza un test. Si el agua contiene 
+bacterias, el test da positivo el 70% de veces. Si no hay bacterias, detecta da negativo un 60% de las veces. Además sabemos que la probabilidad de que una muestra tenga bacterias de este tipo es 0.2. Calcular la probabilidad de que haya bacterias, si el resulatdo de un test es positivo.
+
+
+Ejercicio
+========================================================
+
+
+Escribamos lo que nos da el problema
+
+- $P(P|C)=0.7$ por lo tanto $P(\bar{P}|C)=0.3$ 
+- $P(\bar{P}|\bar{C})=0.6$ por lo tanto $P(P|\bar{C})=0.4$
+- $P(C)= 0.2$ por lo tanto $P(\bar{C})= 0.8$
+
+
+Ejercicio
+========================================================
+
+Calcular la probabilidad de que haya bacterias, si el resulatdo de un test es positivo: $P(C|P)$?
+
+
+Bayes 
+$P(C|P)=\frac{P(P|C)*P(C)}{P(P|C)*P(C)+P(P|\bar{C})*P(\bar{C})}$
+
+$P(C|P)=\frac{0.7*0.2}{0.7*0.2+0.4*0.8}=0.3043$
+
+
+Ejercicio
+======================================================
+
+
+Tenemos tres cajas (caja 1, caja 2, caja 3) en las que se almacenan condensadores de tres capacidades diferentes $(0.01\mu F, 0.1 \mu F, 1.0\mu F)$, como se muestra en el cuadro siguiente:
+
+
+|$\mu$ F| box 1| box 2| box 3| Total
+|-------|-------|-------|-------|-------|
+|0.01 |20 | 95 | 25 | 140 |
+|0.1 | 55 | 35 | 75 | 165 |
+|1.0 | 70 | 80 | 145| 295 |
+|Total | 145 | 210 | 245 | 600 |
+
+
+Deﬁnimos $0.01\mu F$, $0.1\mu F$ y $1.0\mu F$ como los sucesos de extraer un condensador de $0.01\mu F$, $0.1\mu F$ y $1.0\mu F$, respectivamente. De igual forma, deﬁnimos $c1$, $c2$ y $c3$ a los sucesos de elegir la caja 1, la caja 2 y la caja 3, respectivamente. Escogemos al azar una caja y de ella, a su vez, un condensador. Se pide:
+
+- Si ha sido seleccionado un condensador de $1.0 \mu F$, ¿Cuál es la probabilidad de que proceda de
+la caja 1?
+
+
+
+Resumen
+========================================================
+
+
+- Regla de la suma: $P(A\cup B \cup C)=P(A) + P(B) + P(C)$
+</br>$- P(A\cap B) - P(A\cap C) - P(B\cap C)$
+</br>$+P(A\cap B \cap C)$
+
+- Probabilidad condicional: $P(A|B) =\frac{P(A\cap B)}{P(B)}$
+
+
+- Regla de la multiplicación:
+
+$P (A \cap B) =P (A | B) P (B)$
+
+
+- Dos eventos $A$ and $B$ son estadísticamente independientes si
+
+$P (A | B) =P (A)$
+
+$P (B | A) =P (B)$
+
+$P (A \cap B) =P (A) P (B)$
+
+
+
+
+Summary
+========================================================
+
+
+- Suma total de probabilidad
+
+$P (A) =P (A | E1) P (E1) + P (A | E2) P (E2) + ... + P (A | En) P (En)$,
+
+Cuando $\{E1, E2, ... En \}$ son mutuamente excluyentes
+
+- Teorema de Bayes
+$P (Ei | B) =\frac {P (B \cap Ei)} {P (B \cap E1) + ... + P (B \cap E1)}$
+
+

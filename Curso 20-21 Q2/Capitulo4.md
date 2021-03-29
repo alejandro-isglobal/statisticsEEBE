@@ -16,7 +16,7 @@ Objetivo
 - Variables aleatorias
 - Función de probabilidad
 - Media, varianza y momentos de variables aleatorias
-- Distribución de probabilidad acumulada
+- Distribución de probabilidad 
 
 Probabilidad
 ======================================================
@@ -29,22 +29,22 @@ Probabilidad
 Probabilidad
 ==================================================
 
-¿Cómo asignamos valores a la función de probabilidad?
+¿Cómo asignamos los valores de probabilidad a eventos específicos?
 
 
-** Interpretación clásica: **
+**Interpretación clásica:**
 
 Siempre que un espacio muestral consta de N eventos posibles que son igualmente probables, la probabilidad de cada resultado es $\frac{1}{N}$.
 
 
-Tenga en cuenta que esto es puramente en el espacio modelo. La intención es hacer de la probabilidad una cantidad puramente abstracta (matemática). Nos corresponde a nosotros interpretar lo que significa **igualmente probable**.
+Ten en cuenta que esto es puramente en el espacio modelo. La intención es hacer de la probabilidad una cantidad puramente abstracta (matemática). Nos corresponde a nosotros interpretar lo que significa **igualmente probable**.
 
 
 
 Probabilidad
 ==================================================
 
-Considere el lanzamiento de una moneda.
+Considera el lanzamiento de una moneda.
 
 - espacio muestral: {H, T} o {0,1} si asignamos 0: H y 1: T.
 - Desde el diseño, antes de lanzar una moneda en particular, no hay **razón** para pensar que un resultado es más probable que el otro.
@@ -67,19 +67,19 @@ luego
 - $P(X=0)=\frac{1}{2}$
 - $P(X=1)=\frac{1}{2}$
 
-Llamamos $ X $ a ** variable aleatoria **
+Llamamos $X$ a **variable aleatoria**
 
 Probabilidad
 ==================================================
 
-¿Cómo puedes tener probabilidades desiguales?
+¿Cómo podemos obtener probabilidades desiguales?
 
-- Miremos de nuevo los dados e imaginemos que necesitas lanzar un 6 para ganar el juego de aparchís.
+- Miremos de nuevo los dados e imaginemos que necesitas lanzar un 6 para ganar el juego de parchís.
 
-- su probabilidad de ganar en el próximo lanzamiento es $P(6)=1/6$
-- tu probabilidad de no ganar en el próximo lanzamiento es $P(E=1\cap 2\cap 3\cap 4\cap 5)=5/6$
+- tu probabilidad de ganar en el próximo lanzamiento es $P(6)=1/6$
+- tu probabilidad de **no** ganar en el próximo lanzamiento es $P(E=1\cup 2\cup 3\cup 4\cup 5)=5/6$
 
-Tenga en cuenta que no necesitamos (o no podemos) ejecutar el experimento muchas veces.
+Ten en cuenta que no necesitamos (o no podemos) ejecutar el experimento sólo una vez.
 
 
 Probabilidad
@@ -88,7 +88,7 @@ Probabilidad
 Definamos la variable aleatoria
 
 
-X:{1 $\cap$ 2 $\cap$ 3 $\cap$ 4 $\cap$ 5, **6**} $\rightarrow$ {0,1}
+X:{$A$:1 $\cup$ 2 $\cup$ 3 $\cup$ 4 $\cup$ 5, $\bar{A}$:**6**} $\rightarrow$ {0,1}
 
 Luago
 
@@ -132,38 +132,51 @@ El resultado de un proceso de medición no siempre es el mismo: variable aleator
 
 
 Una variable aleatoria puede ser:
-- Discreto (nominal, ordinal)
-- Continuo (intervalo, relación)
+
+- Discreta (nominal, ordinal)
+- Continua (intervalo, relación)
 
 
 Variable aleatoria discreta
 ==================================================
 
-Mostramos cómo un valor de variables aleatorias representa un evento del experimento que se compone de conjuntos de resultados primarios (quizás no observados), cada uno con la misma probabilidad de que el experimento esté en.
+El valor de una variable aleatoria puede comprender varios eventos primarios (de igual probabilidad)
+
+- $X=0$ (el evento de perder) contiene 5 eventos primarios de 6, por lo tanto: $P(X=0)=\frac{5}{6}$
+
+Muchas veces no conocemos los eventos primarios pero sí el resultado de una medición.
+
+Variable aleatoria discreta
+==================================================
+
 
 Ejemplo extremo:
 
-- En física, llamamos a estos eventos primarios, micro-estados. Un microestado es aquel en el que conocemos todas las posiciones y velocidades de todos los átomos de un gas.
+- En física, llamamos a un evento primario, micro-estado, al suceso para el que sabemos todas las posiciones y velocidades de todos los átomos de un gas.
 
-- la temperatura de un gas en equilibrio con el ambiente es una **variable aleatoria** y un valor de 20 grados es un evento del gas que corresponde a muchos micro-estados. La temperatura es la energía cinética promedio.
+- la temperatura de un gas en equilibrio con el ambiente es una **variable aleatoria** y un valor de 20 grados es un evento del gas que corresponde a muchos micro-estados. La temperatura es la energía cinética promedio que corresponde a muchísimos microestados todos con la misma probabilidad.
 
+Conocemos la temperatura pero no los micro-eventos que pueden dar esa temperatura.
 
-Variable aleatoria discreta
-==================================================
-
-¿Cómo se trabaja desde las mediciones hasta la función de probabilidad de la variable aleatoria que representa?
-
-- En el ejemplo anterior, esto se hace en un marco teórico completo llamado mecánica estadística.
-
-
-Consideremos un ejemplo mucho más simple:
-
-Imagine que queremos medir qué tan ruidosa es la transmisión de bits entre dos computadoras. Si tuviera que transmitir 100 bits en un canal ruidoso, ¿cuál debería ser la probabilidad de transmitir 1, 2, 3, ... 100 errores?
+¿cómo asignamos un valor de probabilidad a una temperatura dada? 
 
 Variable aleatoria discreta
 ==================================================
 
-Espacio muestral de un bit: {correcto, error} cada uno igualmente probable
+¿Cómo podemos partir del conjunto de mediciones y asignar una probabilidad para cada resultado posible de una medición?
+
+Consideremos un ejemplo simple:
+
+- Imaginemos que queremos medir qué tan ruidosa es la transmisión de bits entre dos computadoras. 
+
+- Si tuvieramos que transmitir 100 bits en un canal totalmente ruidoso: es igual de probable trasmitir un error que no trasmitirlo.
+
+¿cuál es la probabilidad de transmitir 1, 2, 3, ... 100 errores?
+
+Variable aleatoria discreta
+==================================================
+
+Espacio muestral de un bit: {correct, error} cada uno igualmente probable
 
 Espacio muestral conjunto de 100 bits:
 
@@ -175,26 +188,28 @@ $\,correct|correct|...|error|error,$ ....
 
 $\,error|error|error|...|error\}$
 
-Para cada bit, hay dos resultados posibles, para 100 bits hay
-$n=2\times 2 \times ... \times 2=2^{100}$
-eventos primarios.
+Para cada bit, hay dos resultados posibles, para 100 bits hay $n=2\times 2 \times ... \times 2=2^{100}$ eventos primarios (todos de igual probabilidad).
 
 
 
 Variable aleatoria discreta
 ==================================================
 
-Número de bits con errores en ** cualquier ** resultado
+Asignemos a la variable **X** al número de bits con errores para cada uno de los resultados
 
 Espacio muestral para 100 bits:
 
-$\{correct|correct|...|correct|correct:$**0**, 
-$\,correct|correct|...|correct|error:$**1**,
-$\,correct|correct|...|error|correct:$**1**, 
+$\{correct|correct|...|correct|correct:$ **X=0**, 
+
+$\,correct|correct|...|correct|error:$ **X=1**,
+
+$\,correct|correct|...|error|correct:$ **X=1**, 
 ....
-$\,correct|correct|...|error|error:$**2**, 
+
+$\,correct|correct|...|error|error:$ **X=2**, 
 .... 
-$\,error|error|error|...|error:$**100**}
+
+$\,error|error|error|...|error:$ **X=100**}
 
 
 Variable aleatoria discreta
@@ -205,32 +220,65 @@ El número de bits con errores en **cualquier** resultado es una variable aleato
 
 X es una variable aleatoria tal que $X \in {0,1,2,..100}$
 
-Tenga en cuenta que los valores de X se asignan a un número diferente de resultados (algunos valores de X tienen más microeventos que otros y, por lo tanto, serán más probables)
+Ten en cuenta que los valores de X se asignan a un número diferente de resultados (algunos valores de X tienen más microeventos que otros y, por lo tanto, serán más probables)
 
 
 Función de probabilidad
 ==================================================
 
 
-Veamos en detalle una transmisión de 5 bits.
+Veamos en detalle una transmisión de 4 bits.
 
-- ¿Cuál es la probabilidad de transmitir $X$ número de errores en una transmisión de 5 bits de un canal totalmente ruidoso?
+- ¿Cuál es la probabilidad de transmitir $X$ número de errores en una transmisión de 4 bits de un canal totalmente ruidoso?
 
 
 
 Función de probabilidad
 ==================================================
 
-Espacio muestral para 5 bits:
-</br>$\{0|0|0|0|0$:**0**,
-</br>$\{0|0|0|0|1$:**1**,
-</br>$\{0|0|0|1|0$:**1**,
-</br>...
-</br>$\{0|0|0|1|1$:**2**,
-</br>...
-</br>$1|1|1|1|1$:**5**,
+Espacio muestral para 4 bits {correct:0, error:1}:
 
-¿cuántos eventos primarios para X=0,1,2,3,4,5?
+</br>$\{0|0|0|0$: **X=0**,
+</br> $0|0|0|1$: **X=1**,
+</br> $0|0|1|0$: **X=1**,
+</br> $0|1|0|0$: **X=1**,
+</br> $1|0|0|0$: **X=1**,
+</br> $0|0|1|1$: **X=2**,
+</br> $0|1|0|1$: **X=2**,
+</br> $1|0|0|1$: **X=2**,
+</br> $0|1|1|0$: **X=2**,
+</br> $1|0|1|0$: **X=2**,
+</br> $1|1|0|0$: **X=2**,
+</br> $0|1|1|1$: **X=3**,
+</br> $1|0|1|1$: **X=3**,
+</br> $1|1|0|0$: **X=3**,
+</br> $1|1|1|0$: **X=3**,
+</br> $1|1|1|1$: **X=4**} 
+
+¿cuántos eventos primarios para X=0,1,2,3,4?
+
+
+Función de probabilidad
+==================================================
+
+Número de eventos primarios para cada valor de la variable aleatoria
+
+| 0 | 1 | 2 | 3  | 4  | total |
+| --------- | ---------  | ---------  | ---------   | ---------   | --------- |
+| $n_0$ | $n_1$ | $n_2$ | $n_3$  | $n_4$  | $n_{\cdot}$ |
+
+
+Dado que cada evento primario es igualmente probable,
+La tabla de probabilidad es cada número dividido por  $n_{\cdot}=2^4$
+
+| 0 | 1 | 2 | 3  | 4 | total |
+| --------- | ---------  | ---------  | ---------   | ---------   | --------- |
+|  1/16 | 4/16 |  6/16 | 4/16  | 1/16  | 1 |
+
+(*Triángulo de Pascal*)
+
+Nota: ¡este no es el resultado de un experimento! es el resultado de nuestras suposiciones.
+
 
 
 Función de probabilidad
@@ -238,13 +286,15 @@ Función de probabilidad
 
 Es como seleccionar grupos de tamaño $x$ conjuntos de un conjunto de  $n$
 
-- $X=0$ aparece como el número de subconjuntos de tamaño 0 ($n_0=1$) de un conjunto de 5 elementos
-- $X=1$ aparece como número de subconjuntos de tamaño 1 ($n_1=5$)
-- $X=x$ aparece como número de subconjuntos de tamaño x ($n_x=\binom 5 x$)
+- $X=0$ aparece como el número de subconjuntos de tamaño 0 ($n_0=1$) de un conjunto de 4 elementos
+- $X=1$ aparece como número de subconjuntos de tamaño 1 ($n_1=4$)
+- $X=x$ aparece como número de subconjuntos de tamaño x ($n_x=\binom 4 x$)
 
-$X$ capital es la variable, $x$ tamaño del script es un valor observado / realizado de $X$
+$X$ en mayúscula es la variable (resultado posible), $x$ tamaño en miníscula es un valor **observado** de $X$
 
-Tenga en cuenta que $\sum_{x=0}^5 \binom 5 x =2^5$ es el tamaño del espacio muestral
+- $\binom 4 x$ es el coeficinte binomial de $4$ y $x$
+
+- Ten en cuenta que $\sum_{x=0}^4 \binom 4 x= \sum_{x=0,...4} n_x =2^4$ es el tamaño del espacio muestral
 
 
 
@@ -265,39 +315,17 @@ $(x+y)^n=\sum_{i=0}^n\binom n k x^{n-k}y^k$
 
 - dan el número de subconjuntos de tamaño $k$ que se pueden hacer con un conjunto de tamaño $n$ ($k$ número en la fila $n$ del triángulo de Pascal)
 
-Función de probabilidad
-==================================================
-
-Número de microeventos para cada valor de la variable aleatoria
-
-| 0 | 1 | 2 | 3  | 4 | 5 | total |
-| --------- | ---------  | ---------  | ---------   | ---------  |---------  | --------- |
-| $n_0$ | $n_1$ | $n_2$ | $n_3$  | $n_4$ | $n_5$ | $n_{\cdot}$ |
-
-
-Dado que cada microevento es igualmente probable,
-La tabla de probabilidad es cada número dividido por  $n_{\cdot}=2^5$
-
-| 0 | 1 | 2 | 3  | 4 | 5 | total |
-| --------- | ---------  | ---------  | ---------   | ---------  |---------  | --------- |
-|  1/32 | 5/32 |  10/32 | 10/32  | 5/32 |  1/32 | 1 |
-
-(*Triángulo de Pascal*)
-
-Nota: ¡este no es el resultado de un experimento! es el resultado de nuestras suposiciones
-
 
 Función de probabilidad
 ==================================================
 
 Por lo tanto, la probabilidad de cada valor de la variable aleatoria $X$ es
 
-$P(X=0)=1/32$ 
-</br>$P(X=1)=5/32$
-</br>$P(X=2)=10/32$
-</br>$P(X=3)=10/32$
-</br>$P(X=4)=5/32$
-</br>$P(X=5)=1/32$
+$P(X=0)=1/16$ 
+</br>$P(X=1)=4/16$
+</br>$P(X=2)=6/16$
+</br>$P(X=3)=4/16$
+</br>$P(X=4)=1/16$
 
 La función definida por $f(x_i)=P(X=x_i)$ se llama **función de masa de probabilidad de X**
 
@@ -326,7 +354,7 @@ Función de probabilidad
 
 - Hemos mostrado cómo asignar una función de masa de probabilidad a una variable $X$ que es el resultado de un experimento dado.
 
-- Tenga en cuenta que la definición de $X$ y su función de masa de probabilidad es general sin referencia a ningún experimento. Las funciones viven en el espacio modelo.
+- Ten en cuenta que la definición de $X$ y su función de masa de probabilidad es general sin referencia a ningún experimento. Las funciones viven en el espacio modelo.
 
 - $X$ y $f(x)$ son objetos abstractos que pueden o no asignarse a un experimento
 
@@ -340,10 +368,10 @@ Función de probabilidad
 
 Ejemplo:
 
-Considere la siguiente variable aleatoria $X$ sobre los resultados
+Considera la siguiente variable aleatoria $X$ sobre los resultados
 
 | Resultado | a | b | c | d  | e | f | 
-| --------- | --------- | ---------  | ---------  | ---------   | ---------  |---------  | 
+| ------- | --- | ---  | --- | ---- | --- | --- | 
 | X | 0 | 0 | 1.5 | 1.5  | 2 | 3 | 
 
 
@@ -367,7 +395,7 @@ Podemos calcular, por ejemplo, las siguientes probabilidades para los valores de
 Función de probabilidad
 ======================================================
 
-O considere que no nos importa cuáles son los eventos primarios pero tenemos una definición directa de la función de masa de probabilidad
+O Considera que no nos importa cuáles son los eventos primarios pero tenemos una definición directa de la función de masa de probabilidad
 
 
 |X | -2 | -1 | 0 | 1  | 2 | 
@@ -389,13 +417,13 @@ Media y varianza
 Las funciones de masa de probabilidad tienen dos propiedades principales
 
 - su centro
-- su propagación
+- su dispersióm
 
 Podemos preguntar,
 
 - ¿alrededor de qué valores de $X$ se concentra la probabilidad?
 
-- Cuán dispersos están los valores de $X$ en relación con sus probabilidades.
+- ¿Cuán dispersos están los valores de $X$ en relación con sus probabilidades?
 
 
 Media y varianza
@@ -413,7 +441,7 @@ Tomemos la perspectiva frecuentista y recordemos que cuando hablamos de datos
 
 $$\bar{x}=\sum_{i=1..m} x_i \frac{n_i}{n}$$
 
-fue el centro de gravedad de las observaciones y $m$ es el número posible de resultados para $x_i$ y $n$ la cantidad total de observaciones.
+es el centro de gravedad de las observaciones, $m$ es el número posible de resultados para $x_i$ y $n$ la cantidad total de observaciones.
 
 ¿Cuál sería el centro de gravedad de $P(X=x_i)$ ($n \rightarrow \infty$)?
 
@@ -423,17 +451,20 @@ Media y varianza
 
 **Definición**
 
-La media ($\mu$) o el valor esperado de una variable aleatoria discreta X ($E(X)$) con función de masa $f(x)$ viene dada por
+La media, denotada $\mu$, de una variable aleatoria con función de masa de probabilidad $f(x)$ se define como 
 
-$$ \mu =E(X)=\sum_{i=1}^m x_i f(x_i) $$
+$$ \mu =\sum_{i=1}^m x_i f(x_i) $$
 
+La media también se conoce como **el valor esperado** de la variable aleatoria
+
+$$E(X)=\mu$$
 
 Media y varianza
 ======================================================
 
 <img src="./figures/mu.png" style="width: 75%" align="center">
 
-Es el centro de gravedad de las probabilidades: el punto donde se equilibran las cargas de probabilidad en una carretera.
+Es el centro de gravedad de las probabilidades: el punto donde se equilibran las cargas de probabilidad en una balanza.
 
 
 Media y varianza
@@ -442,19 +473,20 @@ Media y varianza
 
 ¿Cuál es la media de $X$ si su función de masa de probabilidad $f(x)$ está dada por
 
-$P(X=0)=1/32$ 
-</br>$P(X=1)=5/32$
-</br>$P(X=2)=10/32$
-</br>$P(X=3)=10/32$
-</br>$P(X=4)=5/32$
-</br>$P(X=5)=1/32$
+$P(X=0)=1/16$ 
+</br>$P(X=1)=4/16$
+</br>$P(X=2)=6/16$
+</br>$P(X=3)=4/16$
+</br>$P(X=4)=1/16$
 
-E(X)=**0** 1/32 + **1** 5/32 + **2** 10/32 + **3** 10/32 + **4** 5/32 + **5** 1/32 =2.5
+$$ \mu =E(X)=\sum_{i=1}^m x_i f(x_i) $$
+
+$E(X)=$**0** \*  1/16 + **1** \* 4/16 + **2** \* 6/16 + **3** \* 4/16 + **4** \* 1/16  =2
 
 Media y varianza
 ======================================================
-
 ![plot of chunk unnamed-chunk-2](Capitulo4-figure/unnamed-chunk-2-1.png)
+
 
 Media y varianza
 ======================================================
@@ -465,13 +497,12 @@ En términos similares, definimos la distancia media al cuadrado de la media:
 
 La varianza, escrita como $\sigma^2$ o $V(X)$, de una variable aleatoria discreta X con función de masa $f(x)$ está dada por
 
-$$ \sigma^2 =V(X)=\sum_{i=1}^m (x_i-\mu)^2 f(x_i) $$
+$$\sigma^2 =V(X)=\sum_{i=1}^m (x_i-\mu)^2 f(x_i)$$
 
 
 - $\sigma$ se llama desviación estándar de la distribución
 
-- Piense en ello como el momento de inercia sobre la media.
-
+- Piensa en la varianza como el momento de inercia alrededor de la media.
 
 Media y varianza
 ======================================================
@@ -479,22 +510,21 @@ Media y varianza
 
 ¿Cuál es la varianza de $X$ si su función de masa de probabilidad $f(x)$ está dada por?
 
-$P(X=0)=1/32$ 
-</br>$P(X=1)=5/32$
-</br>$P(X=2)=10/32$
-</br>$P(X=3)=10/32$
-</br>$P(X=4)=5/32$
-</br>$P(X=5)=1/32$
+$P(X=0)=1/16$ 
+</br>$P(X=1)=4/16$
+</br>$P(X=2)=6/16$
+</br>$P(X=3)=4/16$
+</br>$P(X=4)=1/16$
 
 
-Media y varianza
-======================================================
-
-Var(X)=**(0-2.5)**$^2$ 1/32 + **(1-2.5)**$^2$ 5/32 + **(2-2.5)**$^2$ 10/32 + **(3-2.5)**$^2$ 10/32 + **(4-2.5)**$^2$ 5/32 + **(5-2.5)**$^2$ 1/32 =1.25
+$$\sigma^2 =V(X)=\sum_{i=1}^m (x_i-\mu)^2 f(x_i)$$
 
 
-$$Var(X)=\sigma^2=1.25$$
-$$\sigma=1.11$$
+$V(X)=$**(0-2)**$^2$\* 1/16 + **(1-2)**$^2$\* 4/16 + **(2-2)**$^2$\* 6/16 + **(3-2)**$^2$\* 4/16 + **(4-2)**$^2$\* 1/16 =1
+
+
+$$V(X)=\sigma^2=1$$
+$$\sigma=1$$
 
 
 Funciones de X
@@ -507,7 +537,7 @@ Para cualquier función $h$ de una variable aleatoria X, con función de masa $f
 $$ E[h(X)]=\sum_{i=1}^m h(x_i) f(x_i) $$
 
 
-Piense en ello como el producto interno entre las funciones $h$ y $f$ en el espacio muestral.
+Piensa en producto interno entre las funciones $h$ y $f$ en el espacio muestral.
 
 
 
@@ -516,11 +546,12 @@ La media es lineal
 
 **Propiedad**
 
-El **valor esperado** (media) de una variable aleatoria discreta $Y=a \ times X + b$ satisface
+El **valor esperado** (media) de una variable aleatoria discreta $Y=a \times X + b$ satisface
 
 
 $E(Y)=\mu_Y$
-</br>$=E(a\times X +b)=\sum_{i=1}^m [a\times x_i +b] f(x_i)=a\times E(X) +b$
+
+$=E(a\times X +b)=\sum_{i=1}^m [a\times x_i +b] f(x_i)=a\times E(X) +b$
 
 para $a$ y $b$ escalares (números).
 
@@ -533,13 +564,18 @@ La varianza no es lineal
 La **varianza** de una variable aleatoria discreta $Y=a \times X + b$ satisface
 
 $V(Y)=V(a\times X +b)$
-</br>$=\sum_{i=1}^m ( y_i-\mu_Y)^2 f(x_i)$
-</br>$= \sum_{i=1}^m ( a\times x_i +b -a\times E(X) -b)^2 f(x_i)$
-</br>$= \sum_{i=1}^m a^2\times(x_i  - E(X) )^2 f(x_i)$
-</br>$= a^2 \times \sum_{i=1}^m (  x_i  - E(X) )^2 f(x_i)$
-</br>$= a^2 V(X)$
 
-para $a$ y $b$ escalares, el segundo paso es porque $ E $ es lineal
+$=\sum_{i=1}^m ( y_i-\mu_Y)^2 f(x_i)$
+
+$= \sum_{i=1}^m ( a\times x_i +b -a\times E(X) -b)^2 f(x_i)$
+
+$= \sum_{i=1}^m a^2\times(x_i  - E(X) )^2 f(x_i)$
+
+$= a^2 \times \sum_{i=1}^m (  x_i  - E(X) )^2 f(x_i)$
+
+$= a^2 V(X)$
+
+para $a$ y $b$ escalares, el segundo paso es porque $E$ es lineal
 
 
 
@@ -552,10 +588,14 @@ Momentos de una variable aleatoria
 La varianza de una variable aleatoria discreta $ X $ satisface
 
 $V(X)=\sum_{i=1}^m (x_i-\mu)^2 f(x_i)$
-</br>$=\sum_{i=1}^m (x_i^2-2x_i\mu+\mu^2) f(x_i)$
-</br>$=\sum_{i=1}^m x_i^2 f(x_i) -2\mu \sum_{i=1}^m x_i f(x_i)  + \mu^2$
-</br>$=\sum_{i=1}^m x_i^2 f(x_i) -2\mu^2 + \mu^2$
-</br>$=\sum_{i=1}^m x_i^2 f(x_i) -\mu^2$ 
+
+$=\sum_{i=1}^m (x_i^2-2x_i\mu+\mu^2) f(x_i)$
+
+$=\sum_{i=1}^m x_i^2 f(x_i) -2\mu \sum_{i=1}^m x_i f(x_i)  + \mu^2$
+
+$=\sum_{i=1}^m x_i^2 f(x_i) -2\mu^2 + \mu^2$
+
+$=\sum_{i=1}^m x_i^2 f(x_i) -\mu^2$ 
 
 Momentos de una variable aleatoria
 ======================================================
@@ -563,12 +603,31 @@ Momentos de una variable aleatoria
 
 La varianza también se puede escribir como
 
-$V(X)=\sum_{i=1}^m (x_i-\mu)^2 f(x_i) =\sum_{i=1}^m x_i^2 f(x_i) -\mu^2$
+- $V(X)=\sum_{i=1}^m (x_i-\mu)^2 f(x_i) =\sum_{i=1}^m x_i^2 f(x_i) -\mu^2$
 
-La varianza es el momento de inercia sobre el centro de masa (media)
+La varianza es la desviación cuadrática de la media, o el momento de inercia alrededor de la media
 
 
+- $E(X^2)=\sum_{i=1}^m x_i^2 f(x_i)$
 
+Es la desviación cuadrática del origen ($X=0$) o momento de inercia alrededor del origen.
+
+Entonces la distancia de la media al origen es la distancia cuadrática media a la media mas la distancia cuadrática media al origen 
+
+- $\mu^2= V(X)+ E(X^2)$
+
+
+Momentos de una variable aleatoria
+======================================================
+**Propiedad**
+
+La varianza también se puede escribir como
+
+- $V(X)= E(X^2)- E(X)^2$
+
+(Recuerda $\mu = E(X)$)
+
+Esta es una fórmula muy útil para calcular la varianza, ya que a menudo es más fácil calcular $E(X^2)$ que $E[(X- \ mu)^2]$
 
 Momentos de una variable aleatoria
 ======================================================
@@ -601,6 +660,8 @@ $\mu'_r$ son el $r$-momento de X con respecto al **origen**.
 Momentos de una variable aleatoria
 ======================================================
 
+**Perspectiva teórica**
+
 El valor esperado de $(X-\mu)^r$
 
 $E[(X-\mu)^r]=\mu_r=\sum_{i=1}^m (x_i-\mu)^r f(x_i)$
@@ -615,21 +676,31 @@ $\mu_2=V(X)=\sigma^2$
 Momentos de una variable aleatoria
 ======================================================
 
+**Perspectiva teórica**
+
+
 ¿Cómo se relacionan $\mu'_r$ y $\mu_r$?
 
 $E[(X)^r]=\mu'_r=\sum_{i=1}^m (x_i-\mu+\mu)^r f(x_i)$ 
-</br>$=\sum_{i=1}^m \sum_{j=0}^r \binom r j \mu^{r-j}(x_i-\mu)^j f(x_i)$
-</br>$=\sum_{j=0}^r \binom r j \mu^{r-j} \sum_{i=1}^m (x_i-\mu)^j f(x_i)$
-</br>$=\sum_{j=0}^r \binom r j \mu^{r-j} \mu_{j}$
+
+$=\sum_{i=1}^m \sum_{j=0}^r \binom r j \mu^{r-j}(x_i-\mu)^j f(x_i)$
+
+$=\sum_{j=0}^r \binom r j \mu^{r-j} \sum_{i=1}^m (x_i-\mu)^j f(x_i)$
+
+$=\sum_{j=0}^r \binom r j \mu^{r-j} \mu_{j}$
 
 
 para $r=2$
 
 $\mu'_2=\binom 2 0 \mu^2 \mu_0 + \binom 2 1 \mu \mu_1 + \binom 2 2 \mu_2$
-</br>$=1*\mu^2*1+2*\mu*0+ 1*\mu_2=\mu^2 + \mu_2$
+
+$=1*\mu^2*1+2*\mu*0+ 1*\mu_2=\mu^2 + \mu_2$
 
 Momentos de una variable aleatoria
 ======================================================
+
+**Perspectiva teórica**
+
 
 cuando $r=2$ tenemos $\mu'_2 =\mu^2+\mu_2  =\mu^2 +\sigma^2$ 
 
@@ -639,9 +710,9 @@ o
 
 $$ V(X)=E(X^2) - \mu^2$$
 
-Esta es una fórmula muy útil para calcular la varianza, ya que a menudo es más fácil calcular $E(X^2)$ que $E[(X- \ mu)^2]$
 
-Distribución de probabilidad acumulada
+
+Distribución de probabilidad 
 ==================================================
 
 Recordemos que para las observaciones (DATOS) definimos la frecuencia relativa acumulada.
@@ -651,100 +722,105 @@ $$F_i=\sum_{k=1..i} \frac{n_k}{n}$$
 Por tanto, según la interpretación frecuentista, también tenemos la función acumulativa equivalente
 
 
-Distribución de probabilidad acumulada
+Distribución de probabilidad 
 ==================================================
 
 **Definición:**
 
-La función de distribución acumulativa se define como
+La función de distribución  se define como
 
 $$F(x)=P(X\leq x) $$
 
 Esa es la probabilidad acumulada hasta un valor dado $x$
 
 
-Distribución de probabilidad acumulada
+Distribución de probabilidad 
 ==================================================
 
 
 Veamos nuestra transmisión de canal ruidoso. La función de masa de probabilidad está dada por $f (x)=P (X=x)$
 
-$f(0)=P(X=0)=1/32$ 
-</br>$f(1)=P(X=1)=5/32$
-</br>$f(2)=P(X=2)=10/32$
-</br>$f(3)=P(X=3)=10/32$
-</br>$f(4)=P(X=4)=5/32$
-</br>$f(5)=P(X=5)=1/32$
+$f(0)=P(X=0)=1/16$ 
+</br>$f(1)=P(X=1)=4/16$
+</br>$f(2)=P(X=2)=6/16$
+</br>$f(3)=P(X=3)=4/16$
+</br>$f(4)=P(X=4)=1/16$
 
-Distribución de probabilidad acumulada
+Distribución de probabilidad 
 ==================================================
 
 ¿Cuál es la probabilidad de obtener como máximo tres errores ($X=3$)
 
 $F(3)=P(X\leq 3)$ 
-</br>$=P(X=0)+P(X=1)+P(X=2)+P(X=3)=26/32$
 
-Distribución de probabilidad acumulada
+$=P(X=0)+P(X=1)+P(X=2)+P(X=3)=15/16$
+
+
+o 
+
+$F(3)=P(X\leq 3)= 1- P(X=4)= 1- 1/16=15/16$ 
+
+Distribución de probabilidad 
 ==================================================
 
-La función de distribución acumulativa viene dada por
+La función de distribución  viene dada por
 
 $F(3) =P(X\leq 3) =f(0)+f(1)+f(2)+f(3)$
-</br>$=\sum_{x_i\leq 3} f(x_i)$
+
+$=\sum_{x_i\leq 3} f(x_i)$
 
 en términos de la función de masa de probabilidad
 
-Distribución de probabilidad acumulada
+Distribución de probabilidad 
 ==================================================
 
-Para variables aleatorias discretas, la distribución de la función acumulativa se define como
+Para variables aleatorias discretas, la función de distribución  se define como
 
 $$F(x)=\sum_{x_i\leq x} f(x_i)$$
 
 La acumulación de probabilidad masiva hasta $x$
 
 
-Distribución de probabilidad acumulada
+Distribución de probabilidad 
 ==================================================
 
-Calcule la **distribución de función acumulativa **de la siguiente función de masa de probabilidad:
-</br>$f(0)=1/32$, $f(1)=5/32$, $f(2)=10/32$, $f(3)=10/32$, $f(4)=5/32$, $f(5)=1/32$
+Calcula la **función de distribución** de la siguiente función de masa de probabilidad:
+
+$f(0)=1/16$, $f(1)=4/16$, $f(2)=6/16$, $f(3)=4/16$, $f(4)=1/16$
 
 Calculemos puntos específicos
 
-$F(0)=1/32$ 
-</br>$F(1)=6/32$
-</br>$F(2)=16/32$
-</br>$F(3)=26/32$
-</br>$F(4)=31/32$
-</br>$F(5)=32/32$
+$F(0)=1/16$ 
+</br>$F(1)=5/16$
+</br>$F(2)=11/16$
+</br>$F(3)=15/16$
+</br>$F(4)=16/16$
 
-Distribución de probabilidad acumulada
+Distribución de probabilidad 
 ==================================================
 
-$F(0)=1/32$, $F(1)=6/32$, $F(2)=16/32$, $F(3)=26/32$, $F(4)=31/32$, $F(5)=32/32$
+$F(0)=1/16$, $F(1)=5/16$, $F(2)=11/16$, $F(3)=15/16$, $F(4)=16/16$, 
 
 Por $X \in \mathbb{Z}$
 \[
     F(x)=
 \begin{cases}
-    1/32,& \text{if } x < 1\\
-    6/32,& 1\leq x < 2\\
-    16/32,& 2\leq x < 3\\
-    26/32,& 3\leq x < 4\\
-    31/32,& 4\leq x < 5\\
-    32/32,& 5\leq x \\
+    1/16,& \text{if } x < 1\\
+    5/16,& 1\leq x < 2\\
+    11/16,& 2\leq x < 3\\
+    15/16,& 3\leq x < 4\\
+    16/16,&  x \leq 5\\
 \end{cases}
 \]
 
-Distribución de probabilidad acumulada
+Distribución de probabilidad 
 ==================================================
 
 ![plot of chunk unnamed-chunk-3](Capitulo4-figure/unnamed-chunk-3-1.png)
 
 
 
-Distribución de probabilidad acumulada
+Distribución de probabilidad 
 ==================================================
 
 
@@ -756,29 +832,29 @@ $F(x)$ satisface:
 
 
 
-Distribución de probabilidad acumulada
+Distribución de probabilidad 
 ==================================================
 
-Calcule la función de probabilidad de masa de la siguiente distribución de probabilidad acumulada:
+Calcule la función de masa de probabilidad de la siguiente Distribución de probabilidad :
 
-$F(0)=1/32$, $F(1)=6/32$, $F(2)=16/32$, $F(3)=26/32$, $F(4)=31/32$, $F(5)=32/32$
-
-Trabajemos al revés.
-
-$f(0)=F(0)=1/32$ 
-</br>$f(1)=F(1)-f(0)=6/32-1/32=5/32$ 
-</br>$f(2)=F(2)-f(1)-f(0)=F(2)-F(1)=10/32$ 
-</br>$f(3)=F(3)-f(2)-f(1)-f(0)=F(3)-F(2)=10/32$ 
-</br>$f(4)=F(4)-F(3)=5/32$ 
-</br>$f(5)=F(5)-F(4)=1/32$ 
+$F(0)=1/16$, $F(1)=5/16$, $F(2)=11/16$, $F(3)=15/16$, $F(4)=16/16$, 
 
 
+Trabajemos al revés de la distribución a la función de probabilidad.
 
-Distribución de probabilidad acumulada
+$f(0)=F(0)=1/16$ 
+</br>$f(1)=F(1)-f(0)=5/32-1/32=4/16$ 
+</br>$f(2)=F(2)-f(1)-f(0)=F(2)-F(1)=6/16$ 
+</br>$f(3)=F(3)-f(2)-f(1)-f(0)=F(3)-F(2)=4/16$ 
+</br>$f(4)=F(4)-F(3)=1/16$ 
+
+
+
+Distribución de probabilidad 
 ==================================================
 
 
-La distribución de probabilidad acumulada es otra forma de especificar la probabilidad de una variable aleatoria
+La Distribución de probabilidad  es otra forma de especificar la probabilidad de una variable aleatoria
 
 $$f(x_i)=F(x_i)-F(x_{i-1})$$
 
@@ -799,7 +875,7 @@ Resumen
 | ----------------- | ------ | ---- |
 | función de masa de probabilidad / frecuencia relativa          |  $P(X=x_i)=f(x_i)$ | $f_i=\frac{n_i}{n}$ |
 | función de probabilidad acumulada / frecuencia relativa acumulada          |  $F(x_i)=P(X \leq x_i)$ | $F_i=\sum_{j\leq j} f_i$   |
-| media / media (1er momento sobre el origen) | $\mu$, $\mu'_1$, $E(X)=\sum_{i(outcome)} x_i f(x_i)$ | $\bar{x}=\sum_{j(observation)} x_j/n$ |   
+| media / media (1er momento sobre el origen) | $\mu$, $\mu'_1$, $E(X)=\sum_{i(resultado)} x_i f(x_i)$ | $\bar{x}=\sum_{j(observación)} x_j/n$ |   
 | varianza (segundo momento sobre la media) |$\sigma^2$, $\mu_2$, $V(X)=\sum_i (x_i-\mu)^2 f(x_i)$ | $s^2=\sum_j (x_j-\bar{x})^2/(n-1)$ |   
 | desviación estándar | $\sigma$, $\sqrt{V(X)}$ | $s$ |
 | 2º momento sobre el origen | $\mu'_2$,$E(X^2)=\sum_i (x_i)^2 f(x_i)$ | $M'_2=\sum_j x_j^2/n$|
@@ -815,6 +891,8 @@ Resumen
 Teorema de Chebyshev
 ==================================================
 
+**Perspectiva teórica**
+
 Propiedad general de probabilidades de variales discretas y continuas.
 
 ¿Cuál debería ser la probabilidad de un valor que esté lejos de la media?
@@ -829,6 +907,8 @@ Intuitivamente pensamos que debería ser bajo porque
 
 Teorema de Chebyshev
 ==================================================
+
+**Perspectiva teórica**
 
 Para cualquier variable aleatoria X con media $\mu$ y varianza $\sigma^2$,
 
@@ -848,7 +928,9 @@ para cualquier $a> 0$.
 Teorema de Chebyshev
 ==================================================
 
-Considere $\sigma=1$ como ejemplo, la probabilidad de tener valores a 1 unidad de desviación estándar de la media es $\leq 1$ (trivial)
+**Perspectiva teórica**
+
+Considera $\sigma=1$ como ejemplo, la probabilidad de tener valores a 1 unidad de desviación estándar de la media es $\leq 1$ (trivial)
 
 
 <img src="./figures/cheb1.JPG" style="width:75%"  align="center">
@@ -858,7 +940,10 @@ Considere $\sigma=1$ como ejemplo, la probabilidad de tener valores a 1 unidad d
 Teorema de Chebyshev
 ==================================================
 
-Considere $\sigma=2$ como ejemplo, la probabilidad de tener mediciones a 2 unidades de desviación estándar de la media es $\leq 1/2^2 =1/4$
+**Perspectiva teórica**
+
+
+Considera $\sigma=2$ como ejemplo, la probabilidad de tener mediciones a 2 unidades de desviación estándar de la media es $\leq 1/2^2 =1/4$
 
 <img src="./figures/cheb2.JPG" style="width:75%"  align="center">
 
@@ -868,7 +953,10 @@ Considere $\sigma=2$ como ejemplo, la probabilidad de tener mediciones a 2 unida
 Teorema de Chebyshev
 ==================================================
 
-considere $\sigma=1$ como ejemplo
+**Perspectiva teórica**
+
+
+Considera $\sigma=1$ como ejemplo
 
 | a | Regla de Chebyshev para cualquier función de probabilidad |
 | ------- | ---------------------- | 
@@ -884,18 +972,21 @@ A medida que nos alejamos cada vez más de la media, medida por la desviación e
 Teorema de Chebyshev
 ==================================================
 
+**Perspectiva teórica**
 
+ $\sigma^2 = \sum_{i=1}^n (x_i-\mu)^2 f(x_i)$
 
+$=  \sum_{i \in \{|x_i-\mu|\geq a\sigma\}(zona \, roja)}  (x_i-\mu)^2 f(x_i)$
 
-</br> $\sigma^2 = \sum_{i=1}^n (x_i-\mu)^2 f(x_i)$
-</br> $=  \sum_{i \in \{|x_i-\mu|\geq a\sigma\}(zona \, roja)}  (x_i-\mu)^2 f(x_i)$
-</br> $+   \sum_{i \in \{|x_i-\mu|\leq a\sigma\}(zona \, azul)}  (x_i-\mu)^2 f(x_i)$
+ $+   \sum_{i \in \{|x_i-\mu|\leq a\sigma\}(zona \, azul)}  (x_i-\mu)^2 f(x_i)$
 
 
 $\sigma^2$ calculado fuera de la distancia $a\sigma$ (rojo) y dentro de $a\sigma$ (azul). Ambas integrales son positivas.
 
 Teorema de Chebyshev
 ==================================================
+
+**Perspectiva teórica**
 
 
 
@@ -906,20 +997,25 @@ $\sigma^2$ es mayor que la suma fuera de $a\sigma$ solo porque todos los términ
 Teorema de Chebyshev
 ==================================================
 
+**Perspectiva teórica**
 
 $\sigma^2 \geq   \sum_{i \in \{|x_i-\mu|\geq a\sigma \}(zona \, roja)}  (x_i-\mu)^2 f(x_i)$
-</br> $\geq   \sum_{i \in \{|x_i-\mu|\geq a\sigma\}(zona \, roja)}   a^2 \sigma^2 f(x_i)$
+
+$\geq   \sum_{i \in \{|x_i-\mu|\geq a\sigma\}(zona \, roja)}   a^2 \sigma^2 f(x_i)$
 
 porque para aquellos X tales que están en la zona roja $|X-\mu|\geq a\sigma$ entonces $$(X-\mu)^2 \geq a^2\sigma^2$$ 
 
 Teorema de Chebyshev
 ==================================================
 
+**Perspectiva teórica**
 
 
  $\sigma^2 \geq \sum_{i \in \{|x_i-\mu|\geq a\sigma\}(zona \, roja)} a^2 \sigma^2 f(x_i)$
-</br> $=a^2\sigma^2 \sum_{i \in \{|x_i-\mu|\geq a\sigma\}(zona \, roja)}  f(x_i)$
-</br> $=a^2 \sigma^2 P(|X-\mu|\geq a\sigma)$
+
+ $=a^2\sigma^2 \sum_{i \in \{|x_i-\mu|\geq a\sigma\}(zona \, roja)}  f(x_i)$
+
+ $=a^2 \sigma^2 P(|X-\mu|\geq a\sigma)$
 
 
 Resumiendo

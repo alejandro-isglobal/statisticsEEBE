@@ -448,7 +448,7 @@ Capítulo 3
 <div id="probabilidad" class="section level1">
 <h1>Probabilidad</h1>
 <p><strong>Interpretación frecuentista:</strong></p>
-<p>la probabilidad <span class="math inline">\(P(E)\)</span> de un evento E en el espacio muestral <span class="math inline">\(S\)</span> es una función tal</p>
+<p>la probabilidad <span class="math inline">\(P(E)\)</span> de un evento <span class="math inline">\(E\)</span> en el espacio muestral <span class="math inline">\(S\)</span> es una función tal</p>
 <ul>
 <li><span class="math inline">\(P(S)=1\)</span></li>
 <li><span class="math inline">\(0 \leq P(E) \leq 1\)</span></li>
@@ -584,6 +584,7 @@ Capítulo 3
 <div id="ejercicio-1" class="section level1">
 <h1>Ejercicio</h1>
 <ul>
+<li><p>La tabla del ejercicio NO es una tabla de contingencia (probabilidad conjunta)!</p></li>
 <li><p>Probabilidad de escoger cualquier caja: <span class="math inline">\(P(c1)=P(c2)=P(c3)=1/3\)</span></p></li>
 <li><p>Matriz condicional para el experimento</p></li>
 </ul>
@@ -626,7 +627,7 @@ Capítulo 3
 </div>
 <div id="ejercicio-2" class="section level1">
 <h1>Ejercicio</h1>
-<p><span class="math inline">\(P(0.1\mu F |c2) = P(0.1\mu F |c2)\)</span></p>
+<p><span class="math inline">\(P(0.1\mu F |c2) = \frac{P(0.1\mu F \cap c2)}{P(C2)}\)</span></p>
 <ul>
 <li>la probabilidad de seleccionar la caja 2 <strong>y</strong> un condensador de <span class="math inline">\(0.1\mu F\)</span> es</li>
 </ul>
@@ -642,27 +643,27 @@ Capítulo 3
 <h1>Regla de multiplicación</h1>
 <p>Los discos duros tienen tipos de errores:</p>
 <ul>
-<li><p>Tiempo de espera del comando: cuando un programa se cuelga / congela el acceso al disco (estadísticas SMART 188).</p></li>
-<li><p>Error incorregible sin conexión: al escribir hay un error con pérdida de información (estadísticas SMART 198).</p></li>
+<li><p><strong>Tiempo de espera</strong> en ejecutar un comando: cuando un programa se cuelga / congela el acceso al disco (estadísticas SMART 188).</p></li>
+<li><p>Error <strong>incorregible</strong> sin conexión: al escribir hay un error con pérdida de información (estadísticas SMART 198).</p></li>
 </ul>
 </div>
 <div id="regla-de-multiplicación-2" class="section level1">
 <h1>Regla de multiplicación</h1>
 <ul>
-<li><p>La probabilidad de que un disco duro muestre un error de tiempo de espera es de 0,02.</p></li>
-<li><p><strong>Cuando</strong> hay un error de tiempo de espera, la probabilidad de un error incorregible es 0.0077.</p></li>
+<li><p>La probabilidad de que un disco duro muestre un error de <strong>tiempo de espera</strong> es de 0.02.</p></li>
+<li><p><strong>Cuando</strong> hay un error de <strong>tiempo de espera</strong>, la probabilidad de un error <strong>incorregible</strong> es 0.0077.</p></li>
 </ul>
-<p>Estos son los datos reales obtenidos de [data.world] (<a href="https://data.world/scuttlemonkey/hard-drive-reliability-sample" class="uri">https://data.world/scuttlemonkey/hard-drive-reliability-sample</a>)</p>
+<p>Estos son los datos reales obtenidos de <a href="https://data.world/scuttlemonkey/hard-drive-reliability-sample">data.world</a></p>
 <ul>
-<li>¿Cuál es la probabilidad de un tiempo de espera <strong>Y</strong> errores incorregibles?</li>
+<li>¿Cuál es la probabilidad de observar errores en tiempo de espera <strong>Y</strong> errores incorregibles?</li>
 </ul>
 </div>
 <div id="regla-de-multiplicación-3" class="section level1">
 <h1>Regla de multiplicación</h1>
 <p>¿Cuáles son las expresiones matemáticas de las siguientes dos oraciones?</p>
 <ul>
-<li><p>La probabilidad de que un disco duro muestre un error de tiempo de espera es de 0,02.</p></li>
-<li><p><strong>Cuando</strong> hay un error de tiempo de espera, la probabilidad de un error incorregible es 0.0077.</p></li>
+<li><p>La probabilidad de que un disco duro muestre un error de <strong>tiempo de espera</strong> es de 0.02.</p></li>
+<li><p><strong>Cuando</strong> hay un error de <strong>tiempo de espera</strong>, la probabilidad de un error <strong>incorregible</strong> es 0.0077.</p></li>
 <li><p>La probabilidad de un tiempo de espera <strong>Y</strong> errores incorregibles</p></li>
 </ul>
 </div>
@@ -670,8 +671,8 @@ Capítulo 3
 <h1>Regla de multiplicación</h1>
 <p>¿Cuáles son las expresiones matemáticas de las siguientes dos oraciones?</p>
 <ul>
-<li><p>La probabilidad de que un disco duro muestre un error de tiempo de espera es 0.02: <span class="math inline">\(P(T)=0.02\)</span></p></li>
-<li><p><strong>Cuando</strong> hay un error de tiempo de espera, la probabilidad de un error incorregible es <span class="math inline">\(0.0077\)</span>: <span class="math inline">\(P(U|T)=0.0077\)</span></p></li>
+<li><p>La probabilidad de que un disco duro muestre un error de <strong>tiempo de espera</strong> es de 0.02: <span class="math inline">\(P(T)=0.02\)</span></p></li>
+<li><p><strong>Cuando</strong> hay un error de <strong>tiempo de espera</strong>, la probabilidad de un error <strong>incorregible</strong> es 0.0077: <span class="math inline">\(P(U|T)=0.0077\)</span></p></li>
 <li><p>La probabilidad de un tiempo de espera <strong>Y</strong> errores incorregibles: <span class="math inline">\(P(U\cap T)=?\)</span></p></li>
 </ul>
 </div>
@@ -692,13 +693,81 @@ Capítulo 3
 <h1>Regla de probabilidad total</h1>
 <p><strong>Regla de probabilidad total</strong></p>
 <p><span class="math display">\[P (A) =P (A | B &#39;) P (B&#39;) + P (A | B) P (B)\]</span></p>
-<p>cuando B ’y B son mutuamente excluyentes (<span class="math inline">\(B \cap B&#39; =\emptyset\)</span>).</p>
+<p>cuando <span class="math inline">\(B\)</span> y <span class="math inline">\(B&#39;\)</span> son mutuamente excluyentes (<span class="math inline">\(B \cap B&#39; =\emptyset\)</span>).</p>
 <p>La regla se sigue de: </br> <span class="math inline">\(P (A) =P (A \cap S) =P (A \cap [B \cup B &#39;])\)</span> </br> <span class="math inline">\(=P ([A \cap B] \cup [A \cap B &#39;])\)</span> </br> <span class="math inline">\(=P (A \cap B) + P (A \cap B &#39;))\)</span> </br> <span class="math inline">\(=P (A | B &#39;) P (B&#39;) + P (A | B) P (B)\)</span></p>
+</div>
+<div id="probabilidad-conjunta-1" class="section level1">
+<h1>Probabilidad conjunta</h1>
+<p>Probabilidad conjunta <span class="math inline">\(P(A,B)=P(A\cap B)\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>B</th>
+<th>B’</th>
+<th>suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><b> A </b></td>
+<td><span class="math inline">\(P(A \cap B)\)</span></td>
+<td><span class="math inline">\(P(A \cap B&#39;)\)</span></td>
+<td><span class="math inline">\(P(A)\)</span></td>
+</tr>
+<tr class="even">
+<td><b> A’ </b></td>
+<td><span class="math inline">\(P(A&#39; \cap B)\)</span></td>
+<td><span class="math inline">\(P(A&#39; \cap B&#39;)\)</span></td>
+<td><span class="math inline">\(P(A&#39;)\)</span></td>
+</tr>
+<tr class="odd">
+<td><b>suma</b></td>
+<td><span class="math inline">\(P(B)\)</span></td>
+<td><span class="math inline">\(P(B&#39;)\)</span></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="regla-de-probabilidad-total-2" class="section level1">
 <h1>Regla de probabilidad total</h1>
 <p>Para muchos eventos mutuamente excluyentes <span class="math inline">\(\{E1, E2, ... En \}\)</span>, la <strong>regla de probabilidad total</strong> es</p>
 <p><span class="math display">\[P(A)= P(A|E1)P(E1) + P(A|E2)P(E2) + ... +P(A|En)P(En)\]</span></p>
+</div>
+<div id="probabilidad-conjunta-2" class="section level1">
+<h1>Probabilidad conjunta</h1>
+<p>Probabilidad conjunta <span class="math inline">\(P(A,B)=P(A\cap B)\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>E1</th>
+<th>E2</th>
+<th>…</th>
+<th>En</th>
+<th>suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><b> A </b></td>
+<td><span class="math inline">\(P(A \cap E1)\)</span></td>
+<td><span class="math inline">\(P(A \cap E3)\)</span></td>
+<td>…</td>
+<td><span class="math inline">\(P(A \cap En)\)</span></td>
+<td><span class="math inline">\(P(A)\)</span></td>
+</tr>
+<tr class="even">
+<td><b> A’ </b></td>
+<td><span class="math inline">\(P(A&#39; \cap E1)\)</span></td>
+<td><span class="math inline">\(P(A&#39; \cap E2)\)</span></td>
+<td>…</td>
+<td><span class="math inline">\(P(A \cap En)\)</span></td>
+<td><span class="math inline">\(P(A&#39;)\)</span></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="regla-de-probabilidad-total-3" class="section level1">
 <h1>Regla de probabilidad total</h1>
@@ -733,7 +802,7 @@ Capítulo 3
 <h1>Ejercicio</h1>
 <ul>
 <li><p>Probabilidad de escoger cualquier caja: <span class="math inline">\(P(c1)=P(c2)=P(c3)=1/3\)</span></p></li>
-<li><p>Matriz condicional para el experimento</p></li>
+<li><p>Matriz condicional sobre las cajas</p></li>
 </ul>
 <table>
 <thead>
@@ -772,6 +841,9 @@ Capítulo 3
 </tbody>
 </table>
 <p>¿Cuál es la probabilidad de que se haya seleccionado un condensador de <span class="math inline">\(0.01 \mu F\)</span>?</p>
+<ul>
+<li>obten la matriz de probabilidad conjunta.</li>
+</ul>
 </div>
 <div id="independencia-estadística" class="section level1">
 <h1>Independencia estadística</h1>
@@ -813,7 +885,7 @@ Capítulo 3
 </tr>
 </tbody>
 </table>
-<p>¿La probabilidad de tener defectos aumenta la probabilidad de tener defectos?</p>
+<p>¿La probabilidad de tener fracturas aumenta la probabilidad de tener una conducción defectuasa?</p>
 </div>
 <div id="independencia-estadística-2" class="section level1">
 <h1>Independencia estadística</h1>
@@ -856,7 +928,7 @@ Capítulo 3
 </div>
 <div id="independencia-estadística-3" class="section level1">
 <h1>Independencia estadística</h1>
-<p>¿Cuál es la probabilidad condicional de observar un conductor defectuoso si tiene fracturas?</p>
+<p>¿Cuál es la probabilidad condicional de observar un conductor defectuoso <strong>si</strong> tiene fracturas?</p>
 <table>
 <thead>
 <tr class="header">
@@ -892,15 +964,15 @@ Capítulo 3
 </div>
 <div id="independencia-estadística-4" class="section level1">
 <h1>Independencia estadística</h1>
-<p>La probabilidad de observar un conductor defectuoso <strong>no</strong> depende de haber observado una fractura.</p>
+<p>La probabilidad de que un conductor tenga una conducción defectuosa <strong>no</strong> depende de la probabilidad de que presente una fractura.</p>
 <p><span class="math display">\[P (D) =P (D | F)\]</span></p>
 </div>
 <div id="independencia-estadística-5" class="section level1">
 <h1>Independencia estadística</h1>
-<p>Dos eventos A y B son estadísticamente independientes si</p>
+<p>Dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son estadísticamente independientes si</p>
 <ul>
-<li><span class="math inline">\(P (A | B) =P (A)\)</span>; A es independiente de B</li>
-<li><span class="math inline">\(P (B | A) =P (B)\)</span>; B es independiente de A</li>
+<li><span class="math inline">\(P (A | B) =P (A)\)</span>; <span class="math inline">\(A\)</span> es independiente de <span class="math inline">\(B\)</span></li>
+<li><span class="math inline">\(P (B | A) =P (B)\)</span>; <span class="math inline">\(B\)</span> es independiente de <span class="math inline">\(A\)</span></li>
 </ul>
 <p>y por la regla de la multiplicación, su probabilidad conjunta es</p>
 <ul>
@@ -940,7 +1012,7 @@ Capítulo 3
 </tr>
 </tbody>
 </table>
-<p>Confirme que todas las entradas de la matriz son el producto de los marginales.</p>
+<p>Confirma que todas los elementos de la matriz de probabilidad conjunta son el producto de las probababilidades marginales.</p>
 <p>Por ejemplo:</p>
 <ul>
 <li><span class="math inline">\(P(F)P(D)= P(D \cap F)\)</span></li>
@@ -989,9 +1061,23 @@ Capítulo 3
 <div id="ejercicio-4" class="section level1">
 <h1>Ejercicio</h1>
 <p>En una avenida hay un sistema de 3 semáforos sucesivos. La probabilidad de encontrar el primer semáforo en rojo es 0.6. En los siguientes semáforos, tenemos las probabilidades <span class="math inline">\(P(R_{j+1}|R_j) = 0.15\)</span> y <span class="math inline">\(P(R_{j+1}|R_j) = 0.25\)</span>, para <span class="math inline">\(j = 1,2\)</span>, donde <span class="math inline">\(R_j\)</span> representa el suceso [encontramos en rojo el semáforo j-ésimo]. Aceptando que la probabilidad de encontrar en rojo un semáforo depende únicamente del estado del semáforo anterior, calcula la probabilidad de que, al circular por el sistema de tres semáforos, ocurran los siguientes sucesos:</p>
-<ol style="list-style-type: lower-alpha">
+<ol style="list-style-type: decimal">
 <li>Encontramos todos los semáforos en rojo.</li>
+</ol>
+<p>Pista</p>
+<ul>
+<li>Escribe las matrices de probabilidad condicional.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
 <li>Encontramos algún semáforo en rojo.</li>
+</ol>
+<p>Pistas:</p>
+<ul>
+<li><p>Si <span class="math inline">\(R_1 \cup R_2 \cup R_3\)</span> y <span class="math inline">\(\overline{R_1 \cup R_2 \cup R_3}\)</span> son mutuamente excluyentes y su unión es <span class="math inline">\(S\)</span>, ¿cómo se relacionan sus probabilidades?.</p></li>
+<li><p>Recuerda las propiedades del álgebra de conjuntos: <span class="math inline">\(\overline{R_1 \cup R_2 \cup R_3}= \bar{R}_1 \cap \bar{R}_2 \cap \bar{R}_3\)</span></p></li>
+<li><p>desarrolla la intersección en términos de probabilidades condicionales.</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
 <li>Encontramos, exactamente, un semáforo en rojo</li>
 </ol>
 </div>
@@ -1033,7 +1119,7 @@ Capítulo 3
 </div>
 <div id="teorema-de-bayes-1" class="section level1">
 <h1>Teorema de Bayes</h1>
-<p>calculamos la <strong>matriz condicional</strong></p>
+<p>calculamos la <strong>matriz condicional</strong> en el estado de infección</p>
 <table>
 <thead>
 <tr class="header">
@@ -1067,7 +1153,7 @@ Capítulo 3
 </div>
 <div id="teorema-de-bayes-2" class="section level1">
 <h1>Teorema de Bayes</h1>
-<p>y también calculamos la otra *matriz condicional**</p>
+<p>y también calculamos la otra <strong>matriz condicional</strong> en el resultado de la prueba</p>
 <table>
 <thead>
 <tr class="header">
@@ -1101,10 +1187,10 @@ Capítulo 3
 <h1>Teorema de Bayes</h1>
 <p>Ahora imaginemos una situación real actual.</p>
 <ul>
-<li><p>Se han (realizado) PCR para coronavirus [<a href="https://www.nejm.org/doi/full/10.1056/NEJMp2015897" class="uri">https://www.nejm.org/doi/full/10.1056/NEJMp2015897</a>] en personas en el hospital que seguramente estén infectadas. Tienen una sensibilidad del 70%. También se han probado en el laboratorio en condiciones sin infección con una sensibilidad del 96%.</p></li>
-<li><p>Un estudio de prevalencia en España mostró que <span class="math inline">\(P (sí) =0.05\)</span>, <span class="math inline">\(P (no) =0.95\)</span> antes del verano.</p></li>
+<li><p>Se han realizado PCRs para coronavirus [<a href="https://www.nejm.org/doi/full/10.1056/NEJMp2015897" class="uri">https://www.nejm.org/doi/full/10.1056/NEJMp2015897</a>] en personas en el hospital que seguramente están infectadas. Las pruebas tienen una sensibilidad del 70%. También se han probado en el laboratorio en condiciones sin infección con una sensibilidad del 96%.</p></li>
+<li><p>Un estudio de prevalencia en España mostró que el el verano del 2020 <span class="math inline">\(P (sí) =0.05\)</span>, <span class="math inline">\(P (no) =0.95\)</span>.</p></li>
 </ul>
-<p>Con estos datos, ¿cuál es la probabilidad de que esté infectado si da positivo en un PCR: <span class="math inline">\(P (sí | positivo)\)</span>?</p>
+<p>Con estos datos, ¿cuál es la probabilidad de que estar infectado <strong>si</strong> la prueba de PCR es positiva: <span class="math inline">\(P (sí | positivo)\)</span>?</p>
 </div>
 <div id="teorema-de-bayes-4" class="section level1">
 <h1>Teorema de Bayes</h1>
@@ -1173,12 +1259,12 @@ Capítulo 3
 </tr>
 </tbody>
 </table>
-<p>¿Cómo pasar de una matriz a otra ?, eso es revirtiendo el condicionamiento:</p>
+<p>¿Cómo pasar de una matriz a otra? ¿cómo revirtimos el condicionamiento?:</p>
 <p><span class="math inline">\(P (positivo | sí) \rightarrow P (sí | positivo)\)</span></p>
 </div>
 <div id="teorema-de-bayes-7" class="section level1">
 <h1>Teorema de Bayes</h1>
-<p>Queremos averiguar cuál es la probabilidad de estar infectado si la prueba es positiva <span class="math inline">\(P (sí | positivo)\)</span>, cuando por experimentos tenemos,</p>
+<p>Queremos averiguar cuál es la probabilidad de estar infectado si la prueba es positiva <span class="math inline">\(P (sí | positivo)\)</span>, cuando por experimentos en el laboratorio tenemos,</p>
 <ul>
 <li><p>la probabilidad de dar positivo si está infectado <span class="math inline">\(P (positivo | sí)\)</span> (sensibilidad)</p></li>
 <li><p>la probabilidad de dar negativo si está infectado <span class="math inline">\(P (negativo | no)\)</span> (especificidad)</p></li>
@@ -1195,7 +1281,7 @@ Capítulo 3
 </div>
 <div id="teorema-de-bayes-9" class="section level1">
 <h1>Teorema de Bayes</h1>
-<p>Tenga en cuenta que</p>
+<p>Ten en cuenta que</p>
 <p><span class="math inline">\(P (positivo \cap sí) =P (sí \cap positivo)\)</span></p>
 <p>aplicando la regla de la multiplicación en ambos lados tenemos</p>
 <p><span class="math inline">\(P (positivo | sí) \times P (sí) =P (sí | positivo) \times P (positivo)\)</span></p>
@@ -1206,8 +1292,12 @@ Capítulo 3
 <h1>Teorema de Bayes</h1>
 <p>Teorema de Bayes:</p>
 <p><span class="math inline">\(P (sí | positivo) =\frac {P (positivo | sí) \times P (sí)} {P (positivo)}\)</span></p>
-<p>Sabemos - la sensibilidad <span class="math inline">\(P (positivo | sí)\)</span> - la prevalencia <span class="math inline">\(P (sí)\)</span></p>
-<p>y necesita la probabilidad de dar positivo <span class="math inline">\(P (positivo)\)</span> en la población.</p>
+<p>Sabemos</p>
+<ul>
+<li>la sensibilidad <span class="math inline">\(P (positivo | sí)\)</span></li>
+<li>la prevalencia <span class="math inline">\(P (sí)\)</span></li>
+</ul>
+<p>y necesitamos la probabilidad de dar positivo <span class="math inline">\(P (positivo)\)</span> en la población.</p>
 </div>
 <div id="teorema-de-bayes-11" class="section level1">
 <h1>Teorema de Bayes</h1>
@@ -1252,16 +1342,16 @@ Capítulo 3
 <p><span class="math inline">\(P(sí | positivo) =\frac {P (positivo | sí) \times P (sí)} {P (positivo | sí) P (sí) + P (positivo | no) P (no)}\)</span></p>
 <p>sabemos:</p>
 <ul>
-<li><p><span class="math inline">\(P (positivo | sí) =0,70\)</span></p></li>
-<li><p><span class="math inline">\(P (positivo | no) =1- P (negativo | no) =0,06\)</span></p></li>
-<li><p>la probabilidad de infección y no infección en la población: <span class="math inline">\(P (sí) =0,05\)</span> y <span class="math inline">\(P (no) =1-P (sí) =0,95\)</span>.</p></li>
+<li><p><span class="math inline">\(P (positivo | sí) =0.70\)</span></p></li>
+<li><p><span class="math inline">\(P (positivo | no) =1- P (negativo | no) =0.06\)</span></p></li>
+<li><p>la probabilidad de infección y no infección en la población: <span class="math inline">\(P (sí) =0.05\)</span> y <span class="math inline">\(P (no) =1-P (sí) =0.95\)</span>.</p></li>
 </ul>
 <p>Por lo tanto: <span class="math inline">\(P (sí | positivo) =0.47\)</span></p>
 </div>
 <div id="teorema-de-bayes-13" class="section level1">
 <h1>Teorema de Bayes</h1>
 <p><strong>Teorema</strong></p>
-<p>Si <span class="math inline">\(E1, E2, ..., Ek\)</span> son <span class="math inline">\(k\)</span> eventos mutuamente excluyentes y exhaustivos y <span class="math inline">\(B\)</span> es cualquier evento,</p>
+<p>Si <span class="math inline">\(E1, E2, ..., Ek\)</span> son <span class="math inline">\(k\)</span> eventos mutuamente excluyentes y exhaustivos (<span class="math inline">\(\cup_{i=1..k} E_k=S\)</span>) y <span class="math inline">\(B\)</span> es cualquier evento,</p>
 <p><span class="math display">\[P (Ei | B) =\frac {P (B | Ei) P (Ei)} {P (B | E1) P (E1) + ... + P (B | Ek) P (Ek)}\]</span></p>
 </div>
 <div id="teorema-de-bayes-14" class="section level1">
@@ -1275,6 +1365,116 @@ Capítulo 3
 <div id="ejercicio-5" class="section level1">
 <h1>Ejercicio</h1>
 <p>En una determinada población, el <span class="math inline">\(20\%\)</span> de los individuos son hipertensos (H). Además, algunas de las personas saben (S) si son o no hipertensas, y otras no lo saben. La probabilidad que siendo hipertensos sepan si lo son o no es del <span class="math inline">\(0.7\)</span> y la probabilidad que no siendo hipertensos no sepan si lo son o no es de <span class="math inline">\(0.6\)</span>. En esta población, si una persona no sabe si es o no hipertensa, ¿cuál es la probabilidad que lo sea?</p>
+</div>
+<div id="ejercicio-6" class="section level1">
+<h1>Ejercicio</h1>
+<p>Escribamos lo que nos da el problema</p>
+<ul>
+<li><span class="math inline">\(P(H)=0.2\)</span></li>
+<li><span class="math inline">\(P(S|H)=0.7\)</span></li>
+<li><span class="math inline">\(P(\bar{S}|\bar{H})=0.6\)</span></li>
+</ul>
+</div>
+<div id="ejercicio-7" class="section level1">
+<h1>Ejercicio</h1>
+<p>si una persona no sabe si es o no hipertensa, ¿cuál es la probabilidad que lo sea?</p>
+<p><span class="math inline">\(P(H|\bar{S})=\frac{P(\bar{S}|H)P(H)}{P(\bar{S})}\)</span></p>
+<p><span class="math inline">\(=\frac{P(\bar{S}|H)P(H)}{P(\bar{S}|H)P(H) +P(\bar{S}|\bar{H})P(\bar{H})}\)</span></p>
+<p><span class="math inline">\(=\frac{[1-P(S|H)]P(H)}{[1-P(S|H)]P(H) +P(\bar{S}|\bar{H})[1-P(H)]}=0.111\)</span></p>
+</div>
+<div id="ejercicio-8" class="section level1">
+<h1>Ejercicio</h1>
+<p>Para detectar la presencia de un cierto tipo de bacteria en el agua se realiza un test. Si el agua contiene bacterias, el test da positivo el 70% de veces. Si no hay bacterias, detecta da negativo un 60% de las veces. Además sabemos que la probabilidad de que una muestra tenga bacterias de este tipo es 0.2. Calcular la probabilidad de que haya bacterias, si el resulatdo de un test es positivo.</p>
+</div>
+<div id="ejercicio-9" class="section level1">
+<h1>Ejercicio</h1>
+<p>Escribamos lo que nos da el problema</p>
+<ul>
+<li><span class="math inline">\(P(P|C)=0.7\)</span> por lo tanto <span class="math inline">\(P(\bar{P}|C)=0.3\)</span></li>
+<li><span class="math inline">\(P(\bar{P}|\bar{C})=0.6\)</span> por lo tanto <span class="math inline">\(P(P|\bar{C})=0.4\)</span></li>
+<li><span class="math inline">\(P(C)= 0.2\)</span> por lo tanto <span class="math inline">\(P(\bar{C})= 0.8\)</span></li>
+</ul>
+</div>
+<div id="ejercicio-10" class="section level1">
+<h1>Ejercicio</h1>
+<p>Calcular la probabilidad de que haya bacterias, si el resulatdo de un test es positivo: <span class="math inline">\(P(C|P)\)</span>?</p>
+<p>Bayes <span class="math inline">\(P(C|P)=\frac{P(P|C)*P(C)}{P(P|C)*P(C)+P(P|\bar{C})*P(\bar{C})}\)</span></p>
+<p><span class="math inline">\(P(C|P)=\frac{0.7*0.2}{0.7*0.2+0.4*0.8}=0.3043\)</span></p>
+</div>
+<div id="ejercicio-11" class="section level1">
+<h1>Ejercicio</h1>
+<p>Tenemos tres cajas (caja 1, caja 2, caja 3) en las que se almacenan condensadores de tres capacidades diferentes <span class="math inline">\((0.01\mu F, 0.1 \mu F, 1.0\mu F)\)</span>, como se muestra en el cuadro siguiente:</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\mu\)</span> F</th>
+<th>box 1</th>
+<th>box 2</th>
+<th>box 3</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.01</td>
+<td>20</td>
+<td>95</td>
+<td>25</td>
+<td>140</td>
+</tr>
+<tr class="even">
+<td>0.1</td>
+<td>55</td>
+<td>35</td>
+<td>75</td>
+<td>165</td>
+</tr>
+<tr class="odd">
+<td>1.0</td>
+<td>70</td>
+<td>80</td>
+<td>145</td>
+<td>295</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td>145</td>
+<td>210</td>
+<td>245</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+<p>Deﬁnimos <span class="math inline">\(0.01\mu F\)</span>, <span class="math inline">\(0.1\mu F\)</span> y <span class="math inline">\(1.0\mu F\)</span> como los sucesos de extraer un condensador de <span class="math inline">\(0.01\mu F\)</span>, <span class="math inline">\(0.1\mu F\)</span> y <span class="math inline">\(1.0\mu F\)</span>, respectivamente. De igual forma, deﬁnimos <span class="math inline">\(c1\)</span>, <span class="math inline">\(c2\)</span> y <span class="math inline">\(c3\)</span> a los sucesos de elegir la caja 1, la caja 2 y la caja 3, respectivamente. Escogemos al azar una caja y de ella, a su vez, un condensador. Se pide:</p>
+<ul>
+<li>Si ha sido seleccionado un condensador de <span class="math inline">\(1.0 \mu F\)</span>, ¿Cuál es la probabilidad de que proceda de la caja 1?</li>
+</ul>
+</div>
+<div id="resumen" class="section level1">
+<h1>Resumen</h1>
+<ul>
+<li><p>Regla de la suma: <span class="math inline">\(P(A\cup B \cup C)=P(A) + P(B) + P(C)\)</span> </br><span class="math inline">\(- P(A\cap B) - P(A\cap C) - P(B\cap C)\)</span> </br><span class="math inline">\(+P(A\cap B \cap C)\)</span></p></li>
+<li><p>Probabilidad condicional: <span class="math inline">\(P(A|B) =\frac{P(A\cap B)}{P(B)}\)</span></p></li>
+<li><p>Regla de la multiplicación:</p></li>
+</ul>
+<p><span class="math inline">\(P (A \cap B) =P (A | B) P (B)\)</span></p>
+<ul>
+<li>Dos eventos <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> son estadísticamente independientes si</li>
+</ul>
+<p><span class="math inline">\(P (A | B) =P (A)\)</span></p>
+<p><span class="math inline">\(P (B | A) =P (B)\)</span></p>
+<p><span class="math inline">\(P (A \cap B) =P (A) P (B)\)</span></p>
+</div>
+<div id="summary" class="section level1">
+<h1>Summary</h1>
+<ul>
+<li>Suma total de probabilidad</li>
+</ul>
+<p><span class="math inline">\(P (A) =P (A | E1) P (E1) + P (A | E2) P (E2) + ... + P (A | En) P (En)\)</span>,</p>
+<p>Cuando <span class="math inline">\(\{E1, E2, ... En \}\)</span> son mutuamente excluyentes</p>
+<ul>
+<li>Teorema de Bayes <span class="math inline">\(P (Ei | B) =\frac {P (B \cap Ei)} {P (B \cap E1) + ... + P (B \cap E1)}\)</span></li>
+</ul>
 </div>
 
 
